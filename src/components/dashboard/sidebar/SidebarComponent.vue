@@ -1,5 +1,6 @@
 <script setup>
-    
+import buttons from './ButtonNavigationComponent';
+
 </script>
 
 <template>
@@ -8,6 +9,6 @@
     </div>
 </template>
 
-<style scoped>
+<style>
     
 </style>
