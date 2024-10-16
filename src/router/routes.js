@@ -1,64 +1,83 @@
+import BehaviorPage from "@/pages/dashboard/BehaviorPage.vue"
+import BillPage from "@/pages/dashboard/BillPage.vue"
+import ClientPage from "@/pages/dashboard/ClientPage.vue"
+import ConsultantPage from "@/pages/dashboard/ConsultantPage.vue"
+import ContratPage from "@/pages/dashboard/ContratPage.vue"
+import CreateAccountPage from "@/pages/dashboard/CreateAccountPage.vue"
+import DashboardPage from "@/pages/dashboard/DashboardPage.vue"
+import FinancePage from "@/pages/dashboard/FinancePage.vue"
+import OpportunityPage from "@/pages/dashboard/OpportunityPage.vue"
+import OthersPage from "@/pages/dashboard/OthersPage.vue"
+import ParamPage from "@/pages/dashboard/ParamPage.vue"
+import ProjectPage from "@/pages/dashboard/ProjectPage.vue"
+import StatisticPage from "@/pages/dashboard/StatisticPage.vue"
+
 const routes = [
     {
         path: '/dash',
         name: 'dash',
-        component: ''
+        component: DashboardPage
     },
     {
         path: '/creation-compte',
         name: 'creation-compte',
-        component: ''
+        component: CreateAccountPage
     },
     {
         path: '/behavior',
         name: 'behavior',
-        component: ''
+        component: BehaviorPage
     },
     {
         path: '/opportinutes',
         name: 'opportinutes',
-        component: ''
+        component: OpportunityPage
     },
     {
         path: '/clients',
         name: 'clients',
-        component: ''
+        component: ClientPage
     },
     {
         path: '/factures',
         name: 'factures',
-        component: ''
+        component: BillPage
     },
     {
         path: '/contrats',
         name: 'contrats',
-        component: ''
+        component: ContratPage
     },
     {
         path: '/projets',
         name: 'projets',
-        component: ''
+        component: ProjectPage
     },
     {
         path: '/finances',
         name: 'finances',
-        component: ''
+        component: FinancePage
     },
     {
         path: '/consultants',
         name: 'consultants',
-        component: ''
+        component: ConsultantPage
     },
     {
         path: '/statistiques-rapports',
         name: 'statistiques-rapports',
-        component: ''
+        component: StatisticPage
     },
     {
         path: '/autres',
         name: 'autres',
-        component: ''
+        component: OthersPage
     },
+    {
+        path: '/params',
+        name: 'parametres',
+        component: ParamPage
+    }
 ]
 
 export default routes

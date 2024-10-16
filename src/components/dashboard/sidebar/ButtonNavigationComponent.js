@@ -59,6 +59,11 @@ const buttons = [
         libel: 'Autres',
         icon: ''
     },
+    {
+        path: '/params',
+        libel: 'Paramètres',
+        icon: ''
+    },
 ]
 
 export default buttons

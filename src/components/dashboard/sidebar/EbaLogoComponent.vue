@@ -13,6 +13,9 @@
 <style scoped>
     .logo{
         width: 100%;
-        height: 280px;
+        height: 140px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 </style>
