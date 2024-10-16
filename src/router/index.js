@@ -1,4 +1,7 @@
+import LoginPage from '@/pages/auth/LoginPage.vue'
+import DashboardView from '@/views/DashboardView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
+import routes from './routes'
 
 
 const router = createRouter({
@@ -6,12 +9,18 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'login',
-      component: HomeView
+      redirect: '/login'
     },
     {
-      path: '/about',
-      name: 'about'
+      path: '/login',
+      name: 'login',
+      component: LoginPage
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: DashboardView,
+      children: routes
     }
   ]
 })
