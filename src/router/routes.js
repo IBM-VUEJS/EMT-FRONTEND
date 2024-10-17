@@ -24,11 +24,6 @@ const routes = [
         component: CreateAccountPage
     },
     {
-        path: '/behavior',
-        name: 'behavior',
-        component: BehaviorPage
-    },
-    {
         path: '/opportinutes',
         name: 'opportinutes',
         component: OpportunityPage

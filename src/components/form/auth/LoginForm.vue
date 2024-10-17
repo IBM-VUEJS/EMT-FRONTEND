@@ -13,7 +13,7 @@ const props = defineProps(
 <template>
     <div class="login_form">
         <div class="header">{{ title }}</div>
-        <form class="inputs">
+        <form class="inputs" @submit.prevent="">
             <InputComponent :type="'email'" :value="''" :placeholder="'example.eba@gmail.com'" :name="'email'" :libel="'Email'"></InputComponent>
             <InputComponent :type="'password'" :value="''" :placeholder="'*********'" :name="'password'" :libel="'Mot de passe'"></InputComponent>
             <ButtonComponent :value="'Se Connecter'" :type="'submit'"></ButtonComponent>

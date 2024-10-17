@@ -19,7 +19,7 @@
             </div>
         </RouterLink>
         <div class="header">{{ title }}</div>
-        <form class="inputs">
+        <form class="inputs" @submit.prevent="">
             <InputComponent :type="'email'" :value="''" :placeholder="'example.eba@gmail.com'" :name="'email'" :libel="'Saisissez votre adresse email pour recevoir le lien de réinitialisation'"></InputComponent>
             <ButtonComponent :value="'Rénitialiser'" :type="'submit'"></ButtonComponent>
         </form>

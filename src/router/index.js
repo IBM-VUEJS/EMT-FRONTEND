@@ -1,6 +1,6 @@
 import LoginPage from '@/pages/auth/LoginPage.vue'
 import DashboardView from '@/views/DashboardView.vue'
-import ReinitialisePasswordPage from '@/pages/auth/ReinitialisePasswordPage.vue'
+import ReinitialisePasswordPage from '@/pages/auth/ForgotPasswordPage.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import routes from './routes'
 

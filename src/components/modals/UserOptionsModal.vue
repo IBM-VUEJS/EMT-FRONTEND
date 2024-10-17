@@ -11,7 +11,7 @@
         <div class="user_options" v-if="toggle">
             <div class="my_profil">
                 <!-- PAGE GESTION DE PROFIL -->
-                <RouterLink :to="''">
+                <RouterLink :to="{name: 'dash'}">
                     <div class="manage">
                         <i class="bi bi-person-circle"></i>
                         <span class="text">Mon Profil</span>
@@ -20,7 +20,7 @@
             </div>
             <div class="logout">
                 <!-- DECONNEXION RETOUR SUR LA PAGE DE CONNEXION -->
-                <RouterLink :to="''"> 
+                <RouterLink :to="{name: 'login'}"> 
                     <div class="manage">
                         <i class="bi bi-door-open"></i>
                         <span class="text">Déconnexion</span>

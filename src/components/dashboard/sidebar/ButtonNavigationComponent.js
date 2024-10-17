@@ -10,11 +10,6 @@ const buttons = [
         icon: ''
     },
     {
-        path: '/behavior',
-        libel: 'Behaviors',
-        icon: ''
-    },
-    {
         path: '/opportinutes',
         libel: 'Opportunités',
         icon: ''
