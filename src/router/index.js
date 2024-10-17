@@ -1,8 +1,9 @@
 import LoginPage from '@/pages/auth/LoginPage.vue'
 import DashboardView from '@/views/DashboardView.vue'
-import ReinitialisePasswordPage from '@/pages/auth/ForgotPasswordPage.vue'
+import ReinitialisePasswordPage from '@/pages/auth/ReinitialisePasswordPage.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import routes from './routes'
+import ForgotPasswordPage from '@/pages/auth/ForgotPasswordPage.vue'
 
 
 const router = createRouter({
@@ -21,6 +22,11 @@ const router = createRouter({
       path: '/reinitialise-password',
       name: 'reinitialise-password',
       component: ReinitialisePasswordPage
+    },
+    {
+      path: '/forgot-password',
+      name: 'forgot-password',
+      component: ForgotPasswordPage
     },
     {
       path: '/dashboard',

@@ -1,6 +1,7 @@
 <script setup>
 import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
 import InputComponent from '@/components/auth/form/InputComponent.vue';
+import RedirectComponent from '@/components/auth/form/RedirectComponent.vue';
 const props = defineProps(
     {
         title: String
@@ -18,11 +19,7 @@ const props = defineProps(
             <InputComponent :type="'password'" :value="''" :placeholder="'*********'" :name="'password'" :libel="'Mot de passe'"></InputComponent>
             <ButtonComponent :value="'Se Connecter'" :type="'submit'"></ButtonComponent>
         </form>
-        <RouterLink :to="{name: 'reinitialise-password'}">
-            <div class="auth_link_div">
-                <span class="auth_link_span">Mot de passe oublié ? </span>
-            </div>
-        </RouterLink>
+        <RedirectComponent :redirect="'/forgot-password'">Mot de passe oublié ? </RedirectComponent>
     </div>
 </template>
 
