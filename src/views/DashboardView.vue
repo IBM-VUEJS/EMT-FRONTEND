@@ -30,9 +30,9 @@
 </template>
 
 <style>
-/* *{
+*{
     outline: 1px solid red;
-} */
+}
     #dashboard{
         display: grid;
         grid-template-columns: 280px 1fr;

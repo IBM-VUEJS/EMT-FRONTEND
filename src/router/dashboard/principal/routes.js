@@ -1,4 +1,3 @@
-import BehaviorPage from "@/pages/dashboard/BehaviorPage.vue"
 import BillPage from "@/pages/dashboard/BillPage.vue"
 import ClientPage from "@/pages/dashboard/ClientPage.vue"
 import ConsultantPage from "@/pages/dashboard/ConsultantPage.vue"
@@ -11,6 +10,7 @@ import OthersPage from "@/pages/dashboard/OthersPage.vue"
 import ParamPage from "@/pages/dashboard/ParamPage.vue"
 import ProjectPage from "@/pages/dashboard/ProjectPage.vue"
 import StatisticPage from "@/pages/dashboard/StatisticPage.vue"
+import paramRoutes from "../secondary/paramRoutes"
 
 const routes = [
     {
@@ -71,7 +71,8 @@ const routes = [
     {
         path: '/params',
         name: 'parametres',
-        component: ParamPage
+        component: ParamPage,
+        children: paramRoutes
     }
 ]
 

@@ -31,7 +31,7 @@ import { useRoute } from 'vue-router';
     .button, .active{
         padding: 10px 20px;
         border-radius: 6px;
-        margin-bottom: 15px;
+        margin-bottom: 25px;
     }
     .active,.button:hover{
         background: linear-gradient(90deg, #DC1919 0%, #A80505 100%);
