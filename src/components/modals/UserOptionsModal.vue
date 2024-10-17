@@ -10,6 +10,7 @@
     <Transition name="option">
         <div class="user_options" v-if="toggle">
             <div class="my_profil">
+                <!-- PAGE GESTION DE PROFIL -->
                 <RouterLink :to="''">
                     <div class="manage">
                         <i class="bi bi-person-circle"></i>
@@ -18,10 +19,11 @@
                 </RouterLink>
             </div>
             <div class="logout">
-                <RouterLink :to="''">
+                <!-- DECONNEXION RETOUR SUR LA PAGE DE CONNEXION -->
+                <RouterLink :to="''"> 
                     <div class="manage">
-                        <i class="bi bi-person-circle"></i>
-                        <span class="text">Mon Profil</span>
+                        <i class="bi bi-door-open"></i>
+                        <span class="text">Déconnexion</span>
                     </div>
                 </RouterLink>
             </div>
@@ -43,19 +45,27 @@
         top: 100%;
         right: 5px;
         padding: 10px 20px;
-        width: 150px;
+        width: 180px;
         height: 80px;
         background-color: white;
         box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.25);
         border-radius: 0 0 6px 6px;
         position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
     }  
+    .user_options div, .user_options div a{
+        width: 100%;
+    }
     .manage{
         display: flex;
         gap: 15px;
     }
 
-    .my_profil a:hover{
+    .my_profil a:hover, .logout a:hover{
         color: red;
     }
 

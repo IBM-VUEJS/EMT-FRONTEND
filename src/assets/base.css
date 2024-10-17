@@ -7,17 +7,11 @@
 
 /* semantic color variables for this project */
 :root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
-
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
-
-  --section-gap: 160px;
+  --red: rgb(196, 43, 43);
+  --red-gradient: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(194, 129, 129, 0.345) 70%, #BE0303 100%);
+  --red-gradient-bg: linear-gradient(90deg, red, #961b1b);
+  --text-white: white;
+  --grey-white: rgb(240, 240, 240);
 }
 
 *,

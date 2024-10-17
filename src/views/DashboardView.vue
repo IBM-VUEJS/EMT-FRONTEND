@@ -3,6 +3,7 @@
     import buttons from '@/components/dashboard/sidebar/ButtonNavigationComponent';
     import NaviationButtonComponent from '@/components/dashboard/sidebar/NaviationButtonComponent.vue';
     import TopbarComponent from '@/components/dashboard/topbar/TopbarComponent.vue';
+    import ContainerComponent from '@/components/dashboard/container/ContainerComponent.vue';
     import { RouterLink } from 'vue-router';
 </script>
 
@@ -23,7 +24,7 @@
         </SidebarComponent>
         <div class="section">
             <TopbarComponent></TopbarComponent>
-            <span>hhhhhhh</span>
+            <ContainerComponent></ContainerComponent>
         </div>
     </div>
 </template>

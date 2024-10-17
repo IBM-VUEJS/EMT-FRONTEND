@@ -1,11 +1,16 @@
 <script setup>
     const logo = "https://ebusinessafrique.com/wp-content/uploads/2020/02/logo.png"
+    const props = defineProps(
+        {
+            width: Number
+        }
+    )
 </script>
 
 <template>
     <div>
         <div class="logo">
-            <img :src="logo" alt="">
+            <img :src="logo" alt="" :width="width">
         </div>
     </div>
 </template>

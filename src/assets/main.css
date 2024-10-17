@@ -15,6 +15,19 @@ a,
   transition: 0.4s;
   padding: 10px 0;
 }
+.header{
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+.back_text{
+  color: var(--red);
+}
+.auth_link_span{
+  color: var(--red);
+  padding-bottom: 2px;
+  border-bottom: 3px solid grey;
+  font-weight: bold;
+}
 
 @media (hover: hover) {
   a:hover {
