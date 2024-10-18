@@ -5,6 +5,9 @@ import { useRoute } from 'vue-router';
         {
             icon: String,
             path: String,
+            size: String,
+            weight: String,
+            color: String
         }
     )
 
@@ -16,10 +19,10 @@ import { useRoute } from 'vue-router';
     <div>
         <li class="nav-item li-button">
             <div class="button" :class="{active: path === route.path}" >
-                <span class="icon">
+                <span v-if="icon" class="icon">
                     <i :class="icon"></i>
                 </span>
-                <span class="text">
+                <span class="text" :style="{fontSize: size, fontWeight: weight, color: color}">
                     <slot name="text"></slot>
                 </span>
             </div>
@@ -29,12 +32,15 @@ import { useRoute } from 'vue-router';
 
 <style scoped>
     .button, .active{
-        padding: 10px 20px;
+        padding: 10px 15px;
         border-radius: 6px;
         margin-bottom: 25px;
     }
     .active,.button:hover{
         background: linear-gradient(90deg, #DC1919 0%, #A80505 100%);
         color: white;
+    }
+    .button:hover .text{
+        color: var(--white);
     }
 </style>

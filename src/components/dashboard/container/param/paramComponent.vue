@@ -5,9 +5,11 @@
 <template>
     <section id="mon_profil">
         <div class="myprofil_navbar">
-            <slot></slot>
+            <slot name="sidebar"></slot>
         </div>
-        <div></div>
+        <div class="myprofil_container">
+            <slot name="container"></slot>
+        </div>
     </section>
 </template>
 
@@ -15,11 +17,19 @@
     #mon_profil{
         box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
         border-radius: 10px;
-        padding: 10px 20px;
+        padding: 20px 40px;
         display: grid;
         grid-template-columns: 300px 1fr;
         grid-template-rows: 1fr;
         width: 100%;
         height: 100%;
+    }
+    .myprofil_navbar{
+        padding: 0 20px;
+    }
+    .myprofil_container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 220px 1fr;
     }
 </style>

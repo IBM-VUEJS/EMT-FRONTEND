@@ -27,7 +27,7 @@
         font-weight: 300;
         padding: 1px 5px 1px 0;
         border-right: 1px solid var(--black);
-        letter-spacing: 2px;
+        letter-spacing: 1px;
     }
     .option{
         padding: 5px

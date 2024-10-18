@@ -6,6 +6,21 @@ const paramRoutes = [
         name: 'my-profil',
         component: ParamPage
     },
+    {
+        path: '/my-profil',
+        name: 'my-profil',
+        component: ParamPage
+    },
+    {
+        path: '/my-profil',
+        name: 'my-profil',
+        component: ParamPage
+    },
+    {
+        path: '/my-profil',
+        name: 'my-profil',
+        component: ParamPage
+    },
 ];
 
 export default paramRoutes

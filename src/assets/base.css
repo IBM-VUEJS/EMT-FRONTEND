@@ -12,8 +12,11 @@
   --red-gradient-bg: linear-gradient(90deg, red, #961b1b);
   --text-white: white;
   --grey-white: rgb(240, 240, 240);
+  --grey: grey;
+  --grey-light: rgb(189, 189, 189);
   --green: rgb(44, 206, 44);
   --black: rgb(0, 0, 0);
+  --white: white;
 }
 
 *,

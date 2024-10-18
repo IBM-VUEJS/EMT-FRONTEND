@@ -26,9 +26,10 @@
         height: 100svh;
     }
     .background_image{
-        background: var(--red-gradient), url('/public/assets/background/bg-auth-girl.png');
+        background: var(--red-gradient), url('/public/assets/background/bg-auth-girl.jpg');
         background-position: fixed;
         background-size: cover;
         background-repeat: no-repeat;
+        transform: rotateY(180deg);
     }
 </style>

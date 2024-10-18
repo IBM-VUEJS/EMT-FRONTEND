@@ -1,7 +1,7 @@
 <script setup>
     import SidebarComponent from '@/components/dashboard/sidebar/SidebarComponent.vue';
     import buttons from '@/components/dashboard/sidebar/ButtonNavigationComponent';
-    import NaviationButtonComponent from '@/components/dashboard/sidebar/NaviationButtonComponent.vue';
+    import NavigationButtonComponent from '@/components/dashboard/sidebar/NavigationButtonComponent.vue';
     import TopbarComponent from '@/components/dashboard/topbar/TopbarComponent.vue';
     import ContainerComponent from '@/components/dashboard/container/ContainerComponent.vue';
     import { RouterLink } from 'vue-router';
@@ -13,11 +13,11 @@
             <template v-slot:content>
                 <template v-for="button in buttons">
                     <RouterLink :to="button['path']">
-                        <NaviationButtonComponent :path="button['path']">
+                        <NavigationButtonComponent :path="button['path']">
                             <template v-slot:text>
                                 {{ button['libel'] }}
                             </template>
-                        </NaviationButtonComponent>
+                        </NavigationButtonComponent>
                     </RouterLink>
                 </template>
             </template>
@@ -30,9 +30,9 @@
 </template>
 
 <style>
-*{
+/* *{
     outline: 1px solid red;
-}
+} */
     #dashboard{
         display: grid;
         grid-template-columns: 280px 1fr;
