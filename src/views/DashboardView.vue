@@ -12,7 +12,7 @@
         <SidebarComponent>
             <template v-slot:content>
                 <template v-for="button in buttons">
-                    <RouterLink :to="button['path']">
+                    <RouterLink :to="{name: button['path']}">
                         <NavigationButtonComponent :path="button['path']" :svg="button['icon']">
                             <template v-slot:svg>
                                 <span v-html="button['icon']" class="svg_icon"></span>
@@ -32,7 +32,7 @@
     </div>
 </template>
 
-<style>
+<style >
 /* *{
     outline: 1px solid red;
 } */

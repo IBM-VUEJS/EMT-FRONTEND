@@ -11,66 +11,71 @@ import ParamPage from "@/pages/dashboard/paramPages/ParamPage.vue"
 import ProjectPage from "@/pages/dashboard/ProjectPage.vue"
 import StatisticPage from "@/pages/dashboard/StatisticPage.vue"
 import paramRoutes from "../secondary/paramRoutes"
-import ParamMyProfilPage from "@/pages/dashboard/paramPages/menus/ParamMyProfilPage.vue"
+import HistoriesPage from "@/pages/dashboard/HistoriesPage.vue"
 
 const routes = [
     {
-        path: '/dash',
+        path: 'dash',
         name: 'dash',
         component: DashboardPage
     },
     {
-        path: '/creation-compte',
+        path: 'creation-compte',
         name: 'creation-compte',
         component: CreateAccountPage
     },
     {
-        path: '/opportinutes',
+        path: 'opportinutes',
         name: 'opportinutes',
         component: OpportunityPage
     },
     {
-        path: '/clients',
+        path: 'clients',
         name: 'clients',
         component: ClientPage
     },
     {
-        path: '/factures',
+        path: 'factures',
         name: 'factures',
         component: BillPage
     },
     {
-        path: '/contrats',
+        path: 'contrats',
         name: 'contrats',
         component: ContratPage
     },
     {
-        path: '/projets',
+        path: 'projets',
         name: 'projets',
         component: ProjectPage
     },
     {
-        path: '/finances',
+        path: 'finances',
         name: 'finances',
         component: FinancePage
     },
     {
-        path: '/consultants',
+        path: 'consultants',
         name: 'consultants',
         component: ConsultantPage
     },
     {
-        path: '/statistiques-rapports',
+        path: 'statistiques-rapports',
         name: 'statistiques-rapports',
         component: StatisticPage
     },
     {
-        path: '/autres',
+        path: 'histories',
+        name: 'histories',
+        component: HistoriesPage
+    },
+    {
+        path: 'autres',
         name: 'autres',
         component: OthersPage
     },
     {
-        path: '/params',
+        path: 'params',
         name: 'parametres',
         component: ParamPage,
         children: paramRoutes

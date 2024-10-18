@@ -6,14 +6,19 @@ import { ref } from 'vue';
             type: String, 
             value: ref,
             name: String,
-            libel: String
+            libel: String,
+            button_width: String,
+            button_height: String,
+            size: String
         }
     )
 </script>
 
 <template>
         <div class="input">
-            <input :type="type" :name="name" :id="name" :value="value">
+            <button :type="type" :name="name" :id="name" :style="{width: button_width, height: button_height, fontSize: size}">
+                <slot></slot> {{ value }}
+            </button> 
         </div>
 </template>
 
@@ -26,17 +31,20 @@ import { ref } from 'vue';
         margin-bottom: 25px;
         flex-direction: column;
     }
-    .input input{
+    .input button{
         width: 100%;
         padding: 10px 20px;
         background: var(--red-gradient-bg);
         border: none;
         border-radius: 6px;
         font-size: 1.025rem;
-        text-align: center;
-        align-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
         font-weight: bold;
         color: var(--text-white);
+        text-wrap: nowrap;
         cursor: pointer;
     }
 </style>

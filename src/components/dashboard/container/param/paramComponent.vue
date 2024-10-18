@@ -30,6 +30,6 @@
     .myprofil_container{
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 220px 1fr;
+        grid-template-rows: 190px 1fr;
     }
 </style>

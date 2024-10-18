@@ -13,62 +13,67 @@ import UserplusIcon from "@/components/icons/UserplusIcon"
 
 const buttons = [
     {
-        path: '/dash',
+        path: 'dash',
         libel: 'Tableau de bord',
         icon: HomeIcon
     },
     {
-        path: '/creation-compte',
+        path: 'creation-compte',
         libel: 'Création de Compte',
         icon: UseraccountIcon
     },
     {
-        path: '/opportinutes',
+        path: 'opportinutes',
         libel: 'Opportunités',
         icon: UserplusIcon
     },
     {
-        path: '/clients',
+        path: 'clients',
         libel: 'Clients',
         icon: UsercheckIcon
     },
     {
-        path: '/factures',
+        path: 'factures',
         libel: 'Factures',
         icon: BillIcon
     },
     {
-        path: '/contrats',
+        path: 'contrats',
         libel: 'Contrats',
         icon: ContratIcon
     },
     {
-        path: '/projets',
+        path: 'projets',
         libel: 'Projets',
         icon: BoxIcon
     },
     {
-        path: '/finances',
+        path: 'finances',
         libel: 'Finances',
         icon: CurrencyDollarsIcon
     },
     {
-        path: '/consultants',
+        path: 'consultants',
         libel: 'Consultants',
         icon: SchoolhatIcon
     },
     {
-        path: '/statistiques-rapports',
+        path: 'statistiques-rapports',
         libel: 'Statistiques & Rapports',
         icon: ChartbarIcon
     },
     {
-        path: '/autres',
+        path: 'histories',
         libel: 'Autres',
         icon: OtherIcons
     },
     {
-        path: '/params',
+        path: 'autres',
+        libel: 'Autres',
+        icon: OtherIcons
+    },
+    {
+        path: 'params',
         libel: 'Paramètres',
         icon: ParamsIcon
     },

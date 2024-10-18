@@ -2,13 +2,8 @@ import ParamConnectionHistoryPage from "@/pages/dashboard/paramPages/menus/Param
 import ParamEditProfilePage from "@/pages/dashboard/paramPages/menus/ParamEditProfilePage.vue";
 import ParamMyProfilPage from "@/pages/dashboard/paramPages/menus/ParamMyProfilPage.vue";
 import ParamPaswwordSecurityPage from "@/pages/dashboard/paramPages/menus/ParamPaswwordSecurityPage.vue";
-import ParamPage from "@/pages/dashboard/paramPages/ParamPage.vue";
 
 const paramRoutes = [
-    {
-        path: '',
-        redirect: '/params/my-profil'
-    },
     {
         path: 'my-profil',
         name: 'my-profil',

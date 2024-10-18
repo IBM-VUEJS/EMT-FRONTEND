@@ -97,10 +97,10 @@ import InnerContainerTopbarMenuComponent from '@/components/dashboard/topbar/Inn
     }
     .username_text{
         display: grid;
-        grid-template-rows: 160px 1fr;
+        grid-template-rows: 140px 1fr;
         width: 100%;
         height: 100%;
-        padding-left: 75px;
+        padding-left: 100px;
     }
     .username{
         font-size: 1.4rem;

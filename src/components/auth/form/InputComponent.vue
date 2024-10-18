@@ -7,7 +7,8 @@ import { ref } from 'vue';
             value: ref,
             placeholder: String,
             name: String,
-            libel: String
+            libel: String,
+            border: String
         }
     )
 </script>
@@ -15,7 +16,7 @@ import { ref } from 'vue';
 <template>
         <div class="input">
             <label :for="name">{{libel}}</label>
-            <input :type="type" :name="name" :id="name" :value="value" :placeholder="placeholder">
+            <input :type="type" :name="name" :id="name" :value="value" :placeholder="placeholder" :style="{border: border}">
         </div>
 </template>
 
@@ -34,5 +35,9 @@ import { ref } from 'vue';
         border: 1px solid red;
         border-radius: 6px;
         font-size: 1.02rem;
+    }
+    .input input:focus{
+        border: 1px solid red;   
+        outline: 2px solid red;
     }
 </style>

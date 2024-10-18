@@ -4,7 +4,7 @@
 
 <template>
     <div>
-        Behavior
+        Histories
     </div>
 </template>
 
