@@ -4,6 +4,7 @@ import { useRoute } from 'vue-router';
     const props = defineProps(
         {
             icon: String,
+            svg: String,
             path: String,
             size: String,
             weight: String,
@@ -19,7 +20,10 @@ import { useRoute } from 'vue-router';
     <div>
         <li class="nav-item li-button">
             <div class="button" :class="{active: path === route.path}" >
-                <span v-if="icon" class="icon">
+                <span class="svg" v-if="svg">
+                     <img :src="" alt="">
+                </span>
+                <span v-else-if="icon" class="icon">
                     <i :class="icon"></i>
                 </span>
                 <span class="text" :style="{fontSize: size, fontWeight: weight, color: color}">
