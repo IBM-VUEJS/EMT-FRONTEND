@@ -11,13 +11,21 @@
     <RouterLink :to="redirect">
         <div class="back">
             <span class="back_icon">
-                <i></i>
+                <i class="bi bi-chevron-left"></i>
             </span>
             <span class="back_text">Retour</span>
         </div>
     </RouterLink>
 </template>
 
-<style>
-    
+<style scoped>
+.back{
+    display: flex;
+    align-items: center;
+}
+    .back_icon{
+        font-size: 1.2rem;
+        font-weight: bolder;
+        margin-right: 15px;
+    }
 </style>

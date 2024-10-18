@@ -1,5 +1,5 @@
 <script setup>
-import buttons from './ButtonNavigationComponent';
+import buttons from './DashboardButtonNavigationLinks';
 import NaviationButtonComponent from './NavigationButtonComponent.vue';
 import EbaLogoComponent from './EbaLogoComponent.vue';
 

@@ -1,6 +1,6 @@
 <script setup>
     import SidebarComponent from '@/components/dashboard/sidebar/SidebarComponent.vue';
-    import buttons from '@/components/dashboard/sidebar/ButtonNavigationComponent';
+    import buttons from '@/components/dashboard/sidebar/DashboardButtonNavigationLinks';
     import NavigationButtonComponent from '@/components/dashboard/sidebar/NavigationButtonComponent.vue';
     import TopbarComponent from '@/components/dashboard/topbar/TopbarComponent.vue';
     import ContainerComponent from '@/components/dashboard/container/ContainerComponent.vue';
@@ -13,7 +13,7 @@
             <template v-slot:content>
                 <template v-for="button in buttons">
                     <RouterLink :to="button['path']">
-                        <NavigationButtonComponent :path="button['path']">
+                        <NavigationButtonComponent :path="button['path']" :icon="button['icon']">
                             <template v-slot:text>
                                 {{ button['libel'] }}
                             </template>

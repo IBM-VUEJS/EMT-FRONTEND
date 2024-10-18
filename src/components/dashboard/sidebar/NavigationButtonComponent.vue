@@ -43,4 +43,7 @@ import { useRoute } from 'vue-router';
     .button:hover .text{
         color: var(--white);
     }
+    .icon{
+        margin-right: 15px;
+    }
 </style>

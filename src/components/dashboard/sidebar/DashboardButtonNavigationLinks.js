@@ -2,22 +2,22 @@ const buttons = [
     {
         path: '/dash',
         libel: 'Tableau de bord',
-        icon: ''
+        icon: 'bi bi-house-door'
     },
     {
         path: '/creation-compte',
         libel: 'Création de Compte',
-        icon: ''
+        icon: 'bi bi-person'
     },
     {
         path: '/opportinutes',
         libel: 'Opportunités',
-        icon: ''
+        icon: 'bi bi-person-plus'
     },
     {
         path: '/clients',
         libel: 'Clients',
-        icon: ''
+        icon: 'bi bi-person-check'
     },
     {
         path: '/factures',

@@ -1,29 +1,12 @@
 <script setup>
 import ParamComponent from '@/components/dashboard/container/param/paramComponent.vue';
 import NavigationButtonComponent from '@/components/dashboard/sidebar/NavigationButtonComponent.vue';
+import ParamContainerComponent from '@/components/dashboard/sidebar/param/ParamContainerComponent.vue';
+import paramsButtons from '@/components/dashboard/sidebar/param/ParamSidebarButtonNavigationLinks';
 import ParamSidebarComponent from '@/components/dashboard/sidebar/param/ParamSidebarComponent.vue';
 import InnerContainerTopbarComponent from '@/components/dashboard/topbar/InnerContainerTopbarComponent.vue';
 import InnerContainerTopbarMenuComponent from '@/components/dashboard/topbar/InnerContainerTopbarMenuComponent.vue';
-import MyProfileForm from '@/components/form/param/MyProfileForm.vue';
 
-const links = [
-    {
-        to: '',
-        libel: "Mon profil"
-    },
-    {
-        to: '',
-        libel: "Edit Profile"
-    },
-    {
-        to: '',
-        libel: "Mot de passe et sécurité"
-    },
-    {
-        to: '',
-        libel: "Historique des de connexion"
-    }
-]
 </script>
 
 <template>
@@ -45,7 +28,7 @@ const links = [
                 </div>
                 <div class="param_container_sidebar_links">
                     <ul class="nav nav-pills flex-column">
-                        <template v-for="link in links">
+                        <template v-for="link in paramsButtons">
                             <RouterLink :to="link['to']">
                                 <NavigationButtonComponent :size="'.92rem'" :weight="'500'" :color="'var(--grey)'">
                                     <template v-slot:text>
@@ -63,11 +46,9 @@ const links = [
                 <div class="username">MOHAMED Saphira</div>
                 <p class="text">Vous pouvez mettre à jour vos informations en saisissant de nouvelles données</p>
             </div>
-            <MyProfileForm>
-                <template v-slot:formcontent>
-                    fjfjfjf
-                </template>
-            </MyProfileForm>
+            <ParamContainerComponent>
+                
+            </ParamContainerComponent>
         </template>
     </ParamComponent>
 </template>
