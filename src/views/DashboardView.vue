@@ -13,7 +13,10 @@
             <template v-slot:content>
                 <template v-for="button in buttons">
                     <RouterLink :to="button['path']">
-                        <NavigationButtonComponent :path="button['path']" :icon="button['icon']">
+                        <NavigationButtonComponent :path="button['path']" :svg="button['icon']">
+                            <template v-slot:svg>
+                                <span v-html="button['icon']" class="svg_icon"></span>
+                            </template>
                             <template v-slot:text>
                                 {{ button['libel'] }}
                             </template>
@@ -44,4 +47,5 @@
         grid-template-columns: 1fr;
         grid-template-rows: 80px 1fr;
     }
+
 </style>

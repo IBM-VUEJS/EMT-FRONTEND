@@ -19,14 +19,16 @@ import { useRoute } from 'vue-router';
 <template>
     <div>
         <li class="nav-item li-button">
-            <div class="button" :class="{active: path === route.path}" >
+            <div class="button" :class="{active: route.path.includes(path)}" >
                 <span class="svg" v-if="svg">
-                     <img :src="" alt="">
+                     <slot name="svg"></slot>
                 </span>
                 <span v-else-if="icon" class="icon">
                     <i :class="icon"></i>
                 </span>
-                <span class="text" :style="{fontSize: size, fontWeight: weight, color: color}">
+                <span v-else class="icon">
+                </span>
+                <span class="text" :style="{fontSize: size, fontWeight: weight}">
                     <slot name="text"></slot>
                 </span>
             </div>
@@ -34,20 +36,31 @@ import { useRoute } from 'vue-router';
     </div>
 </template>
 
-<style scoped>
+<style>
+    .button{
+        display: flex;
+        align-items: end;
+    }
+    .text{
+        padding: 0;
+    }
     .button, .active{
         padding: 10px 15px;
         border-radius: 6px;
         margin-bottom: 25px;
     }
-    .active,.button:hover{
+    .active, .button:hover{
         background: linear-gradient(90deg, #DC1919 0%, #A80505 100%);
-        color: white;
+        color: var(--white);
     }
     .button:hover .text{
         color: var(--white);
     }
-    .icon{
+    .icon, .svg{
         margin-right: 15px;
     }
+    .active .svg .text, .active .svg .svg_icon, .button:hover .svg .svg_icon{
+        filter: invert(100%);
+    }
+    
 </style>

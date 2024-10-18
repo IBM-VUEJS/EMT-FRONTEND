@@ -11,7 +11,11 @@ import InnerContainerTopbarMenuComponent from '@/components/dashboard/topbar/Inn
 
 <template>
     <InnerContainerTopbarComponent>
-        <InnerContainerTopbarMenuComponent :option="'Mon Profil'" :font_size="'1.4rem'">Paramètre</InnerContainerTopbarMenuComponent>
+        <InnerContainerTopbarMenuComponent :option="'Mon Profil'" :font_size="'1.4rem'" :navigation="false">
+            <template v-slot:current_page>
+                Paramètre
+            </template>
+        </InnerContainerTopbarMenuComponent>
     </InnerContainerTopbarComponent>
     <ParamComponent>
         <template v-slot:sidebar>
@@ -29,8 +33,8 @@ import InnerContainerTopbarMenuComponent from '@/components/dashboard/topbar/Inn
                 <div class="param_container_sidebar_links">
                     <ul class="nav nav-pills flex-column">
                         <template v-for="link in paramsButtons">
-                            <RouterLink :to="link['to']">
-                                <NavigationButtonComponent :size="'.92rem'" :weight="'500'" :color="'var(--grey)'">
+                            <RouterLink :to="{name: link['path']}">
+                                <NavigationButtonComponent :size="'.92rem'" :weight="'500'" :color="'var(--grey)'" :path="link['path']">
                                     <template v-slot:text>
                                         {{ link['libel'] }}
                                     </template>
@@ -73,9 +77,6 @@ import InnerContainerTopbarMenuComponent from '@/components/dashboard/topbar/Inn
     }
     .param_container_sidebar_links{
         padding: 50px 5px;
-    }
-    .container_topbar_menu{
-
     }
     .camera{
         color: var(--white);

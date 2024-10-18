@@ -6,23 +6,27 @@ import ParamPage from "@/pages/dashboard/paramPages/ParamPage.vue";
 
 const paramRoutes = [
     {
-        path: '/my-profil',
+        path: '',
+        redirect: '/params/my-profil'
+    },
+    {
+        path: 'my-profil',
         name: 'my-profil',
         component: ParamMyProfilPage
     },
     {
-        path: '/edit-profil',
+        path: 'edit-profil',
         name: 'edit-profil',
         component: ParamEditProfilePage
     },
     {
-        path: '/password-security',
+        path: 'password-security',
         name: 'password-security',
         component: ParamPaswwordSecurityPage
     },
     {
-        path: '/connexion-history',
-        name: 'connexion-history',
+        path: 'connection-history',
+        name: 'connection-history',
         component: ParamConnectionHistoryPage
     },
 ];

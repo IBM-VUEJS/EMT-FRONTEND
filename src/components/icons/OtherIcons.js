@@ -1,0 +1,16 @@
+const OtherIcon = `        <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_517_1150)">
+        <path d="M12.75 5.83335C13.9236 5.83335 14.875 4.88196 14.875 3.70835C14.875 2.53475 13.9236 1.58335 12.75 1.58335C11.5764 1.58335 10.625 2.53475 10.625 3.70835C10.625 4.88196 11.5764 5.83335 12.75 5.83335Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M4.25 10.7917C5.4236 10.7917 6.375 9.84029 6.375 8.66669C6.375 7.49308 5.4236 6.54169 4.25 6.54169C3.07639 6.54169 2.125 7.49308 2.125 8.66669C2.125 9.84029 3.07639 10.7917 4.25 10.7917Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12.75 15.75C13.9236 15.75 14.875 14.7986 14.875 13.625C14.875 12.4514 13.9236 11.5 12.75 11.5C11.5764 11.5 10.625 12.4514 10.625 13.625C10.625 14.7986 11.5764 15.75 12.75 15.75Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6.08458 9.73627L10.9225 12.5554" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10.9154 4.77794L6.08458 7.5971" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <defs>
+        <clipPath id="clip0_517_1150">
+        <rect width="17" height="17" fill="white" transform="translate(0 0.166687)"/>
+        </clipPath>
+        </defs>
+        </svg>`
+
+export default OtherIcon

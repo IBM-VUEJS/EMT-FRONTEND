@@ -11,6 +11,7 @@ import ParamPage from "@/pages/dashboard/paramPages/ParamPage.vue"
 import ProjectPage from "@/pages/dashboard/ProjectPage.vue"
 import StatisticPage from "@/pages/dashboard/StatisticPage.vue"
 import paramRoutes from "../secondary/paramRoutes"
+import ParamMyProfilPage from "@/pages/dashboard/paramPages/menus/ParamMyProfilPage.vue"
 
 const routes = [
     {

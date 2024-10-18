@@ -1,3 +1,6 @@
-<svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+const  BillIcon = `<svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M3.125 10.0416V4.37498C3.125 3.99926 3.2567 3.63892 3.49112 3.37324C3.72554 3.10757 4.04348 2.95831 4.375 2.95831H11.875C12.2065 2.95831 12.5245 3.10757 12.7589 3.37324C12.9933 3.63892 13.125 3.99926 13.125 4.37498V13.5833C13.125 14.2916 12.75 15.7083 11.25 15.7083M11.25 15.7083H3.75C3.125 15.7083 1.875 15.2833 1.875 13.5833V12.1666H9.375V13.5833C9.375 15.2833 10.625 15.7083 11.25 15.7083ZM5.625 5.79165H10.625M5.625 8.62498H8.125" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+</svg>`
+
+
+export default BillIcon

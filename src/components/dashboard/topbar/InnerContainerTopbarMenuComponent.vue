@@ -2,19 +2,37 @@
     const props = defineProps(
         {
             option: String,
-            font_size: String
+            font_size: String,
+            navigation: Boolean
         }
     )
 </script>
 
 <template>
     <div class="container_topbar_menu">
-        <div class="container_topbar_menu_text" :style="{fontSize: font_size}">
-            <slot></slot>
-        </div>
-        <div class="option" v-if="option !== null">
-            {{ option }} &gt;&gt;
-        </div>
+        <template v-if="navigation">
+            <div class="navigation">
+                <slot name="navigation"></slot>
+            </div>
+            <div class="current_page_option">
+                <div class="container_topbar_menu_text" :style="{fontSize: font_size}">
+                    <slot name="current_page"></slot>
+                </div>
+                <div class="option" v-if="option !== null">
+                    {{ option }} &gt;&gt;
+                </div>
+            </div>
+        </template>
+        <template v-else>
+            <div class="current_page_option2">
+                <div class="container_topbar_menu_text" :style="{fontSize: font_size}">
+                    <slot name="current_page"></slot>
+                </div>
+                <div class="option" v-if="option !== null">
+                    {{ option }} &gt;&gt;
+                </div>
+            </div>
+        </template>
     </div>
 </template>
 
@@ -22,6 +40,18 @@
     .container_topbar_menu{
         display: flex;
         align-items: center;
+        width: 100%;
+    }
+    .current_page_option{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .current_page_option2{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        width: 100%;
     }
     .container_topbar_menu_text{
         font-weight: 300;

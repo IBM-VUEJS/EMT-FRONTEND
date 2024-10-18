@@ -1,18 +1,18 @@
 const paramsButtons = [
     {
-        path: '/my-profil',
+        path: 'my-profil',
         libel: 'Mon Profil',
     },
     {
-        path: '/edit-profil',
+        path: 'edit-profil',
         libel: 'Edit Pofil',
     },
     {
-        path: '/password-security',
+        path: 'password-security',
         libel: 'Mot de passe et sécurité',
     },
     {
-        path: '/connectio-history',
+        path: 'connection-history',
         libel: 'Historique des connexions',
     },
 ]
