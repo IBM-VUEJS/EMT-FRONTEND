@@ -5,6 +5,10 @@ import ParamPaswwordSecurityPage from "@/pages/dashboard/paramPages/menus/ParamP
 
 const paramRoutes = [
     {
+        path: '/dashboard/params',
+        redirect: '/dashboard/params/my-profil'
+    },
+    {
         path: 'my-profil',
         name: 'my-profil',
         component: ParamMyProfilPage

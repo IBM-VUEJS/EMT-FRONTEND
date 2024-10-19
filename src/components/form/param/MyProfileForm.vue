@@ -2,7 +2,37 @@
 import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
 import EditPenLineIcon from '@/components/icons/EditPenLineIcon';
 import InputComponent from '@/components/auth/form/InputComponent.vue';
-    const border = "1px solid var(--grey-light)"
+import SelectComponent from '@/components/auth/form/SelectComponent.vue';
+
+const border = "1px solid var(--grey-light)"
+const options = [
+    {
+        value: 'TOGO',
+        libel: '+228'
+    },
+    {
+        value: 'BENIN',
+        libel: '+229'
+    }
+]
+const situations = [
+    {
+        value: 'TOGO',
+        libel: 'TOGO'
+    },
+    {
+        value: 'BENIN',
+        libel: 'BENIN'
+    },
+    {
+        value: 'GHANA',
+        libel: 'GHANA'
+    },
+    {
+        value: 'BURKINA-FASO',
+        libel: 'BURKINA-FASO'
+    },
+]
 </script>
 
 <template>
@@ -10,11 +40,11 @@ import InputComponent from '@/components/auth/form/InputComponent.vue';
         <form @submit.prevent="">
             <div class="form_inputs">
                 <div class="left_form">
+                    <div class="title">Personel</div>
                     <div class="form_part_title">
-                        <div class="title">Personel</div>
                         <div class="double_input_username">
-                            <InputComponent :libel="'Numéro de téléphone'"  :border="border"></InputComponent>
-                            <InputComponent :libel="'Numéro de téléphone'"  :border="border"></InputComponent>
+                            <InputComponent :libel="'Noms'"  :border="border"></InputComponent>
+                            <InputComponent :libel="'Prénoms'"  :border="border"></InputComponent>
                         </div>
                     </div>
                     <div>
@@ -28,26 +58,27 @@ import InputComponent from '@/components/auth/form/InputComponent.vue';
                     </div>
                 </div>
                 <div class="right_form">
+                    <div class="title">Contact</div>
                     <div class="form_part_title">
-                        <div class="title">Contact</div>
                         <div>
                             <InputComponent :libel="'Email personnel'" :type="'email'"  :border="border"></InputComponent>
                         </div>
                     </div>
                     <div class="">
                         <div class="form_part_title">
-                        <div class="title">Numéro de téléphone</div>
+                        <div>Numéro de téléphone</div>
                         <div class="double_input_number">
-                            <InputComponent  :border="border"></InputComponent>
+                            <SelectComponent  :border="border" :options="options">
+                            </SelectComponent>
                             <InputComponent  :border="border"></InputComponent>
                         </div>
                     </div>
                     </div>
                     <div>
-                        <InputComponent :libel="'text'"  :border="border"></InputComponent>
+                        <SelectComponent :libel="'Situation géographique'"  :border="border" :options="situations"></SelectComponent>
                     </div>
                     <div>
-                        <InputComponent :libel="'text'"  :border="border"></InputComponent>
+                        <InputComponent :libel="'Adresse'"  :border="border"></InputComponent>
                     </div>   
                 </div>
             </div>
@@ -91,7 +122,7 @@ import InputComponent from '@/components/auth/form/InputComponent.vue';
     }
     .title{
         display: flex;
-        align-items: start;
+        align-items: center;
         font-size: 1.1rem;
         color: var(--grey);
     }

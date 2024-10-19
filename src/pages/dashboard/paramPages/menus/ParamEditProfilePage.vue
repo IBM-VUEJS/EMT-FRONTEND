@@ -24,8 +24,7 @@ import MyProfileForm from '@/components/form/param/MyProfileForm.vue';
         height: 100%;
         display: grid;
         grid-template-rows: 50px 1fr;
-        border-left: 1px solid var(--grey-light);
-        padding: 0 25px 0 60px;
+        padding: 0 40px 0 40px;
     }
     .change_bar_content{
         display: flex;
@@ -33,6 +32,7 @@ import MyProfileForm from '@/components/form/param/MyProfileForm.vue';
         justify-content: space-between;
         flex-wrap: wrap;
         color: var(--grey);
+        padding: 0 40px 0 0;
     }
     .change_container_content{
         width: 100%;

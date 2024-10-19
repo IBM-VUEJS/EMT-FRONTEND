@@ -58,6 +58,9 @@ import InnerContainerTopbarMenuComponent from '@/components/dashboard/topbar/Inn
 </template>
 
 <style scoped>
+/* *{
+    outline: 1px solid red;
+} */
     .myprofile_div_image{
         width: 220px;
         height: 220px;
@@ -76,7 +79,9 @@ import InnerContainerTopbarMenuComponent from '@/components/dashboard/topbar/Inn
         border-radius: 50%;
     }
     .param_container_sidebar_links{
-        padding: 50px 5px;
+        padding: 50px 20px 0 0;
+        height: 525px;
+        border-right: 1px solid var(--grey-light);
     }
     .camera{
         color: var(--white);

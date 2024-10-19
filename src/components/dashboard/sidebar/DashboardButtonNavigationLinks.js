@@ -3,6 +3,7 @@ import BoxIcon from "@/components/icons/BoxIcon"
 import ChartbarIcon from "@/components/icons/ChartbarIcon"
 import ContratIcon from "@/components/icons/ContratIcon"
 import CurrencyDollarsIcon from "@/components/icons/CurrencyDollarsIcon"
+import HistoryIcon from "@/components/icons/HistoryIcon"
 import HomeIcon from "@/components/icons/HomeIcon"
 import OtherIcons from "@/components/icons/OtherIcons"
 import ParamsIcon from "@/components/icons/ParamsIcon"
@@ -13,7 +14,7 @@ import UserplusIcon from "@/components/icons/UserplusIcon"
 
 const buttons = [
     {
-        path: 'dash',
+        path: 'principal',
         libel: 'Tableau de bord',
         icon: HomeIcon
     },
@@ -64,8 +65,8 @@ const buttons = [
     },
     {
         path: 'histories',
-        libel: 'Autres',
-        icon: OtherIcons
+        libel: 'Historiques',
+        icon: HistoryIcon
     },
     {
         path: 'autres',

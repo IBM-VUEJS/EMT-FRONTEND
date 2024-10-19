@@ -28,7 +28,10 @@ import { useRoute } from 'vue-router';
                 </span>
                 <span v-else class="icon">
                 </span>
-                <span class="text" :style="{fontSize: size, fontWeight: weight}">
+                <span v-if="color" class="text_color" :style="{fontSize: size, fontWeight: weight}">
+                    <slot name="text"></slot>
+                </span>
+                <span v-else class="text" :style="{fontSize: size, fontWeight: weight}">
                     <slot name="text"></slot>
                 </span>
             </div>
@@ -47,13 +50,22 @@ import { useRoute } from 'vue-router';
     .button, .active{
         padding: 10px 15px;
         border-radius: 6px;
-        margin-bottom: 25px;
+        margin-bottom: 15px;
     }
     .active, .button:hover{
         background: linear-gradient(90deg, #DC1919 0%, #A80505 100%);
         color: var(--white);
     }
+    .active .text_color{
+        color: var(--white);
+    }
     .button:hover .text{
+        color: var(--white);
+    }
+    .text_color{
+        color: var(--grey);
+    }
+    .button:hover .text_color{
         color: var(--white);
     }
     .icon, .svg{

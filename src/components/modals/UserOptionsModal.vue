@@ -11,7 +11,7 @@
         <div class="user_options" v-if="toggle">
             <div class="my_profil">
                 <!-- PAGE GESTION DE PROFIL -->
-                <RouterLink :to="{name: 'dash'}">
+                <RouterLink :to="{name: 'principal'}">
                     <div class="manage">
                         <i class="bi bi-person-circle"></i>
                         <span class="text">Mon Profil</span>

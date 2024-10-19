@@ -15,8 +15,8 @@ import HistoriesPage from "@/pages/dashboard/HistoriesPage.vue"
 
 const routes = [
     {
-        path: 'dash',
-        name: 'dash',
+        path: 'principal',
+        name: 'principal',
         component: DashboardPage
     },
     {
@@ -76,7 +76,7 @@ const routes = [
     },
     {
         path: 'params',
-        name: 'parametres',
+        name: 'params',
         component: ParamPage,
         children: paramRoutes
     }

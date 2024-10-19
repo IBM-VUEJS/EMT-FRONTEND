@@ -16,7 +16,7 @@ import { ref } from 'vue';
 
 <template>
         <div class="input">
-            <button :type="type" :name="name" :id="name" :style="{width: button_width, height: button_height, fontSize: size}">
+            <button :type="type" :name="name" :id="name" :style="{width: button_width, height: button_height, fontSize: size}" >
                 <slot></slot> {{ value }}
             </button> 
         </div>
