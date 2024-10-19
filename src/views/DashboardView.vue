@@ -4,11 +4,18 @@
     import NavigationButtonComponent from '@/components/dashboard/sidebar/NavigationButtonComponent.vue';
     import TopbarComponent from '@/components/dashboard/topbar/TopbarComponent.vue';
     import ContainerComponent from '@/components/dashboard/container/ContainerComponent.vue';
+    import DarkBackgroundModals from '@/components/modals/DarkBackgroundModals.vue';
+    import DefineNewPasswordModal from '@/components/modals/DefineNewPasswordModal.vue';
     import { RouterLink } from 'vue-router';
+    import { ref } from 'vue';
+    const show = ref(true)
 </script>
 
 <template>
     <div id="dashboard">
+        <DarkBackgroundModals v-if="show" @click="show = !show">
+            <DefineNewPasswordModal></DefineNewPasswordModal>
+        </DarkBackgroundModals>
         <SidebarComponent>
             <template v-slot:content>
                 <template v-for="button in buttons">
@@ -41,6 +48,7 @@
         grid-template-columns: 280px 1fr;
         width: 100%;
         height: 100%;
+        position: relative
     }
     .section{
         display: grid;

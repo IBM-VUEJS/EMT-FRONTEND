@@ -100,12 +100,13 @@ const situations = [
     .form_inputs{
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        overflow-y: scroll;
     }
     form{
         display: grid;
         grid-template-rows: 1fr 40px;
         grid-template-columns: 1fr;
-        padding-top: 15px;
+        padding-top: 0px;
         width: 100%;
         height: 100%;
     }

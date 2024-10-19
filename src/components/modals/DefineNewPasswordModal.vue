@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <AuthView>
+    <AuthView :width="'80%'" :height="'750px'">
         <template v-slot:form>
             <FormView>
                 <DefineNewPasswordForm :title="'Veuillez définir un nouveau mot de passe'"></DefineNewPasswordForm>

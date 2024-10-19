@@ -1,9 +1,14 @@
 <script setup>
-    
+    defineProps(
+        {
+            width: String,
+            height: String
+        }
+    )
 </script>
 
 <template>
-    <div class="auth">
+    <div class="auth" :style="{width: width, height: height}">
          <div class="background_form">
             <slot name="form"></slot>
          </div>

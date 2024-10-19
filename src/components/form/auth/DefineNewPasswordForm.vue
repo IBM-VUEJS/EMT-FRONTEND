@@ -2,7 +2,6 @@
     import InputComponent from '@/components/auth/form/InputComponent.vue';
     import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
     import CriteriaComponent from '@/components/auth/form/CriteriaComponent.vue';
-import BackArrowTextComponent from '@/components/auth/form/backArrowTextComponent.vue';
 
     const props = defineProps(
         {
