@@ -4,7 +4,7 @@ import { ref } from 'vue';
     defineProps(
         {
             type: String, 
-            value: ref,
+            value: String,
             name: String,
             libel: String,
             button_width: String,

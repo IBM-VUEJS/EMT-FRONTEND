@@ -7,13 +7,14 @@
     import DarkBackgroundModals from '@/components/modals/DarkBackgroundModals.vue';
     import DefineNewPasswordModal from '@/components/modals/DefineNewPasswordModal.vue';
     import { RouterLink } from 'vue-router';
-    import { ref } from 'vue';
-    const show = ref(true)
+    import { inject, provide, ref } from 'vue';
+    let show = ref(true)
+    provide('show', show)
 </script>
 
 <template>
     <div id="dashboard">
-        <DarkBackgroundModals v-if="show" @click="show = !show">
+        <DarkBackgroundModals v-if="show">
             <DefineNewPasswordModal></DefineNewPasswordModal>
         </DarkBackgroundModals>
         <SidebarComponent>

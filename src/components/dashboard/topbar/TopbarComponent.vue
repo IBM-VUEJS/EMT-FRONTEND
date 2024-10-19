@@ -1,5 +1,6 @@
 <script setup>
-import UserOptionsModal from '@/components/modals/UserOptionsModal.vue';
+    import UserOptionsModal from '@/components/modals/UserOptionsModal.vue';
+    import Swal from 'sweetalert2';
     import { ref } from 'vue';
     const toggle = ref(false)
     const props = defineProps(
@@ -7,12 +8,22 @@ import UserOptionsModal from '@/components/modals/UserOptionsModal.vue';
 
         }
     )
+
+    const showAlert = () => {
+        Swal.fire({
+            title: 'Alerte Vue avec Composition API',
+            text: 'Ceci est un exemple d\'utilisation de SweetAlert2 dans Vue.js!',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        })
+        console.log(c);
+        }
 </script>
 
 <template>
     <div id="topbar">
         <div class="userInformations">
-            <div class="bell_icon">
+            <div class="bell_icon" @click="showAlert">
                 <i class="bi bi-bell"></i>
                 <div class="notifications">9+</div>
             </div>

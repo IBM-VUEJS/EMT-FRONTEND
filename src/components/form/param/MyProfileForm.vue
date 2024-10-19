@@ -3,6 +3,7 @@ import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
 import EditPenLineIcon from '@/components/icons/EditPenLineIcon';
 import InputComponent from '@/components/auth/form/InputComponent.vue';
 import SelectComponent from '@/components/auth/form/SelectComponent.vue';
+import Swal from 'sweetalert2';
 
 const border = "1px solid var(--grey-light)"
 const options = [
@@ -33,11 +34,43 @@ const situations = [
         libel: 'BURKINA-FASO'
     },
 ]
+
+const updateProfil = () => {
+    Swal.fire({
+            icon: 'warning',
+            text: "Êtes-vous sur de vouloir Mettre à jour vos informations ?",
+            titleText: 'cette action est irreversible',
+            showDenyButton: true,
+            confirmButtonText: "Oui, Mettre à jour",
+            confirmButtonColor: 'var(--red)',
+            denyButtonText: `Annuler`,
+            denyButtonColor: "grey",
+        }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+                {
+                    text: "Informations sauvegardées",
+                    icon: "success",
+                    confirmButtonColor: "#53AC32"
+                }
+            );
+        } else if (result.isDenied) {
+            Swal.fire(
+                {
+                    text: "Informations non sauvegardées",
+                    icon: "info",
+                    confirmButtonColor: "#53AC32"
+                }
+            );
+        }
+    });
+}
+
 </script>
 
 <template>
     <div class="my_profile_form">
-        <form @submit.prevent="">
+        <form @submit.prevent="updateProfil">
             <div class="form_inputs">
                 <div class="left_form">
                     <div class="title">Personel</div>
@@ -99,7 +132,7 @@ const situations = [
     }
     .form_inputs{
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         overflow-y: scroll;
     }
     form{
@@ -114,7 +147,7 @@ const situations = [
         width: 100%;
         display: grid;
         grid-template-rows: 80px 80px 80px 80px;
-        padding: 0 30px 0px 0;
+        padding: 0 30px 0px 2px;
         gap: 15px;
     }
     .form_part_title{
