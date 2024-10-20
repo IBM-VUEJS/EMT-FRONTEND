@@ -76,7 +76,7 @@ const updateProfil = () => {
                     <div class="title">Personel</div>
                     <div class="form_part_title">
                         <div class="double_input_username">
-                            <InputComponent :libel="'Noms'"  :border="border"></InputComponent>
+                            <InputComponent :libel="'Noms'" :placeholder="''" :border="border"></InputComponent>
                             <InputComponent :libel="'Prénoms'"  :border="border"></InputComponent>
                         </div>
                     </div>
@@ -125,10 +125,14 @@ const updateProfil = () => {
 </template>
 
 <style scoped>
+/* *{
+    outline: 1px solid red
+} */
     .my_profile_form{
         padding: 0 10px 0 0;
         width: 100%;
         height: 100%;
+        overflow-y: scroll
     }
     .form_inputs{
         display: grid;

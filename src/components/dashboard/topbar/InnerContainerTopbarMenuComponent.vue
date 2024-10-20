@@ -1,4 +1,6 @@
 <script setup>
+import { inject, onMounted, ref } from 'vue';
+
     const props = defineProps(
         {
             option: String,
@@ -6,20 +8,23 @@
             navigation: Boolean
         }
     )
+const show =            () => {
+                console.log(inject('dynamic_option'));
+            }
 </script>
 
 <template>
-    <div class="container_topbar_menu">
+    <div :class="navigation ? 'container_topbar_menu2' : 'container_topbar_menu'">
         <template v-if="navigation">
             <div class="navigation">
                 <slot name="navigation"></slot>
             </div>
             <div class="current_page_option">
-                <div class="container_topbar_menu_text" :style="{fontSize: font_size}">
+                <div class="container_topbar_menu_text" :style="{fontSize: font_size}" @click="show">
                     <slot name="current_page"></slot>
                 </div>
                 <div class="option" v-if="option !== null">
-                    {{ option }} &gt;&gt;
+                    &gt;&gt; {{ dynamic_option }}
                 </div>
             </div>
         </template>
@@ -29,7 +34,7 @@
                     <slot name="current_page"></slot>
                 </div>
                 <div class="option" v-if="option !== null">
-                    {{ option }} &gt;&gt;
+                    &gt;&gt; {{ option }} 
                 </div>
             </div>
         </template>
@@ -40,6 +45,12 @@
     .container_topbar_menu{
         display: flex;
         align-items: center;
+        width: 100%;
+    }
+    .container_topbar_menu2{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         width: 100%;
     }
     .current_page_option{

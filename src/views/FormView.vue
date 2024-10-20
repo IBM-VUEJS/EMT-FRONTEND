@@ -1,5 +1,5 @@
 <script setup>
-import EbaLogoComponent from '@/components/dashboard/sidebar/EbaLogoComponent.vue';
+import EbaLogoComponent from '@/components/dashboard/navigationbar/EbaLogoComponent.vue';
 
     
 </script>

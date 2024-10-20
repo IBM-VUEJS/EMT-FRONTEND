@@ -1,9 +1,9 @@
 <script setup>
 import ParamComponent from '@/components/dashboard/container/param/paramComponent.vue';
-import NavigationButtonComponent from '@/components/dashboard/sidebar/NavigationButtonComponent.vue';
-import ParamContainerComponent from '@/components/dashboard/sidebar/param/ParamContainerComponent.vue';
-import paramsButtons from '@/components/dashboard/sidebar/param/ParamSidebarButtonNavigationLinks';
-import ParamSidebarComponent from '@/components/dashboard/sidebar/param/ParamSidebarComponent.vue';
+import NavigationButtonComponent from '@/components/dashboard/navigationbar/NavigationButtonComponent.vue';
+import ParamContainerComponent from '@/components/dashboard/navigationbar/param/ParamContainerComponent.vue';
+import paramsButtons from '@/components/dashboard/navigationbar/param/ParamSidebarButtonNavigationLinks';
+import ParamSidebarComponent from '@/components/dashboard/navigationbar/param/ParamSidebarComponent.vue';
 import InnerContainerTopbarComponent from '@/components/dashboard/topbar/InnerContainerTopbarComponent.vue';
 import InnerContainerTopbarMenuComponent from '@/components/dashboard/topbar/InnerContainerTopbarMenuComponent.vue';
 

@@ -5,13 +5,14 @@ import ContratPage from "@/pages/dashboard/ContratPage.vue"
 import CreateAccountPage from "@/pages/dashboard/CreateAccountPage.vue"
 import DashboardPage from "@/pages/dashboard/DashboardPage.vue"
 import FinancePage from "@/pages/dashboard/FinancePage.vue"
-import OpportunityPage from "@/pages/dashboard/OpportunityPage.vue"
+import OpportunityPage from "@/pages/dashboard/opportunityPages/OpportunityPage.vue"
 import OthersPage from "@/pages/dashboard/OthersPage.vue"
 import ParamPage from "@/pages/dashboard/paramPages/ParamPage.vue"
 import ProjectPage from "@/pages/dashboard/ProjectPage.vue"
 import StatisticPage from "@/pages/dashboard/StatisticPage.vue"
 import paramRoutes from "../secondary/paramRoutes"
 import HistoriesPage from "@/pages/dashboard/HistoriesPage.vue"
+import opportunityRoutes from "../secondary/opportunityRoutes"
 
 const routes = [
     {
@@ -27,7 +28,8 @@ const routes = [
     {
         path: 'opportinutes',
         name: 'opportinutes',
-        component: OpportunityPage
+        component: OpportunityPage,
+        children: opportunityRoutes
     },
     {
         path: 'clients',

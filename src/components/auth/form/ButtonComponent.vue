@@ -9,14 +9,15 @@ import { ref } from 'vue';
             libel: String,
             button_width: String,
             button_height: String,
-            size: String
+            size: String,
+            bottom: String
         }
     )
 </script>
 
 <template>
         <div class="input">
-            <button :type="type" :name="name" :id="name" :style="{width: button_width, height: button_height, fontSize: size}" >
+            <button :type="type" :name="name" :id="name" :style="{width: button_width, height: button_height, fontSize: size, marginBottom: bottom}" >
                 <slot></slot> {{ value }}
             </button> 
         </div>

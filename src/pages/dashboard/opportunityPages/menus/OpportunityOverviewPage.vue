@@ -1,0 +1,217 @@
+<script setup>
+    import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
+import BlueChartsBarIcon from '@/components/icons/BlueChartsBarIcon';
+    import LoseOpportunityIcon from '@/components/icons/LoseOpportunityIcon';
+    import NewOpportunityIcon from '@/components/icons/NewOpportunityIcon';
+    import QualifyOpportunityIcon from '@/components/icons/QualifyOpportunityIcon';
+    import RocketIcon from '@/components/icons/RocketIcon';
+    import WinOpportunityIcon from '@/components/icons/WinOpportunityIcon';
+    const statuts = [
+        {
+            icon: NewOpportunityIcon,
+            number: 15,
+            libel: 'Nouveau',
+        },
+        {
+            icon: QualifyOpportunityIcon,
+            number: 8,
+            libel: 'Qualifié',
+        },
+        {
+            icon: WinOpportunityIcon,
+            number: 12,
+            libel: 'Gagné',
+        },
+        {
+            icon: LoseOpportunityIcon,
+            number: 5,
+            libel: 'Perdu',
+        },
+    ]
+</script>
+
+<template>
+    <div id="overviews">
+        <div class="first_row_stat">
+            <div class="opportunity_stat_printer">
+                <div class="rising_hope box">
+                    <div class="rising_hope_text">
+                        <h5>Revenus total espéré</h5>
+                        <div class="rising">
+                            125,7M
+                        </div>
+                        <ButtonComponent :button_width="'120px'" :bottom="'0'">Consulter</ButtonComponent>
+                    </div>
+                    <div class="rising_hope_icon">
+                        <span v-html="RocketIcon"></span>
+                    </div>
+                </div>
+
+                <div class="box status_box">
+                    <h5>Effectif des Opportunités par statut</h5>
+                    <div class="statuts">
+                        <template v-for="statut in statuts">
+                            <div class="statuts_info">
+                                <div class="icon">
+                                    <span v-html="statut['icon']"></span>
+                                </div>
+                                <div class="number_libel">
+                                    <div class="number">{{ statut['number'] }}</div>
+                                    <div class="libel">{{ statut['libel'] }}</div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+            <div class="status_box box">
+                <h5>Nombre total d'Opportunité🎉</h5>
+                <div class="opportunity_number_chart">
+                    <div class="opportunity_number">
+                        170
+                    </div>
+                    <div class="chart_bar_icon">
+                        <div v-html="BlueChartsBarIcon"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="second_row_stat">
+            <div class="box " >
+                
+            </div>
+            <div class="circle_charts">
+                <div class="circle_chart box">5</div>
+                <div class="circle_chart box">6</div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style scoped>
+    #overviews{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 170px 1fr;
+        gap: 15px;
+    }
+    .first_row_stat, .second_row_stat{
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 300px;
+        gap: 15px;
+    }
+    .opportunity_stat_printer{
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 350px 1fr;
+        gap: 15px; 
+    }
+    .circle_charts{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 15px
+    }
+    .box{
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.296);
+        border-radius: 6px;
+        padding: 20px 10px 0px 10px;
+    }
+    .rising_hope{
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: 1fr;
+    }
+    .rising{
+        font-size: 1.5rem;
+        font-weight: bolder;
+        margin-bottom: 10px;
+        color: var(--red);
+    }
+    .rising_hope_text{
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .rising_hope_icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    h5{
+        font-weight: normal;
+    }
+    .statuts_info{
+        display: flex;
+        align-items: center;
+    }
+    .status_box{
+        display: grid;
+        grid-template-rows: 40px 100px;
+        gap: 0;
+
+    }
+    .statuts{
+        display: grid;
+        grid-template-columns: repeat(4, 220px);
+        height: 100%;
+    }
+    .opportunity_number_chart{
+        display: grid;
+        grid-template-columns: 75px 100px;
+        gap: 10px;
+    }
+    .chart_bar_icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    .opportunity_number{
+        display: flex;
+        align-items: end;
+        justify-content: end;
+        height: 100%;
+        width: 100%;
+        font-size: 1.5rem;
+        font-weight: bolder;
+        color: var(--red);
+    }
+    @media screen and (max-width: 1300px) {
+        #overviews{
+            width: 100%;
+            min-height: 100svh;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 15px;
+        }
+        .first_row_stat, .second_row_stat{
+            display: grid;
+            grid-template-rows: 620px 300px;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        .circle_charts{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 300px 300px;
+            gap: 15px
+        }
+        .opportunity_stat_printer{
+            display: grid;
+            grid-template-rows: 300px 300px;
+            grid-template-columns: 1fr;
+            gap: 15px; 
+        }
+        .status{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        }
+    }
+</style>

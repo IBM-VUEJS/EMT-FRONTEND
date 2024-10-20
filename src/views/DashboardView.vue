@@ -1,7 +1,7 @@
 <script setup>
-    import SidebarComponent from '@/components/dashboard/sidebar/SidebarComponent.vue';
-    import buttons from '@/components/dashboard/sidebar/DashboardButtonNavigationLinks';
-    import NavigationButtonComponent from '@/components/dashboard/sidebar/NavigationButtonComponent.vue';
+    import SidebarComponent from '@/components/dashboard/navigationbar/SidebarComponent.vue';
+    import buttons from '@/components/dashboard/navigationbar/DashboardButtonNavigationLinks';
+    import NavigationButtonComponent from '@/components/dashboard/navigationbar/NavigationButtonComponent.vue';
     import TopbarComponent from '@/components/dashboard/topbar/TopbarComponent.vue';
     import ContainerComponent from '@/components/dashboard/container/ContainerComponent.vue';
     import DarkBackgroundModals from '@/components/modals/DarkBackgroundModals.vue';
@@ -49,7 +49,8 @@
         grid-template-columns: 280px 1fr;
         width: 100%;
         height: 100%;
-        position: relative
+        position: relative;
+        overflow: hidden;
     }
     .section{
         display: grid;
