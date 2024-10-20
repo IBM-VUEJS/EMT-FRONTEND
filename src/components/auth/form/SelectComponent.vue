@@ -4,11 +4,14 @@ import { ref } from 'vue';
     defineProps(
         {
             options: Array, 
-            value: ref,
             placeholder: String,
             name: String,
             libel: String,
-            border: String
+            border: String,
+            bgColor: String,
+            width: String,
+            purple: Boolean,
+            bottom: String
         }
     )
 </script>
@@ -16,7 +19,7 @@ import { ref } from 'vue';
 <template>
         <div class="input">
             <label :for="name">{{libel}}</label>
-            <select name="" id="" :style="{border: border}">
+            <select name="" id="" :style="{border: border, backgroundColor: bgColor, color: textColor, width: width, marginBottom: bottom}" :class="purple ? 'purple' : 'select'">
                 <template v-for="option in options">
                     <option :value="option['value']">
                         {{ option['libel'] }}
@@ -35,7 +38,7 @@ import { ref } from 'vue';
         margin-bottom: 25px;
         flex-direction: column;
     }
-    .input select{
+    .input .select{
         width: 100%;
         padding: 10px 20px;
         border: 1px solid red;
@@ -43,8 +46,19 @@ import { ref } from 'vue';
         font-size: 1.02rem;
         background-color: var(--white);
     }
-    .input select:focus{
+    .input .select:focus{
         border: 1px solid var(--red);   
         outline: 2px solid var(--red);
+    }
+    .purple{
+        width: 100%;
+        padding: 10px 20px;
+        border-radius: 6px;
+        font-size: 1.02rem;
+        background-color: var(--white);
+    }
+    .purple:focus{
+        border: 1px solid var(--purple);   
+        outline: 2px solid var(--purple);
     }
 </style>
