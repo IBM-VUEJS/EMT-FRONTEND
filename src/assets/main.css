@@ -28,6 +28,12 @@ a,
   border-bottom: 3px solid grey;
   font-weight: bold;
 }
+.cancel-button{
+  padding: 10px 20px;
+  color: var(--black);
+  background-color: var(--white);
+  border: 2px solid var(--black);
+}
 
 @media (hover: hover) {
   a:hover {

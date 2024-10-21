@@ -1,16 +1,12 @@
 <script setup>
 import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
 import SearchComponent from '@/components/auth/form/SearchComponent.vue';
-import SelectComponent from '@/components/auth/form/SelectComponent.vue';
 import BlueEyesIcon from '@/components/icons/BlueEyesIcon';
-import CancelIcon from '@/components/icons/CancelIcon';
 import DeleteIcon from '@/components/icons/DeleteIcon';
 import FilterIcon from '@/components/icons/FilterIcon';
 import PaginationLeftArrow from '@/components/icons/PaginationLeftArrow';
 import PaginationRightArrow from '@/components/icons/PaginationRightArrow';
 import YellowEditPenLine from '@/components/icons/YellowEditPenLine';
-import Swal from 'sweetalert2';
-import { inject, provide, ref } from 'vue';
 
 const prospects = [
     {
@@ -30,151 +26,13 @@ const prospects = [
         nom: 'MOOV',
         type: 'Entreprise Privée',
         pays: 'BENIN'
-    },
-    {
-        numero: 'PRO_2404',
-        nom: 'UNIVERSITY OF LOME',
-        type: 'Institution Publique',
-        pays: 'TOGO'
-    },
-    {
-        numero: 'PRO_2405',
-        nom: 'CORIS BANK',
-        type: 'Entreprise Privée',
-        pays: 'BURKINA FASO'
-    },
-    {
-        numero: 'PRO_2406',
-        nom: 'ORANGE',
-        type: 'Entreprise Privée',
-        pays: 'COTE D\'IVOIRE'
-    },
-    {
-        numero: 'PRO_2407',
-        nom: 'MTN',
-        type: 'Entreprise Privée',
-        pays: 'GHANA'
-    },
-    {
-        numero: 'PRO_2408',
-        nom: 'NSIA',
-        type: 'Entreprise Privée',
-        pays: 'TOGO'
     }
 ];
-
-const nom = [
-    {
-        libel: 'Choisir le nom',
-        value: ''
-    },
-    {
-        libel: 'KOKOU',
-        value: 'KOKOU'
-    }
-]
-
-const type = [
-    {
-        libel: 'Choisir le type',
-        value: ''
-    },
-    {
-        libel: 'Particulier',
-        value: 'Particulier'
-    }
-]
-
-const pays = [
-    {
-        libel: 'Choisir le pays',
-        value: ''
-    },
-    {
-        libel: 'TOGO',
-        value: 'TOGO'
-    }
-]
-
-
-const hideFilter = ref(false)
-provide('hideFilter', hideFilter)
-const show = inject('show')
-const showDefinePasswordForm = inject('showDefinePasswordForm')
-const showFilter = () => {
-    show.value = true
-    hideFilter.value = true
-}
-
-const closeFilter = () => {
-    show.value = false
-    hideFilter.value = false
-}
-
-const archiveProspect = () => {
-    Swal.fire(
-        {
-            icon: 'warning',
-            text: 'Êtes-vous sûr d\'archiver ce prospect',
-            showConfirmButton: true,
-            confirmButtonColor: 'var(--red)',
-            confirmButtonText: 'Oui, archiver',
-            showCancelButton: true,
-            cancelButtonText: 'Annuler',
-            customClass: {
-                cancelButton: 'cancel-button'
-            }
-        }
-    ).then(
-        () => {
-            if (is) {
-                
-            }
-        }
-    )
-}
 
 </script>
 
 <template>
-    <div id="prospect_list">
-        <div class="search_add_filtre">
-            <div class="search_div">
-                <form @submit.prevent="">
-                    <SearchComponent :type="'search'" :width="''" :border="'none'" :search="true" :bottom="'0'"></SearchComponent>
-                </form>
-            </div>
-            <div class="add_filtre">
-                <div class="filtre">
-                    <ButtonComponent :bgcolor="'var(--white)'" :bottom="'0'"  :slim="true"  :bordered="true" @click="showFilter">
-                        <span v-html="FilterIcon"></span> Filtrer
-                    </ButtonComponent>
-                    <div class="filter_form" v-if="hideFilter">
-                        <div class="close_filter_div">
-                            <div class="close" @click="closeFilter">
-                                <span v-html="CancelIcon"></span>
-                            </div>
-                        </div>
-                        <h5 class="popup_title">Filtrer la liste des Prospects</h5>
-                        <form action="">
-                            <SelectComponent :options="nom" :border="'1px solid var(--grey)'" :libel="'Nom'"></SelectComponent>
-                            <SelectComponent :options="type" :border="'1px solid var(--grey)'" :libel="'Type'"></SelectComponent>
-                            <SelectComponent :options="pays" :border="'1px solid var(--grey)'" :libel="'Pays'"></SelectComponent>
-                            <div class="submit_cancel">
-                                <ButtonComponent :bottom="'0'">
-                                    Filter
-                                </ButtonComponent>
-
-                                <ButtonComponent :bordered="true" :slim="true" :bottom="'0'" @click="closeFilter">
-                                    Annuler
-                                </ButtonComponent>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="prospect_info_list">
+<div class="prospect_info_list">
             <div class="list_header">
                 <div  class="list_value" style="padding-left: 15px;">Numéro</div>
                 <div  class="list_value">Nom</div>
@@ -194,9 +52,6 @@ const archiveProspect = () => {
                                 <span v-html="BlueEyesIcon"></span>
                             </div>
                             <div class="action_icons">
-                                <span v-html="YellowEditPenLine"></span>
-                            </div>
-                            <div class="action_icons" @click="archiveProspect(2)">
                                 <span v-html="DeleteIcon"></span>
                             </div>
                         </div>
@@ -219,7 +74,6 @@ const archiveProspect = () => {
                 </div>
             </div>
         </div>
-    </div>
 </template>
 
 <style scoped>
@@ -336,45 +190,5 @@ const archiveProspect = () => {
     }
     .action_icons{
         cursor: pointer;
-    }
-    .filtre{
-        position: relative;
-    }
-    .filter_form{
-        position: absolute;
-        background-color: var(--white);
-        padding: 20px;
-        width: 300px;
-        right: 25px;
-        top: 110%;
-        border-radius: 10px;
-        z-index: 100;
-    }
-    .submit_cancel{
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        gap: 10px;
-    }
-    .close_filter_div{
-        position: relative;
-    }
-    .close{
-        position: absolute;
-        top: -35px;
-        right: -30px;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 5px;
-        box-shadow: var(--shadow);
-        background-color: var(--white);
-        cursor: pointer
-    }
-    .popup_title{
-        font-weight: 300;
-        color: var(--red);
     }
 </style>

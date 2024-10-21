@@ -1,17 +1,11 @@
 <script setup>
-import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
-import SearchComponent from '@/components/auth/form/SearchComponent.vue';
-import AddIcon from '@/components/icons/AddIcon';
-import BlueEyesIcon from '@/components/icons/BlueEyesIcon';
-import DeleteIcon from '@/components/icons/DeleteIcon';
-import FilterIcon from '@/components/icons/FilterIcon';
+
 import PaginationLeftArrow from '@/components/icons/PaginationLeftArrow';
 import PaginationRightArrow from '@/components/icons/PaginationRightArrow';
-import YellowEditPenLine from '@/components/icons/YellowEditPenLine';
-import Swal from 'sweetalert2';
-import { inject } from 'vue';
+import BlueEyesIcon from '@/components/icons/BlueEyesIcon';
+import DeleteIcon from '@/components/icons/DeleteIcon';
 
-const opportunities = [
+    const opportunities = [
     {
         id: '0001',
         nom: 'Application web',
@@ -19,7 +13,7 @@ const opportunities = [
         revenu: '35.000$',
         probability: '92%',
         vendeur: 'Mme LOUISE',
-        statut: 'Nouveau',
+        statut: 'Perdu',
         action: ''
     },
     {
@@ -29,7 +23,7 @@ const opportunities = [
         revenu: '50.000$',
         probability: '85%',
         vendeur: 'M. BOKO',
-        statut: 'Qualifié',
+        statut: 'Perdu',
         action: ''
     },
     {
@@ -39,104 +33,15 @@ const opportunities = [
         revenu: '28.000$',
         probability: '77%',
         vendeur: 'Mme ADJO',
-        statut: 'Gagné',
-        action: ''
-    },
-    {
-        id: '0004',
-        nom: 'ERP',
-        contact: 'UNIVERSITY OF LOME',
-        revenu: '60.000$',
-        probability: '65%',
-        vendeur: 'M. KODJO',
         statut: 'Perdu',
         action: ''
     },
-    {
-        id: '0005',
-        nom: 'Intranet sécurisé',
-        contact: 'CORIS BANK',
-        revenu: '45.000$',
-        probability: '80%',
-        vendeur: 'Mme LOUISE',
-        statut: 'Qualifié',
-        action: ''
-    },
-    {
-        id: '0006',
-        nom: 'Application mobile',
-        contact: 'ORANGE',
-        revenu: '40.000$',
-        probability: '90%',
-        vendeur: 'M. KOUASSI',
-        statut: 'Nouveau',
-        action: ''
-    },
-    {
-        id: '0007',
-        nom: 'Plateforme e-commerce',
-        contact: 'MTN',
-        revenu: '25.000$',
-        probability: '70%',
-        vendeur: 'Mme SEWA',
-        statut: 'Gagné',
-        action: ''
-    },
-    {
-        id: '0008',
-        nom: 'Système de paie',
-        contact: 'NSIA',
-        revenu: '55.000$',
-        probability: '88%',
-        vendeur: 'M. AZIZ',
-        statut: 'Perdu',
-        action: ''
-    }
 ];
-
-const show = inject('show')
-const showDefinePasswordForm = inject('showDefinePasswordForm')
-const archiveOpportunity = () => {
-    Swal.fire({
-            title: '',
-            showCancelButton: true,
-            text: 'Êtes-vous sûr de vouloir archiver cette opportunité ?',
-            icon: 'warning',
-            confirmButtonText: 'Oui, archiver',
-            confirmButtonColor: 'var(--red)',
-            cancelButtonText: 'Annuler',
-            customClass: {
-                cancelButton: 'cancel-button'
-            }
-        })
-        show.value = false
-        showDefinePasswordForm.value = false
-}
 
 </script>
 
 <template>
-    <div id="opportunity_list">
-        <div class="search_add_filtre">
-            <div class="search_div">
-                <form @submit.prevent="">
-                    <SearchComponent :type="'search'" :width="''" :border="'none'" :search="true" :bottom="'0'"></SearchComponent>
-                </form>
-            </div>
-            <div class="add_filtre">
-                <div class="add">
-                    <ButtonComponent :bgcolor="'white'" :bottom="'0'" :slim="true">
-                         <span v-html="AddIcon"></span> Ajouter
-                    </ButtonComponent>
-                </div>
-                <div class="filtre">
-                    <ButtonComponent :bgcolor="'var(--white)'" :bottom="'0'"  :slim="true"  :bordered="true">
-                        <span v-html="FilterIcon"></span> Filtrer
-                    </ButtonComponent>
-                </div>
-            </div>
-        </div>
-        <div class="opportunity_info_list">
+<div class="opportunity_info_list">
             <div class="list_header">
                 <div  class="list_value" style="padding-left: 15px;">ID</div>
                 <div  class="list_value">NOM</div>
@@ -162,9 +67,6 @@ const archiveOpportunity = () => {
                                 <span v-html="BlueEyesIcon"></span>
                             </div>
                             <div class="action_icons">
-                                <span v-html="YellowEditPenLine"></span>
-                            </div>
-                            <div class="action_icons" @click="archiveOpportunity">
                                 <span v-html="DeleteIcon"></span>
                             </div>
                         </div>
@@ -187,28 +89,10 @@ const archiveOpportunity = () => {
                 </div>
             </div>
         </div>
-    </div>
 </template>
 
 <style scoped>
-    #opportunity_list{
-        display: grid;
-        grid-template-rows: 60px 1fr;
-        padding-bottom: 10px;
-        padding-top: 30px;
-    }
-    .search_add_filtre{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        height: 100%;
-    }
-    .add_filtre{
-        display: flex;
-        gap: 25px;
-    }
-    .opportunity_info_list{
+       .opportunity_info_list{
         display: grid;
         grid-template-rows: 50px 550px 50px;
         width: 100%;

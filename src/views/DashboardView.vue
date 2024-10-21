@@ -8,15 +8,22 @@
     import DefineNewPasswordModal from '@/components/modals/DefineNewPasswordModal.vue';
     import { RouterLink } from 'vue-router';
     import { inject, provide, ref } from 'vue';
-    let show = ref(true)
+    const show = ref(true)
+    const showDefinePasswordForm = ref(true)
+    const hideFilter = inject('hideFilter')
     provide('show', show)
+    provide('showDefinePasswordForm', showDefinePasswordForm)
+
 </script>
 
 <template>
     <div id="dashboard">
         <DarkBackgroundModals v-if="show">
-            <DefineNewPasswordModal></DefineNewPasswordModal>
+            
         </DarkBackgroundModals>
+        <div class="modals" v-if="showDefinePasswordForm">
+            <DefineNewPasswordModal></DefineNewPasswordModal>
+        </div>
         <SidebarComponent>
             <template v-slot:content>
                 <template v-for="button in buttons">
@@ -41,9 +48,9 @@
 </template>
 
 <style >
-*{
+/* *{
     outline: 1px solid red;
-}
+} */
     #dashboard{
         display: grid;
         grid-template-columns: 280px 1fr;
@@ -57,5 +64,13 @@
         grid-template-columns: 1fr;
         grid-template-rows: 80px 1fr;
     }
-
+    .modals{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+    }
 </style>

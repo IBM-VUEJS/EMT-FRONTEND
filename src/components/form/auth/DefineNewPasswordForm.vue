@@ -12,9 +12,10 @@ import Swal from 'sweetalert2';
     )
 
     let show = inject('show')
+    const showDefinePasswordForm = inject('showDefinePasswordForm')
     const changePassword = () => {
-        console.log(show.value)
         show.value = false
+        showDefinePasswordForm.value = false
         Swal.fire(
             {
                 title: '',

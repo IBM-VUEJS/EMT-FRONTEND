@@ -16,7 +16,7 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        z-index: 100;
-        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.4);
     }
 </style>

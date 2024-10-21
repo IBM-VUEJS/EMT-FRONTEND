@@ -45,6 +45,10 @@ import { ref } from 'vue';
         border-radius: 6px;
         font-size: 1.02rem;
         background-color: var(--white);
+        color: var(--grey)
+    }
+    select option{
+        color: var(--grey);
     }
     .input .select:focus{
         border: 1px solid var(--red);   

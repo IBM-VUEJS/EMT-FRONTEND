@@ -2,6 +2,7 @@ import OpportinutyArchives from "@/pages/dashboard/opportunityPages/menus/Opport
 import OpportinutyListPage from "@/pages/dashboard/opportunityPages/menus/OpportinutyListPage.vue";
 import OpportunityListProspectPage from "@/pages/dashboard/opportunityPages/menus/OpportunityListProspectPage.vue";
 import OpportunityOverviewPage from "@/pages/dashboard/opportunityPages/menus/OpportunityOverviewPage.vue";
+import archiveRoutes from "./opportunity/archivesRoutes";
 
 const opportunityRoutes = [
     {
@@ -22,7 +23,8 @@ const opportunityRoutes = [
     {
         path: 'opportunity-archives',
         name: 'opportunity-archives',
-        component: OpportinutyArchives
+        component: OpportinutyArchives,
+        children: archiveRoutes
     },
 ];
 
