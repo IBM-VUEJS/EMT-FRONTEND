@@ -7,19 +7,27 @@
 
 /* semantic color variables for this project */
 :root {
-  --red: rgb(196, 43, 43);
+  --red: #A80505;
+  --blue: #036DF8;
+  --green: #28C76F;
+  --yellow: #FF9A0C;
   --red-gradient: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(194, 129, 129, 0.345) 70%, #BE0303 100%);
   --red-gradient-bg: linear-gradient(90deg, red, #961b1b);
   --text-white: white;
   --grey-white: rgb(240, 240, 240);
   --grey: grey;
+  --grey-slim: #F0F0F0;
   --grey-light: rgb(189, 189, 189);
-  --green: rgb(44, 206, 44);
   --black: rgb(0, 0, 0);
   --white: white;
-  --blue: #036DF8;
   --purple: rgb(111, 11, 211);
   --purple-light: rgba(111, 11, 211, 0.5);
+  --menu-bg: #F8F8F8;
+}
+
+:root{
+  --shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 0 10px 1px rgba(0, 0, 0, 0.2);
 }
 
 *,

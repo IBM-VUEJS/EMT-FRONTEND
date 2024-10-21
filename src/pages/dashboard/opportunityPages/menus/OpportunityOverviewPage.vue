@@ -114,7 +114,7 @@
                     datasets: [
                         {
                         label: 'Opportunités',
-                        data: [1, 250, 4, 220, 4, 300, 50, 260, 120],
+                        data: [1, 230, 4, 220, 4, 300, 50, 260, 120],
                         backgroundColor: 'red',
                         borderColor: 'red',
                         tension: 0.5,
@@ -236,7 +236,7 @@
                         <div class="rising">
                             125,7M
                         </div>
-                        <ButtonComponent :button_width="'120px'" :bottom="'0'">Consulter</ButtonComponent>
+                        <ButtonComponent :button_width="'120px'" :bottom="'10px'">Consulter</ButtonComponent>
                     </div>
                     <div class="rising_hope_icon">
                         <span v-html="RocketIcon"></span>
@@ -300,7 +300,7 @@
                 </div>
                 <div class="stat_per_year">
                     <div class="number" style="align-items: end;" >
-                        <SelectComponent :bottom="''" :options="options" :border="'2px solid var(--purple)'" :width="'100px'" :bg-color="'var(--purple-light)'" :color="'var(--purple)'" :purple="'true'"></SelectComponent>
+                        <SelectComponent :bottom="''" :options="options" :border="'2px solid var(--purple)'" :width="'100px'" :bg-color="'var(--purple-light)'" :color="'var(--purple)'" :purple="true"></SelectComponent>
                     </div>
                     <div class="number" style="flex-direction: column; align-items: start; padding-left: 20px; gap: 10px">
                         <div><span style="font-weight: bold; font-size: 1.5rem; margin-right: 10px;">170</span> Opportunités</div>

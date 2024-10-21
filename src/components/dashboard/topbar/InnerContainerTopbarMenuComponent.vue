@@ -8,9 +8,7 @@ import { inject, onMounted, ref } from 'vue';
             navigation: Boolean
         }
     )
-const show =            () => {
-                console.log(inject('dynamic_option'));
-            }
+
 </script>
 
 <template>
@@ -24,7 +22,7 @@ const show =            () => {
                     <slot name="current_page"></slot>
                 </div>
                 <div class="option" v-if="option !== null">
-                    &gt;&gt; {{ dynamic_option }}
+                    &gt;&gt; {{ option }}
                 </div>
             </div>
         </template>

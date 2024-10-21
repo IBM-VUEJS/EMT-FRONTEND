@@ -1,24 +1,23 @@
 <script setup>
-import OpportunityContainerNavigationComponent from '@/components/dashboard/container/opportunity/OpportunityContainerNavigationComponent.vue';
-import OpportunityComponent from '@/components/dashboard/container/opportunity/OpportunityComponent.vue';
-import ParamContainerComponent from '@/components/dashboard/navigationbar/param/ParamContainerComponent.vue';
-import InnerContainerTopbarComponent from '@/components/dashboard/topbar/InnerContainerTopbarComponent.vue';
-import InnerContainerTopbarMenuComponent from '@/components/dashboard/topbar/InnerContainerTopbarMenuComponent.vue';
-import OpportunityButtonNavigationLinks from '@/components/dashboard/navigationbar/opportunity/OpportunityButtonNavigationLinks';
-import OpportunityNavigationLinks from '@/components/dashboard/container/opportunity/OpportunityNavigationLinks.vue';
-import { provide, ref } from 'vue';
-const dynamic_option = ref("")
+    import OpportunityContainerNavigationComponent from '@/components/dashboard/container/opportunity/OpportunityContainerNavigationComponent.vue';
+    import OpportunityComponent from '@/components/dashboard/container/opportunity/OpportunityComponent.vue';
+    import InnerContainerTopbarComponent from '@/components/dashboard/topbar/InnerContainerTopbarComponent.vue';
+    import InnerContainerTopbarMenuComponent from '@/components/dashboard/topbar/InnerContainerTopbarMenuComponent.vue';
+    import OpportunityButtonNavigationLinks from '@/components/dashboard/navigationbar/opportunity/OpportunityButtonNavigationLinks';
+    import OpportunityNavigationLinks from '@/components/dashboard/container/opportunity/OpportunityNavigationLinks.vue';
+    import { provide, ref } from 'vue';
+    const dynamic_option = ref("Vue d'ensemble")
 
-const changeOption = (option) => {
-    dynamic_option.value = option
-    console.log(dynamic_option.value);
-    provide('dynamic_option', dynamic_option.value)
-}
+    const changeOption = (option) => {
+        dynamic_option.value = option
+        console.log(dynamic_option.value);
+        provide('dynamic_option', dynamic_option.value)
+    }
 </script>
 
 <template>
     <InnerContainerTopbarComponent>
-        <InnerContainerTopbarMenuComponent :option="'Mon Profil'" :font_size="'1.4rem'" :navigation="true">
+        <InnerContainerTopbarMenuComponent :option="dynamic_option" :font_size="'1.4rem'" :navigation="true">
             <template v-slot:navigation>
                 <OpportunityContainerNavigationComponent>
                     <template v-for="link in OpportunityButtonNavigationLinks">

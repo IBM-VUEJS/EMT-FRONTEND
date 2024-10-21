@@ -2,6 +2,7 @@
     import { ref } from 'vue';
     import EyehideoutlineIcon from '@/components/icons/EyehideoutlineIcon';
     import EyeoutlineIcon from '@/components/icons/EyeoutlineIcon';
+    import SearchIcon from '@/components/icons/SearchIcon';
 
     const show_password = ref(false)
 
@@ -12,13 +13,17 @@
             placeholder: String,
             name: String,
             libel: String,
-            border: String
+            border: String,
+            width: String,
+            radius: String,
+            search: Boolean,
+            bottom: String
         }
     )
 </script>
 
 <template>
-        <div class="inputs">
+        <div class="inputs" :style="{marginBottom: bottom}">
             <label :for="name">{{libel}}</label>
             <template v-if="type === 'password'">
                 <div class="input_div"  :style="{border: border}">
@@ -34,7 +39,7 @@
                 </div>
             </template>
             <template v-else>
-                <input class="input" :type="type" :name="name" :id="name" :value="value" :placeholder="placeholder" :style="{border: border}">
+                <input class="input" :type="type" :name="name" :id="name" :value="value" :placeholder="placeholder" :style="{border: border, width: width, borderRadius: radius}">
             </template>
         </div>
 </template>

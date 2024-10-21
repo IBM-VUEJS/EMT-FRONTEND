@@ -1,4 +1,4 @@
-import OpportinutyArchives from "@/pages/dashboard/opportunityPages/menus/OpportinutyArchives.vue";
+import OpportinutyArchives from "@/pages/dashboard/opportunityPages/menus/OpportinutyArchivesPage.vue";
 import OpportinutyListPage from "@/pages/dashboard/opportunityPages/menus/OpportinutyListPage.vue";
 import OpportunityListProspectPage from "@/pages/dashboard/opportunityPages/menus/OpportunityListProspectPage.vue";
 import OpportunityOverviewPage from "@/pages/dashboard/opportunityPages/menus/OpportunityOverviewPage.vue";

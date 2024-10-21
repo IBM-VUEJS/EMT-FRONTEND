@@ -1,6 +1,7 @@
 <script setup>
 import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
 import SearchComponent from '@/components/auth/form/SearchComponent.vue';
+import AddIcon from '@/components/icons/AddIcon';
 import BlueEyesIcon from '@/components/icons/BlueEyesIcon';
 import DeleteIcon from '@/components/icons/DeleteIcon';
 import FilterIcon from '@/components/icons/FilterIcon';
@@ -8,61 +9,93 @@ import PaginationLeftArrow from '@/components/icons/PaginationLeftArrow';
 import PaginationRightArrow from '@/components/icons/PaginationRightArrow';
 import YellowEditPenLine from '@/components/icons/YellowEditPenLine';
 
-const prospects = [
+const opportunities = [
     {
-        numero: 'PRO_2401',
-        nom: 'ECOBANK',
-        type: 'Entreprise Privée',
-        pays: 'TOGO'
+        id: '0001',
+        nom: 'Application web',
+        contact: 'ECOBANK',
+        revenu: '35.000$',
+        probability: '92%',
+        vendeur: 'Mme LOUISE',
+        statut: 'Nouveau',
+        action: ''
     },
     {
-        numero: 'PRO_2402',
-        nom: 'TOGOCEL',
-        type: 'Entreprise Privée',
-        pays: 'TOGO'
+        id: '0002',
+        nom: 'Système de gestion',
+        contact: 'TOGOCEL',
+        revenu: '50.000$',
+        probability: '85%',
+        vendeur: 'M. BOKO',
+        statut: 'Qualifié',
+        action: ''
     },
     {
-        numero: 'PRO_2403',
-        nom: 'MOOV',
-        type: 'Entreprise Privée',
-        pays: 'BENIN'
+        id: '0003',
+        nom: 'CRM',
+        contact: 'MOOV',
+        revenu: '28.000$',
+        probability: '77%',
+        vendeur: 'Mme ADJO',
+        statut: 'Gagné',
+        action: ''
     },
     {
-        numero: 'PRO_2404',
-        nom: 'UNIVERSITY OF LOME',
-        type: 'Institution Publique',
-        pays: 'TOGO'
+        id: '0004',
+        nom: 'ERP',
+        contact: 'UNIVERSITY OF LOME',
+        revenu: '60.000$',
+        probability: '65%',
+        vendeur: 'M. KODJO',
+        statut: 'Perdu',
+        action: ''
     },
     {
-        numero: 'PRO_2405',
-        nom: 'CORIS BANK',
-        type: 'Entreprise Privée',
-        pays: 'BURKINA FASO'
+        id: '0005',
+        nom: 'Intranet sécurisé',
+        contact: 'CORIS BANK',
+        revenu: '45.000$',
+        probability: '80%',
+        vendeur: 'Mme LOUISE',
+        statut: 'Qualifié',
+        action: ''
     },
     {
-        numero: 'PRO_2406',
-        nom: 'ORANGE',
-        type: 'Entreprise Privée',
-        pays: 'COTE D\'IVOIRE'
+        id: '0006',
+        nom: 'Application mobile',
+        contact: 'ORANGE',
+        revenu: '40.000$',
+        probability: '90%',
+        vendeur: 'M. KOUASSI',
+        statut: 'Nouveau',
+        action: ''
     },
     {
-        numero: 'PRO_2407',
-        nom: 'MTN',
-        type: 'Entreprise Privée',
-        pays: 'GHANA'
+        id: '0007',
+        nom: 'Plateforme e-commerce',
+        contact: 'MTN',
+        revenu: '25.000$',
+        probability: '70%',
+        vendeur: 'Mme SEWA',
+        statut: 'Gagné',
+        action: ''
     },
     {
-        numero: 'PRO_2408',
-        nom: 'NSIA',
-        type: 'Entreprise Privée',
-        pays: 'TOGO'
+        id: '0008',
+        nom: 'Système de paie',
+        contact: 'NSIA',
+        revenu: '55.000$',
+        probability: '88%',
+        vendeur: 'M. AZIZ',
+        statut: 'Perdu',
+        action: ''
     }
 ];
 
 </script>
 
 <template>
-    <div id="prospect_list">
+    <div id="opportunity_list">
         <div class="search_add_filtre">
             <div class="search_div">
                 <form @submit.prevent="">
@@ -70,6 +103,11 @@ const prospects = [
                 </form>
             </div>
             <div class="add_filtre">
+                <div class="add">
+                    <ButtonComponent :bgcolor="'white'" :bottom="'0'" :slim="true">
+                         <span v-html="AddIcon"></span> Ajouter
+                    </ButtonComponent>
+                </div>
                 <div class="filtre">
                     <ButtonComponent :bgcolor="'var(--white)'" :bottom="'0'"  :slim="true"  :bordered="true">
                         <span v-html="FilterIcon"></span> Filtrer
@@ -77,27 +115,30 @@ const prospects = [
                 </div>
             </div>
         </div>
-        <div class="prospect_info_list">
+        <div class="opportunity_info_list">
             <div class="list_header">
-                <div  class="list_value" style="padding-left: 15px;">Numéro</div>
-                <div  class="list_value">Nom</div>
-                <div  class="list_value">Type</div>
-                <div  class="list_value">Pays</div>
-                <div  class="list_value">Actions</div>
+                <div  class="list_value" style="padding-left: 15px;">ID</div>
+                <div  class="list_value">NOM</div>
+                <div  class="list_value">Nom du contact</div>
+                <div  class="list_value">Revenu espéré</div>
+                <div  class="list_value">% Probabilité</div>
+                <div  class="list_value">Vendeur</div>
+                <div  class="list_value">Statut</div>
+                <div  class="actions">Action</div>
             </div>
             <div class="list_body">
-                <template v-for="prospect in prospects">
+                <template v-for="opportunity in opportunities">
                     <div class="list_body_values">
-                        <div  class="list_value" style="padding-left: 15px;">{{ prospect['numero'] }}</div>
-                        <div  class="list_value">{{prospect['nom']}}</div>
-                        <div  class="list_value">{{ prospect['type'] }}</div>
-                        <div  class="list_value">{{prospect['pays']}}</div>
+                        <div  class="list_value" style="padding-left: 15px;">{{ opportunity['id'] }}</div>
+                        <div  class="list_value">{{opportunity['nom']}}</div>
+                        <div  class="list_value">{{ opportunity['contact'] }}</div>
+                        <div  class="list_value">{{opportunity['revenu']}}</div>
+                        <div  class="list_value">{{ opportunity['probability'] }}</div>
+                        <div  class="list_value">{{opportunity['vendeur']}}</div>
+                        <div  class="list_value" :class="{green: opportunity['statut'] === 'Nouveau', yellow: opportunity['statut'] === 'Gagné', blue: opportunity['statut'] === 'Qualifié', red: opportunity['statut'] === 'Perdu'}">{{opportunity['statut']}}</div>
                         <div  class="actions">
                             <div class="action_icons">
                                 <span v-html="BlueEyesIcon"></span>
-                            </div>
-                            <div class="action_icons">
-                                <span v-html="YellowEditPenLine"></span>
                             </div>
                             <div class="action_icons">
                                 <span v-html="DeleteIcon"></span>
@@ -126,7 +167,7 @@ const prospects = [
 </template>
 
 <style scoped>
-    #prospect_list{
+    #opportunity_list{
         display: grid;
         grid-template-rows: 60px 1fr;
         padding-bottom: 10px;
@@ -143,7 +184,7 @@ const prospects = [
         display: flex;
         gap: 25px;
     }
-    .prospect_info_list{
+    .opportunity_info_list{
         display: grid;
         grid-template-rows: 50px 550px 50px;
         width: 100%;
@@ -155,7 +196,7 @@ const prospects = [
     }
     .list_header, .list_body_values{
         display: grid;
-        grid-template-columns: repeat(4, 370px) 100px;
+        grid-template-columns: repeat(7, 200px) 200px;
     }
     .list_body_values{
         height: 55px;

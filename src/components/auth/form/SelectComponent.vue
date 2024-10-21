@@ -19,7 +19,7 @@ import { ref } from 'vue';
 <template>
         <div class="input">
             <label :for="name">{{libel}}</label>
-            <select name="" id="" :style="{border: border, backgroundColor: bgColor, color: textColor, width: width, marginBottom: bottom}" :class="purple ? 'purple' : 'select'">
+            <select name="" id="" :style="{border: border, backgroundColor: bgColor, width: width, marginBottom: bottom}" :class="purple ? 'purple' : 'select'">
                 <template v-for="option in options">
                     <option :value="option['value']">
                         {{ option['libel'] }}

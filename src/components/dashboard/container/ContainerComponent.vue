@@ -17,5 +17,6 @@
         gap: 10px;
         height: 900px;
         overflow-y: scroll;
+        background-color: var(--menu-bg);
     }
 </style>

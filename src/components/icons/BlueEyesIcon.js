@@ -1,0 +1,14 @@
+const BlueEyesIcon =    `<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_267_7027)">
+                            <path d="M0.708313 8.49992C0.708313 8.49992 3.54165 2.83325 8.49998 2.83325C13.4583 2.83325 16.2916 8.49992 16.2916 8.49992C16.2916 8.49992 13.4583 14.1666 8.49998 14.1666C3.54165 14.1666 0.708313 8.49992 0.708313 8.49992Z" stroke="#036DF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8.5 10.625C9.6736 10.625 10.625 9.6736 10.625 8.5C10.625 7.32639 9.6736 6.375 8.5 6.375C7.32639 6.375 6.375 7.32639 6.375 8.5C6.375 9.6736 7.32639 10.625 8.5 10.625Z" stroke="#036DF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_267_7027">
+                            <rect width="17" height="17" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>`
+
+
+export default BlueEyesIcon

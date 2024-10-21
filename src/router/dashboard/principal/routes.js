@@ -29,7 +29,7 @@ const routes = [
         path: 'opportinutes',
         name: 'opportinutes',
         component: OpportunityPage,
-        children: opportunityRoutes
+        children: opportunityRoutes,
     },
     {
         path: 'clients',
