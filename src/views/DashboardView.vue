@@ -8,6 +8,7 @@
     import DefineNewPasswordModal from '@/components/modals/DefineNewPasswordModal.vue';
     import { RouterLink } from 'vue-router';
     import { inject, provide, ref } from 'vue';
+import AddNewOpportunityForm from '@/components/form/opportunity/AddNewOpportunityForm.vue';
     const show = ref(true)
     const showDefinePasswordForm = ref(true)
     const hideFilter = inject('hideFilter')
@@ -21,8 +22,11 @@
         <DarkBackgroundModals v-if="show">
             
         </DarkBackgroundModals>
-        <div class="modals" v-if="showDefinePasswordForm">
+        <!-- <div class="modals" v-if="showDefinePasswordForm">
             <DefineNewPasswordModal></DefineNewPasswordModal>
+        </div> -->
+        <div class="modals" v-if="show">
+            <AddNewOpportunityForm></AddNewOpportunityForm>
         </div>
         <SidebarComponent>
             <template v-slot:content>

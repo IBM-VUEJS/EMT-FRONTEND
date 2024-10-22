@@ -1,5 +1,8 @@
 <script setup>
-import { ref } from 'vue';
+    import 'quill/dist/quill.snow.css' 
+    import { QuillEditor } from '@vueup/vue-quill'
+    import '@vueup/vue-quill/dist/vue-quill.snow.css'
+    import { ref } from 'vue';
 
     defineProps(
         {
@@ -14,18 +17,29 @@ import { ref } from 'vue';
             bottom: String
         }
     )
+
+    const content = ref('') 
+
+    const editorOptions = {
+    theme: 'snow',
+    modules: {
+        toolbar: [
+        [{ header: [1, 2, 3, false] }],
+        ['bold', 'italic', 'underline'],
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+        ['link', 'image']
+        ]
+    }
+    }
+
 </script>
 
 <template>
         <div class="input">
             <label :for="name">{{libel}}</label>
-            <select name="" id="" :style="{border: border, backgroundColor: bgColor, width: width, marginBottom: bottom}" :class="purple ? 'purple' : 'select'">
-                <template v-for="option in options">
-                    <option :value="option['value']">
-                        {{ option['libel'] }}
-                    </option>
-                </template>
-            </select>
+            <div id="textarea">
+                <quill-editor v-model="content" :options="editorOptions"></quill-editor>
+            </div>
         </div>
 </template>
 
@@ -37,6 +51,7 @@ import { ref } from 'vue';
         gap: 10px;
         flex-direction: column;
     }
+    /* select */
     .input .select{
         width: 100%;
         padding: 10px 20px;
@@ -63,5 +78,27 @@ import { ref } from 'vue';
     .purple:focus{
         border: 1px solid var(--purple);   
         outline: 2px solid var(--purple);
+    }
+    /* ql-container et ql-toolbar sont contenu dans le composant quill-edtor qui est un module externe ajouter avec la commande npm */
+    #textarea, #textarea .ql-toolbar, #textarea .ql-container{ 
+        width: 100%;
+        max-width: 520px;
+        height: 150px;
+    }
+    #textarea .ql-container{
+        overflow-y: scroll
+    }
+    #textarea .ql-toolbar{
+        border: none !important;
+        outline: none !important;
+    }
+
+    .ql-editor {
+        word-wrap: break-word;
+        white-space: normal;
+        overflow-wrap: break-word;
+    }
+    .ql-container {
+        width: 100%;
     }
 </style>

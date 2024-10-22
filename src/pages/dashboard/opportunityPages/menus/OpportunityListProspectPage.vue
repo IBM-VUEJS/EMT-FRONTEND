@@ -156,12 +156,12 @@ const archiveProspect = () => {
                             </div>
                         </div>
                         <h5 class="popup_title">Filtrer la liste des Prospects</h5>
-                        <form action="">
+                        <form action="" @submit.prevent="">
                             <SelectComponent :options="nom" :border="'1px solid var(--grey)'" :libel="'Nom'"></SelectComponent>
                             <SelectComponent :options="type" :border="'1px solid var(--grey)'" :libel="'Type'"></SelectComponent>
                             <SelectComponent :options="pays" :border="'1px solid var(--grey)'" :libel="'Pays'"></SelectComponent>
                             <div class="submit_cancel">
-                                <ButtonComponent :bottom="'0'">
+                                <ButtonComponent :button_height="'39px'" :bottom="'0'">
                                     Filter
                                 </ButtonComponent>
 

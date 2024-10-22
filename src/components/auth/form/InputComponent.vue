@@ -54,7 +54,7 @@
         flex-direction: column;
     }
     .inputs .input{
-        padding: 10px 20px;
+        padding: 7.5px 20px;
     }
     .inputs .input, .input_div{
         width: 100%;
@@ -63,8 +63,8 @@
         font-size: 1.02rem;
     }
     .inputs .input:focus{
-        border: 1px solid red;   
-        outline: 2px solid red;
+        border: 1px solid var(--red);   
+        outline: 2px solid var(--red);
     }
     .input_div{
         display: grid;

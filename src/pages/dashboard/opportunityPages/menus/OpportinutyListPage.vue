@@ -113,6 +113,10 @@ const archiveOpportunity = () => {
         showDefinePasswordForm.value = false
 }
 
+const addOpportunity = () => {
+    
+}
+
 </script>
 
 <template>
@@ -125,7 +129,7 @@ const archiveOpportunity = () => {
             </div>
             <div class="add_filtre">
                 <div class="add">
-                    <ButtonComponent :bgcolor="'white'" :bottom="'0'" :slim="true">
+                    <ButtonComponent :bgcolor="'white'" :bottom="'0'" :slim="true" @click="addOpportunity">
                          <span v-html="AddIcon"></span> Ajouter
                     </ButtonComponent>
                 </div>
