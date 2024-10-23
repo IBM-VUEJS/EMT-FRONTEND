@@ -59,6 +59,10 @@ const unarchiveProspect = () => {
     )
 }
 
+const showProspectFunc = () => {
+    
+}
+
 </script>
 
 <template>
@@ -78,7 +82,7 @@ const unarchiveProspect = () => {
                         <div  class="list_value">{{ prospect['type'] }}</div>
                         <div  class="list_value">{{prospect['pays']}}</div>
                         <div  class="actions">
-                            <div class="action_icons" @click="">
+                            <div class="action_icons" @click="showProspectFunc">
                                 <span v-html="BlueEyesIcon"></span>
                             </div>
                             <div class="action_icons">

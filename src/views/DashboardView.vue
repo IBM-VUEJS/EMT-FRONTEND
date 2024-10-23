@@ -10,12 +10,16 @@
     import { inject, provide, ref } from 'vue';
     import AddNewOpportunityForm from '@/components/form/opportunity/AddNewOpportunityForm.vue';
 import ShowOpportunityForm from '@/components/form/opportunity/ShowOpportunityForm.vue';
+import UpdateOpportunityForm from '@/components/form/opportunity/UpdateOpportunityForm.vue';
+import ShowProspectForm from '@/components/form/opportunity/prospect/ShowProspectForm.vue';
 
 
     const show = ref(true)
     const showAddOpportuinity = ref(false)
     const showDefinePasswordForm = ref(true)
     const showOpportunity  = ref(false)
+    const showUpdateOpportunity  = ref(false)
+    const showProspect = ref(false)
     const opportunity_to_show  = ref([])
 
     //Affichage du fond noir
@@ -29,6 +33,12 @@ import ShowOpportunityForm from '@/components/form/opportunity/ShowOpportunityFo
 
     //formulaire d'affichage d'une opportunité
     provide('showOpportunity', showOpportunity)
+
+    //formulaire de mise à jour d'une opportunité
+    provide('showUpdateOpportunity', showUpdateOpportunity)
+
+    provide('showProspect', showProspect)
+
     provide('opportunity_to_show', opportunity_to_show)
 
 
@@ -39,15 +49,27 @@ import ShowOpportunityForm from '@/components/form/opportunity/ShowOpportunityFo
         <DarkBackgroundModals v-if="show">
             
         </DarkBackgroundModals>
+
         <div class="modals" v-if="showDefinePasswordForm">
             <DefineNewPasswordModal></DefineNewPasswordModal>
         </div>
+
         <div class="modals" v-if="showAddOpportuinity">
             <AddNewOpportunityForm></AddNewOpportunityForm>
         </div>
+
         <div class="modals" v-if="showOpportunity">
             <ShowOpportunityForm></ShowOpportunityForm>
         </div>
+
+        <div class="modals" v-if="showUpdateOpportunity">
+            <UpdateOpportunityForm></UpdateOpportunityForm>
+        </div>
+
+        <div class="modals" v-if="showProspect">
+            <ShowProspectForm></ShowProspectForm>
+        </div>
+
         <SidebarComponent>
             <template v-slot:content>
                 <template v-for="button in buttons">

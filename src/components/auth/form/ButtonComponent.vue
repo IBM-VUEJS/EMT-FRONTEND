@@ -72,5 +72,6 @@ import { ref } from 'vue';
         color: var(--red);
         border: 2px solid var(--red);
         padding: 5px 20px;
+        border-radius: 6px;
     }
 </style>

@@ -6,6 +6,7 @@ import SelectComponent from '@/components/auth/form/SelectComponent.vue';
 import FilterIcon from '@/components/icons/FilterIcon';
 import { RouterView, useRoute } from 'vue-router';
 import { ref, inject } from 'vue';
+import CancelIcon from '@/components/icons/CancelIcon';
 
 const routes = useRoute()
 const hideFilter = ref(false)
@@ -55,6 +56,7 @@ const closeFilter = () => {
                             <SelectComponent :options="nom" :border="'1px solid var(--grey)'" :libel="'Nom'"></SelectComponent>
                             <SelectComponent :options="type" :border="'1px solid var(--grey)'" :libel="'Type'"></SelectComponent>
                             <SelectComponent :options="pays" :border="'1px solid var(--grey)'" :libel="'Pays'" :bottom="'10px'"></SelectComponent>
+                            <InputComponent :type="'date'"  :border="'1px solid var(--grey)'" :libel="'Date'" :bottom="'10px'"></InputComponent>
                             <div class="submit_cancel">
                                 <ButtonComponent :button_height="'39px'" :bottom="'0'">
                                     Filter

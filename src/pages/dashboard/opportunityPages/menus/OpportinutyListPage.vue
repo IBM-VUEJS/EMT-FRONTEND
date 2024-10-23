@@ -103,6 +103,7 @@ const opportunity_to_show = inject('opportunity_to_show')
 const show = inject('show')
 const showOpportunity  = inject('showOpportunity')
 const showAddOpportuinity = inject('showAddOpportuinity')
+const showUpdateOpportunity = inject('showUpdateOpportunity')
 const showDefinePasswordForm = inject('showDefinePasswordForm')
 
 
@@ -141,6 +142,14 @@ const showOpportunityFunc = (id) => {
     show.value = true
     opportunity_to_show.value.push(opportunities.find((opportunity) => opportunity.id === id))
     provide('opportunity_to_show', opportunity_to_show.value)
+    
+}
+
+const UpdateOpportunityFunc = (id) => {
+    showUpdateOpportunity.value = true
+    show.value = true
+    opportunity_to_show.value.push(opportunities.find((opportunity) => opportunity.id === id))
+    provide('opportunity_to_show', opportunity_to_show.value)
     console.log(opportunity_to_show.value);
 }
 
@@ -157,6 +166,12 @@ const showFilter = () => {
 const closeFilter = () => {
     show.value = false
     hideFilter.value = false
+    
+}
+
+//UPDAT FUNCTION
+const updateOpportunity = () => {
+
 }
 
 </script>
@@ -165,7 +180,7 @@ const closeFilter = () => {
     <div id="opportunity_list">
         <div class="search_add_filtre">
             <div class="search_div">
-                <form @submit.prevent="">
+                <form @submit.prevent="updateOpportunity">
                     <SearchComponent :type="'search'" :width="''" :border="'none'" :search="true" :bottom="'0'"></SearchComponent>
                 </form>
             </div>
@@ -232,7 +247,7 @@ const closeFilter = () => {
                             <div class="action_icons" @click="showOpportunityFunc(opportunity['id'])">
                                 <span v-html="BlueEyesIcon"></span>
                             </div>
-                            <div class="action_icons">
+                            <div class="action_icons" @click="UpdateOpportunityFunc(opportunity['id'])">
                                 <span v-html="YellowEditPenLine"></span>
                             </div>
                             <div class="action_icons" @click="archiveOpportunity">

@@ -9,21 +9,43 @@ import Swal from 'sweetalert2';
 import { inject } from 'vue';
 
 const show = inject('show')
-const showAddOpportuinity = inject('showAddOpportuinity')
+const showUpdateOpportunity = inject('showUpdateOpportunity')
+
+const opportunity_to_show = inject('opportunity_to_show')
+const showOpportunity = inject('showOpportunity')
+
 const closeAddOpportunityForm = () => {
     show.value = false
-    showAddOpportuinity.value = false
+    showUpdateOpportunity.value = false
 }
 
-const saveOpportunity = () => {
+const saveUpdateOpportunity = () => {
     show.value = false
-    showAddOpportuinity.value = false
+    showUpdateOpportunity.value = false
     Swal.fire(
         {
-            text: 'L\'opportunité a été crée avec succès.',
-            icon: 'success',
-            confirmButtonText: 'Retour',
-            confirmButtonColor: 'var(--green)'
+            text: 'Êtes-vous sûr de vouloir modifier les informations de cette opportunité ?',
+            icon: 'warning',
+            confirmButtonText: 'Oui, modifier',
+            confirmButtonColor: 'var(--red)',
+            showCancelButton: true,
+            cancelButtonText: 'Annuler',
+            customClass: {
+                cancelButton: 'cancel-button'
+            }
+        }
+    ).then(
+        (result) => {
+            if(result.isConfirmed) {
+                Swal.fire(
+                    {
+                        text: 'Les informations de l\'opportunité ont été modifié avec succès.',
+                        icon: 'success',
+                        confirmButtonText: 'Retour',
+                        confirmButtonColor: 'var(--green)'
+                    }
+                ) 
+            }
         }
     )
 }
@@ -32,7 +54,7 @@ const saveOpportunity = () => {
 <template>
     <div class="add_opportunity_form">
         <h5>Créer une nouvelle opportunitée</h5>
-        <form @submit.prevent="saveOpportunity" id="add_opp">
+        <form @submit.prevent="saveUpdateOpportunity" id="add_opp">
             <div class="inputs_add_form">
                 <div class="left_part">
                     <div>
@@ -167,7 +189,7 @@ const saveOpportunity = () => {
             grid-template-rows: 60px 1fr;
             padding: 15px 10px;
             width: 1000px;
-            max-height: 100svh;
+            height: 100svh;
             background-color: var(--white);
             border-radius: 10px;
             overflow-y: scroll;
