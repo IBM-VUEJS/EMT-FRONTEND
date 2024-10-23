@@ -17,7 +17,8 @@
             width: String,
             radius: String,
             search: Boolean,
-            bottom: String
+            bottom: String,
+            padding: String
         }
     )
 </script>
@@ -39,7 +40,7 @@
                 </div>
             </template>
             <template v-else>
-                <input class="input" :type="type" :name="name" :id="name" :value="value" :placeholder="placeholder" :style="{border: border, width: width, borderRadius: radius}">
+                <input class="input" :type="type" :name="name" :id="name" :value="value" :placeholder="placeholder" :style="{border: border, width: width, borderRadius: radius, padding: padding}">
             </template>
         </div>
 </template>

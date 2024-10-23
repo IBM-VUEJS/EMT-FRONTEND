@@ -19,8 +19,8 @@ const login = () => {
     <div class="login_form">
         <div class="header">{{ title }}</div>
         <form class="inputs" @submit.prevent="login">
-            <InputComponent :type="'email'" :value="''" :placeholder="'example.eba@gmail.com'" :name="'email'" :libel="'Email'"></InputComponent>
-            <InputComponent :type="'password'" :value="''" :placeholder="'*********'" :name="'password'" :libel="'Mot de passe'"></InputComponent>
+            <InputComponent :type="'email'" :value="''" :placeholder="'example.eba@gmail.com'" :name="'email'" :libel="'Email'" :padding="'10px 20px'"></InputComponent>
+            <InputComponent :type="'password'" :value="''" :placeholder="'*********'" :name="'password'" :libel="'Mot de passe'" :padding="'10px 20px'"></InputComponent>
             <ButtonComponent :value="'Se Connecter'" :type="'submit'"></ButtonComponent>
         </form>
         <RedirectComponent :redirect="'/forgot-password'">Mot de passe oublié ? </RedirectComponent>

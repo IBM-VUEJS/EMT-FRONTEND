@@ -70,7 +70,7 @@ import LeftArrowIcon from '@/components/icons/LeftArrowIcon';
     </div>
 </template>
 
-<style scoped>
+<style>
     .add_opportunity_form{
         display: grid;
         grid-template-rows: 60px 1fr;
@@ -101,6 +101,27 @@ import LeftArrowIcon from '@/components/icons/LeftArrowIcon';
         display: grid;
         grid-template-rows: 1fr 65px;
     }
+    .ql-toolbar.ql-snow{
+        border-bottom: none !important;
+        border-top: 1px solid var(--grey);
+        border-left: 1px solid var(--grey);
+        border-right: 1px solid var(--grey);
+        border-radius: 10px 10px 0 0;
+    }
+    .ql-container.ql-snow{
+        border-bottom: 1px solid var(--grey);
+        border-top: none !important;
+        border-left: 1px solid var(--grey);
+        border-right: 1px solid var(--grey);
+        border-radius: 0 0 10px 10px;
+    }
+    #textarea{
+        border: 2px solid transparent;
+        box-sizing: border-box  ;
+    }
+    #textarea:focus-within{
+        border: 2px solid var(--red);
+    }
     @media screen and (max-width: 1200px) {
         .add_opportunity_form{
             display: grid;
@@ -119,6 +140,7 @@ import LeftArrowIcon from '@/components/icons/LeftArrowIcon';
             gap: 15px;
         }
     }
+
     @media screen and (max-width: 930px) {
         .add_opportunity_form{
             display: grid;
