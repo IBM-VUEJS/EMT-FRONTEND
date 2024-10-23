@@ -11,7 +11,8 @@ import { ref } from 'vue';
             bgColor: String,
             width: String,
             purple: Boolean,
-            bottom: String
+            bottom: String,
+            disabled: Boolean
         }
     )
 </script>
@@ -19,7 +20,7 @@ import { ref } from 'vue';
 <template>
         <div class="input">
             <label :for="name">{{libel}}</label>
-            <select name="" id="" :style="{border: border, backgroundColor: bgColor, width: width, marginBottom: bottom}" :class="purple ? 'purple' : 'select'">
+            <select name="" id="" :style="{border: border, backgroundColor: bgColor, width: width, marginBottom: bottom}" :class="purple ? 'purple' : 'select'" :disabled="'disabled'">
                 <template v-for="option in options">
                     <option :value="option['value']">
                         {{ option['libel'] }}

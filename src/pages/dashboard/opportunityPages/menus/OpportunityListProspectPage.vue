@@ -98,7 +98,6 @@ const pays = [
 
 
 const hideFilter = ref(false)
-provide('hideFilter', hideFilter)
 const show = inject('show')
 const showDefinePasswordForm = inject('showDefinePasswordForm')
 const showFilter = () => {
@@ -126,11 +125,18 @@ const archiveProspect = () => {
             }
         }
     ).then(
-        () => {
-            if (is) {
-                
+        (result) => {
+                if(result.isConfirmed) {
+                    Swal.fire(
+                        {
+                            text: 'L\'opportunité a été archivé avec succès',
+                            icon: 'success',
+                            confirmButtonText: 'Retour',
+                            confirmButtonColor: 'var(--green)'
+                        }
+                    )
+                }
             }
-        }
     )
 }
 
@@ -159,7 +165,7 @@ const archiveProspect = () => {
                         <form action="" @submit.prevent="">
                             <SelectComponent :options="nom" :border="'1px solid var(--grey)'" :libel="'Nom'"></SelectComponent>
                             <SelectComponent :options="type" :border="'1px solid var(--grey)'" :libel="'Type'"></SelectComponent>
-                            <SelectComponent :options="pays" :border="'1px solid var(--grey)'" :libel="'Pays'"></SelectComponent>
+                            <SelectComponent :options="pays" :border="'1px solid var(--grey)'" :libel="'Pays'" :bottom="'10px'"></SelectComponent>
                             <div class="submit_cancel">
                                 <ButtonComponent :button_height="'39px'" :bottom="'0'">
                                     Filter

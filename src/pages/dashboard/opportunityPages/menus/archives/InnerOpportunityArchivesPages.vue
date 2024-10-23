@@ -4,6 +4,8 @@ import PaginationLeftArrow from '@/components/icons/PaginationLeftArrow';
 import PaginationRightArrow from '@/components/icons/PaginationRightArrow';
 import BlueEyesIcon from '@/components/icons/BlueEyesIcon';
 import DeleteIcon from '@/components/icons/DeleteIcon';
+import { inject } from 'vue';
+import Swal from 'sweetalert2';
 
     const opportunities = [
     {
@@ -37,6 +39,46 @@ import DeleteIcon from '@/components/icons/DeleteIcon';
         action: ''
     },
 ];
+const opportunity_to_show = inject('opportunity_to_show')
+
+
+const show = inject('show')
+const showOpportunity  = inject('showOpportunity')
+
+const unarchiveOpportunity = () => {
+    Swal.fire({
+            title: '',
+            showCancelButton: true,
+            text: 'Êtes-vous sûr de vouloir désarchiver cette opportunité ?',
+            icon: 'warning',
+            confirmButtonText: 'Oui, archiver',
+            confirmButtonColor: 'var(--red)',
+            cancelButtonText: 'Annuler',
+            customClass: {
+                cancelButton: 'cancel-button'
+            }
+        }).then(
+            (result) => {
+                if(result.isConfirmed) {
+                    Swal.fire(
+                        {
+                            text: 'L\'opportunité a été désarchivé avec succès',
+                            icon: 'success',
+                            confirmButtonText: 'Retour',
+                            confirmButtonColor: 'var(--green)'
+                        }
+                    )
+                }
+            }
+        )
+        show.value = false
+}
+
+const showOpportunityFunc = (id) => {
+    showOpportunity.value = true
+    show.value = true
+    opportunity_to_show.value.push(opportunities.find((opportunity) => opportunity.id === id))
+}
 
 </script>
 
@@ -63,10 +105,10 @@ import DeleteIcon from '@/components/icons/DeleteIcon';
                         <div  class="list_value">{{opportunity['vendeur']}}</div>
                         <div  class="list_value" :class="{green: opportunity['statut'] === 'Nouveau', yellow: opportunity['statut'] === 'Gagné', blue: opportunity['statut'] === 'Qualifié', red: opportunity['statut'] === 'Perdu'}">{{opportunity['statut']}}</div>
                         <div  class="actions">
-                            <div class="action_icons">
+                            <div class="action_icons" @click="showOpportunityFunc(opportunity['id'])">
                                 <span v-html="BlueEyesIcon"></span>
                             </div>
-                            <div class="action_icons">
+                            <div class="action_icons" @click="unarchiveOpportunity">
                                 <span v-html="DeleteIcon"></span>
                             </div>
                         </div>

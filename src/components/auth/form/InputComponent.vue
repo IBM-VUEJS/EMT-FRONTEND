@@ -18,7 +18,9 @@
             radius: String,
             search: Boolean,
             bottom: String,
-            padding: String
+            padding: String,
+            readonly: Boolean,
+            height: String
         }
     )
 </script>
@@ -28,7 +30,7 @@
             <label :for="name">{{libel}}</label>
             <template v-if="type === 'password'">
                 <div class="input_div"  :style="{border: border}">
-                    <input :type="show_password ? 'text' : 'password'" :name="name" :id="name" :placeholder="placeholder">
+                    <input :type="show_password ? 'text' : 'password'" :name="name" :id="name" :placeholder="placeholder" :readonly="readonly" >
                     <div class="icon" @click="show_password = !show_password">
                         <template v-if="show_password">
                             <span v-html="EyeoutlineIcon"></span>
@@ -40,7 +42,7 @@
                 </div>
             </template>
             <template v-else>
-                <input class="input" :type="type" :name="name" :id="name" :value="value" :placeholder="placeholder" :style="{border: border, width: width, borderRadius: radius, padding: padding}">
+                <input class="input" :type="type" :name="name" :id="name" :value="value" :placeholder="placeholder" :style="{border: border, width: width, borderRadius: radius, padding: padding, height: height}" :readonly="readonly">
             </template>
         </div>
 </template>

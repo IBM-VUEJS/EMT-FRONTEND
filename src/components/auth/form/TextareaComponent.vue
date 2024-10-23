@@ -27,7 +27,7 @@
         [{ header: [1, 2, 3, false] }],
         ['bold', 'italic', 'underline'],
         [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-        ['link', 'image']
+        [{ 'align': [] }]
         ]
     }
     }
@@ -43,7 +43,7 @@
         </div>
 </template>
 
-<style scoped>
+<style>
     .input{
         display: flex;
         align-items: start;
@@ -80,19 +80,10 @@
         outline: 2px solid var(--purple);
     }
     /* ql-container et ql-toolbar sont contenu dans le composant quill-edtor qui est un module externe ajouter avec la commande npm */
-    #textarea, #textarea .ql-toolbar, #textarea .ql-container{ 
+    #textarea .ql-toolbar, #textarea .ql-container{ 
         width: 100%;
         max-width: 520px;
-        height: 150px;
     }
-    #textarea .ql-container{
-        overflow-y: scroll
-    }
-    #textarea .ql-toolbar{
-        border: none !important;
-        outline: none !important;
-    }
-
     .ql-editor {
         word-wrap: break-word;
         white-space: normal;
@@ -100,5 +91,25 @@
     }
     .ql-container {
         width: 100%;
+        height: 150px;
+    }
+    .ql-toolbar.ql-snow{
+        border: none !important;
+        border-radius: 10px 10px 0 0;
+    }
+    .ql-container.ql-snow{
+        border: none !important;
+        border-radius: 0 0 10px 10px;
+    }
+    #textarea{
+        border: 1px solid var(--grey);
+        box-sizing: border-box  ;
+        width: 100%;
+        max-width: 520px;
+        min-height: 100px;
+        border-radius: 10px;
+    }
+    #textarea:focus-within{
+        border: 2px solid var(--red);
     }
 </style>

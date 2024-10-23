@@ -12,14 +12,18 @@
             size: String,
             bottom: String,
             bgcolor: String,
-            textcolor: String
+            textcolor: String,
+            disabled: Boolean,
+            radius: String,
+            width: String,
+            border: String
         }
     )
 </script>
 
 <template>
     <div class="input_search">
-        <input class="search" :type="'search'" :name="name" :id="name" :value="value" :placeholder="'Rechercher'" :style="{border: border, width: width, borderRadius: radius}">
+        <input class="search" :type="'search'" :name="name" :id="name" :value="value" :placeholder="'Rechercher'" :style="{border: border, width: width, borderRadius: radius}" :disabled="disabled"> 
         <button type="submit">
             <div v-html="SearchIcon"></div>
         </button>

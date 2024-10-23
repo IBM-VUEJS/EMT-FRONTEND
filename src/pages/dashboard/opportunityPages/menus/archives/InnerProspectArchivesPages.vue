@@ -7,6 +7,7 @@ import FilterIcon from '@/components/icons/FilterIcon';
 import PaginationLeftArrow from '@/components/icons/PaginationLeftArrow';
 import PaginationRightArrow from '@/components/icons/PaginationRightArrow';
 import YellowEditPenLine from '@/components/icons/YellowEditPenLine';
+import Swal from 'sweetalert2';
 
 const prospects = [
     {
@@ -29,6 +30,35 @@ const prospects = [
     }
 ];
 
+const unarchiveProspect = () => {
+    Swal.fire(
+        {
+            text: 'Êtes-vous sûr de vouloir désarchiver cet prospect ?',
+            icon: 'warning',
+            confirmButtonText: 'Oui, désarchiver',
+            confirmButtonColor: 'var(--red)',
+            cancelButtonText: 'Annuler',
+            showCancelButton: true,
+            customClass: {
+                cancelButton: 'cancel-button'
+            }
+        }
+    ).then(
+        (result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    {
+                        text: 'Le prospect a été désarchiver avec succès.',
+                        icon: 'success',
+                        confirmButtonText: 'Retour',
+                        confirmButtonColor: 'var(--green)',
+                    }
+                )
+            }
+        }
+    )
+}
+
 </script>
 
 <template>
@@ -48,11 +78,11 @@ const prospects = [
                         <div  class="list_value">{{ prospect['type'] }}</div>
                         <div  class="list_value">{{prospect['pays']}}</div>
                         <div  class="actions">
-                            <div class="action_icons">
+                            <div class="action_icons" @click="">
                                 <span v-html="BlueEyesIcon"></span>
                             </div>
                             <div class="action_icons">
-                                <span v-html="DeleteIcon"></span>
+                                <span v-html="DeleteIcon" @click="unarchiveProspect"></span>
                             </div>
                         </div>
                     </div>

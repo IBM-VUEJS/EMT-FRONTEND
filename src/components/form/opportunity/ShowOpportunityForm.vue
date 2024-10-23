@@ -6,73 +6,67 @@ import TextareaComponent from '@/components/auth/form/TextareaComponent.vue';
 import DownloadIcon from '@/components/icons/DownloadIcon';
 import LeftArrowIcon from '@/components/icons/LeftArrowIcon';
 import Swal from 'sweetalert2';
-import { inject } from 'vue';
+import { computed, inject, provide, readonly, ref } from 'vue';
 
 const show = inject('show')
-const showAddOpportuinity = inject('showAddOpportuinity')
+const opportunity_to_show = inject('opportunity_to_show')
+const showOpportunity = inject('showOpportunity')
+
 const closeAddOpportunityForm = () => {
     show.value = false
-    showAddOpportuinity.value = false
+    showOpportunity.value = false
+    opportunity_to_show.value = []
 }
 
-const saveOpportunity = () => {
-    show.value = false
-    showAddOpportuinity.value = false
-    Swal.fire(
-        {
-            text: 'L\'opportunité a été crée avec succès.',
-            icon: 'success',
-            confirmButtonText: 'Retour',
-            confirmButtonColor: 'var(--green)'
-        }
-    )
-}
 </script>
 
 <template>
     <div class="add_opportunity_form">
-        <h5>Créer une nouvelle opportunitée</h5>
+        <h5>Informations de l'opportunitée</h5>
         <form @submit.prevent="saveOpportunity" id="add_opp">
             <div class="inputs_add_form">
                 <div class="left_part">
                     <div>
-                        <InputComponent :bottom="'0'" :placeholder="'Nom'" :libel="'Nom de l\'opportunité'" :border="'1px solid var(--grey)'"></InputComponent>
+                        <InputComponent :readonly="true" :bottom="'0'" :placeholder="'Nom'" :libel="'Nom de l\'opportunité'" :border="'1px solid var(--grey)'" :value="opportunity_to_show[0].id" :disabled="true"></InputComponent>
                     </div>
                     <div class="add_form_double_input">
                         <div>
-                            <InputComponent :bottom="'0'" :placeholder="'Saisir'" :libel="'Revenue'" :border="'1px solid var(--grey)'"></InputComponent>
+                            <InputComponent :readonly="true" :bottom="'0'" :placeholder="'Saisir'" :libel="'Revenue'" :border="'1px solid var(--grey)'" :value="opportunity_to_show[0].revenu"></InputComponent>
                         </div>
                         <div>
-                            <SelectComponent :width="'100%'" :bottom="'0'" :placeholder="'Nom'" :libel="'Devise'" :border="'1px solid var(--grey)'"></SelectComponent>
+                            <InputComponent :readonly="true" :width="'100%'" :bottom="'0'" :placeholder="'Nom'" :libel="'Devise'" :border="'1px solid var(--grey)'" :value="opportunity_to_show[0].id"></InputComponent>
                         </div>
                     </div>
                     <div>
-                        <InputComponent :bottom="'0'" :placeholder="'Saisir le chiffre'" :libel="'Probabiliter de conversion'" :border="'1px solid var(--grey)'"></InputComponent>
+                        <InputComponent :readonly="true" :bottom="'0'" :placeholder="'Saisir le chiffre'" :libel="'Probabiliter de conversion'" :border="'1px solid var(--grey)'" :value="opportunity_to_show[0].id"></InputComponent>
                     </div>
                     <div>
-                        <SelectComponent :bottom="'0'" :placeholder="'Nom'" :libel="'Type de contact'" :border="'1px solid var(--grey)'"></SelectComponent>
+                        <InputComponent :readonly="true" :bottom="'0'" :placeholder="'Nom'" :libel="'Type de contact'" :border="'1px solid var(--grey)'" :value="opportunity_to_show[0].id"></InputComponent>
                     </div>
                     <div>
-                        <SelectComponent :bottom="'0'" :placeholder="'Nom'" :libel="'Nom du contact'" :border="'1px solid var(--grey)'"></SelectComponent>
+                        <InputComponent :readonly="true" :bottom="'0'" :placeholder="'Nom'" :libel="'Nom du contact'" :border="'1px solid var(--grey)'" :value="opportunity_to_show[0].id"></InputComponent>
 
                     </div>
                     <div>
-                        <SelectComponent :bottom="'0'" :placeholder="'Nom'" :libel="'Source de l\'opportunité'" :border="'1px solid var(--grey)'"></SelectComponent>
+                        <InputComponent :readonly="true" :bottom="'0'" :placeholder="'Nom'" :libel="'Source de l\'opportunité'" :border="'1px solid var(--grey)'" :value="opportunity_to_show[0].id"></InputComponent>
                     </div>
                 </div>
 
                 <div class="right_part">
                     <div>
-                        <SelectComponent :bottom="'0'" :placeholder="'Nom'" :libel="'Catégorie'" :border="'1px solid var(--grey)'"></SelectComponent>
+                        <InputComponent :readonly="true" :bottom="'0'" :placeholder="'Nom'" :libel="'Catégorie'" :border="'1px solid var(--grey)'" :value="opportunity_to_show[0].id"></InputComponent>
                     </div>
                     <div>
-                        <SelectComponent :bottom="'0'" :placeholder="'Nom'" :libel="'Catégorie'" :border="'1px solid var(--grey)'"></SelectComponent>
+                        <InputComponent :readonly="true":bottom="'0'" :placeholder="'Nom'" :libel="'Catégorie'" :border="'1px solid var(--grey)'" :value="opportunity_to_show[0].id"></InputComponent>
                     </div>
                     <div>
-                        <SelectComponent :bottom="'0'" :placeholder="'Nom'" :libel="'Catégorie'" :border="'1px solid var(--grey)'"></SelectComponent>
+                        <InputComponent :readonly="true" :bottom="'0'" :placeholder="'Nom'" :libel="'Catégorie'" :border="'1px solid var(--grey)'" :value="opportunity_to_show[0].id"></InputComponent>
                     </div>
                     <div>
-                        <TextareaComponent :libel="'Notes'"></TextareaComponent>
+                        <label for="" class="notes">Notes</label>
+                        <div class="div_notes">
+                            {{ opportunity_to_show[0].notes }}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -81,16 +75,25 @@ const saveOpportunity = () => {
                     <span v-html="LeftArrowIcon"></span>
                     Retour
                 </ButtonComponent>
-                <ButtonComponent :type="'submit'" :bottom="'0'" :slim="true">
-                    <span v-html="DownloadIcon"></span>
-                    Enregistrer
-                </ButtonComponent>
             </div>
         </form>
     </div>
 </template>
 
 <style scoped>
+    .notes{
+        margin-bottom: 10px;
+    }
+    .div_notes{
+        padding: 10px;
+        height: 200px;
+        min-width: 300px;
+        border-radius: 10px;
+        border: 1px solid var(--grey);
+        word-wrap: break-word;
+        word-break: break-all;
+        overflow-y: scroll;
+    }
     .add_opportunity_form{
         display: grid;
         grid-template-rows: 60px 1fr;
