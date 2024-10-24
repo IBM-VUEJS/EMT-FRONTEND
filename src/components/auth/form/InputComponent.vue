@@ -30,7 +30,7 @@
             <label :for="name">{{libel}}</label>
             <template v-if="type === 'password'">
                 <div class="input_div"  :style="{border: border}">
-                    <input :type="show_password ? 'text' : 'password'" :name="name" :id="name" :placeholder="placeholder" :readonly="readonly" >
+                    <input :type="show_password ? 'text' : 'password'" :name="name"  :placeholder="placeholder" :readonly="readonly" >
                     <div class="icon" @click="show_password = !show_password">
                         <template v-if="show_password">
                             <span v-html="EyeoutlineIcon"></span>

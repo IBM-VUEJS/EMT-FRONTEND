@@ -232,19 +232,16 @@
             <div class="opportunity_stat_printer">
                 <div class="rising_hope box">
                     <div class="rising_hope_text">
-                        <h5>Revenus total espéré</h5>
+                        <h5>Revenu total espéré</h5>
                         <div class="rising">
-                            125,7M
+                            125.700.000 F CFA
                         </div>
                         <ButtonComponent :button_width="'120px'" :bottom="'10px'">Consulter</ButtonComponent>
-                    </div>
-                    <div class="rising_hope_icon">
-                        <span v-html="RocketIcon"></span>
                     </div>
                 </div>
 
                 <div class="box status_box">
-                    <h5>Effectif des Opportunités par statut</h5>
+                    <h5>Nombre d'opportunités par statut</h5>
                     <div class="statuts">
                         <template v-for="statut in statuts">
                             <div class="statuts_info">
@@ -265,13 +262,10 @@
                 </div>
             </div>
             <div class="opportunity_box box">
-                <h5>Nombre total d'Opportunité🎉</h5>
+                <h5>Nombre total d'Opportunité</h5>
                 <div class="opportunity_number_chart">
                     <div class="opportunity_number">
                         170
-                    </div>
-                    <div class="chart_bar_icon">
-                        <div v-html="BlueChartsBarIcon"></div>
                     </div>
                 </div>
             </div>
@@ -300,7 +294,7 @@
                 </div>
                 <div class="stat_per_year">
                     <div class="number" style="align-items: end;" >
-                        <SelectComponent :bottom="''" :options="options" :border="'2px solid var(--purple)'" :width="'100px'" :bg-color="'var(--purple-light)'" :color="'var(--purple)'" :purple="true"></SelectComponent>
+                        <SelectComponent :bottom="''" :options="options" :border="'2px solid var(--purple-)'" :width="'100px'" :bg-color="'var(--purple-light)'" :color="'var(--purple)'" :purple="true"></SelectComponent>
                     </div>
                     <div class="number" style="flex-direction: column; align-items: center; padding-left: 20px; gap: 10px">
                         <div>
@@ -312,7 +306,7 @@
                         <canvas ref="chartCanvasLine"></canvas>
                     </div>
                     <div class="number" style="align-items: start;">
-                        <ButtonComponent :button_width="'100%'" :bottom="'0'">Consulter</ButtonComponent>
+                        <ButtonComponent :button_width="'100%'" :bottom="'0'" :slim="true">Consulter</ButtonComponent>
                     </div>
                 </div>
             </div>
@@ -338,15 +332,15 @@
     #overviews{
         width: 100%;
         height: 100%;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 200px calc(100% - 200px);
+        display: flex;
+        flex-direction: column;
         gap: 15px;
     }
     .first_row_stat, .second_row_stat{
         display: flex;
         align-items: start;
         justify-content: start;
+        flex-direction: row;
         gap: 15px;
     }
     .opportunity_stat_printer{
@@ -381,7 +375,7 @@
     .box{
         box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.296);
         border-radius: 6px;
-        padding: 20px 10px 0px 10px;
+        padding: 10px;
     }
     .rising_hope{
         display: flex;
@@ -395,9 +389,11 @@
     }
     .rising_hope_text{
         display: flex;
-        align-items: start;
+        align-items: center;
         justify-content: space-between;
         flex-direction: column;
+        width: 100%;
+        height: 100%
     }
     .rising_hope_icon{
         display: flex;
@@ -410,6 +406,7 @@
     }
     h5{
         font-weight: normal;
+        font-size: 1.15em;
     }
     .statuts_info{
         display: flex;
@@ -423,7 +420,7 @@
         height: 80%;
     }
     .statuts_info{
-        width: 200px;
+        width: 100px;
     }
     .opportunity_number_chart{
         display: flex;
@@ -431,6 +428,8 @@
         justify-content: center;
         flex-wrap: wrap;
         gap: 10px;
+        height: calc(100% - 40px);
+        width: 100%;
     }
     .chart_bar_icon{
         display: flex;
@@ -441,11 +440,11 @@
     }
     .opportunity_number{
         display: flex;
-        align-items: end;
-        justify-content: end;
+        align-items: center;
+        justify-content: center;
         height: 100%;
-        width: 40px;
-        font-size: 1.5rem;
+        width: 100%;
+        font-size: 2rem;
         font-weight: bolder;
         color: var(--red);
     }
@@ -520,19 +519,41 @@
     .circle_chart{
         width: 100%;
         height: 50%;
-        display: grid;
-        grid-template-rows: 20px calc(100% - 40px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
         gap: 5px;
     }
     .circle_chart h6{
         text-align: center;
+        font-size: 1rem;
         margin: 0;
     }
     .circle_chart div{
         width: 100%;
-        height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    @media screen and (max-width: 1200px) {
+        .second_row_stat{
+            flex-direction: column-reverse;
+        }        
+        .chart_zone1{
+            height: 70%;
+            width: 100%;
+        }
+        .circle_charts{
+            display: flex;
+            flex-direction: row;
+            height: 30%;
+            width: 100%;
+        }
+        .circle_chart{
+            width: 50%;
+            height: 100%;
+        }
     }
 </style>
