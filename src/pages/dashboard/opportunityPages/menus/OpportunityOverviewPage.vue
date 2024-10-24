@@ -264,7 +264,7 @@
                     </div>
                 </div>
             </div>
-            <div class="status_box box">
+            <div class="opportunity_box box">
                 <h5>Nombre total d'Opportunité🎉</h5>
                 <div class="opportunity_number_chart">
                     <div class="opportunity_number">
@@ -338,25 +338,42 @@
         height: 100%;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 170px 1fr;
+        grid-template-rows: 1/2fr 7/2fr;
         gap: 15px;
     }
     .first_row_stat, .second_row_stat{
-        display: grid;
-        grid-template-rows: 1fr;
-        grid-template-columns: 1fr 300px;
+        display: flex;
+        align-items: start;
+        justify-content: start;
         gap: 15px;
     }
     .opportunity_stat_printer{
-        display: grid;
-        grid-template-rows: 1fr;
-        grid-template-columns: 350px 1fr;
+        display: flex;
+        width: 80%;
+        height: 100%;
         gap: 15px; 
     }
+    .rising_hope{
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-wrap: wrap;
+    }
+    .status_box{
+        width: 75%;
+    }
+    .opportunity_box{
+        width: 20%;
+        height: 100%
+    }
     .circle_charts{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+        width: 20%;
+        height: 100%;
         gap: 15px
     }
     .box{
@@ -365,9 +382,8 @@
         padding: 20px 10px 0px 10px;
     }
     .rising_hope{
-        display: grid;
-        grid-template-columns: 200px 1fr;
-        grid-template-rows: 1fr;
+        display: flex;
+        /* flex-wrap: wrap; */
     }
     .rising{
         font-size: 1.5rem;
@@ -385,6 +401,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 20%;
+    }
+    .rising_hope_icon span svg{
+        width: 100%;
     }
     h5{
         font-weight: normal;
@@ -393,27 +413,29 @@
         display: flex;
         align-items: center;
     }
-    .status_box{
-        display: grid;
-        grid-template-rows: 40px 100px;
-        gap: 0;
-
-    }
     .statuts{
-        display: grid;
-        grid-template-columns: repeat(4, 220px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
         height: 100%;
+        height: 100px;
+    }
+    .statuts_info{
+        width: 200px;
     }
     .opportunity_number_chart{
-        display: grid;
-        grid-template-columns: 75px 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
         gap: 10px;
     }
     .chart_bar_icon{
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100%;
+        width: 80%;
         height: 100%;
     }
     .opportunity_number{
@@ -421,18 +443,20 @@
         align-items: end;
         justify-content: end;
         height: 100%;
-        width: 100%;
+        width: 40px;
         font-size: 1.5rem;
         font-weight: bolder;
         color: var(--red);
     }
     .chart_zone1{
-        display: grid;
-        grid-template-columns: 840px 1fr;
+        display: flex;
+        width: 80%;
+        height: 100%;
     }
     .chart_zone1_opp_pros{
-        display: grid;
-        grid-template-rows: 50px 1fr;
+        display: flex;
+        flex-direction: column;
+        width: 70%;
         padding: 10px;
         border-right: 1px solid var(--grey-light);
     }
@@ -440,6 +464,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 100%;
+        height: 100%;
     }
     .text, .chart1_legend{
         display: flex;
@@ -449,6 +475,8 @@
     }
     .text{
         justify-content: space-between;
+        width: 100%;
+        height: 40px
     }
     .text .chart1_title{
         font-size: 1.2rem;
@@ -488,9 +516,12 @@
         justify-content: center;
     }
     .circle_chart{
-            display: grid;
-            grid-template-rows: 40px 250px;
-            grid-template-columns: 1fr;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
     }
     .circle_chart h6{
         text-align: center;
@@ -502,37 +533,5 @@
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-    @media screen and (max-width: 1300px) {
-        #overviews{
-            width: 100%;
-            min-height: 100svh;
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr;
-            gap: 15px;
-        }
-        .first_row_stat, .second_row_stat{
-            display: grid;
-            grid-template-rows: 620px 300px;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-        .circle_charts{
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: 300px 300px;
-            gap: 15px
-        }
-        .opportunity_stat_printer{
-            display: grid;
-            grid-template-rows: 300px 300px;
-            grid-template-columns: 1fr;
-            gap: 15px; 
-        }
-        .status{
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-        }
     }
 </style>

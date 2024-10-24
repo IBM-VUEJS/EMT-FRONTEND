@@ -9,9 +9,9 @@
     import { RouterLink } from 'vue-router';
     import { inject, provide, ref } from 'vue';
     import AddNewOpportunityForm from '@/components/form/opportunity/AddNewOpportunityForm.vue';
-import ShowOpportunityForm from '@/components/form/opportunity/ShowOpportunityForm.vue';
-import UpdateOpportunityForm from '@/components/form/opportunity/UpdateOpportunityForm.vue';
-import ShowProspectForm from '@/components/form/opportunity/prospect/ShowProspectForm.vue';
+    import ShowOpportunityForm from '@/components/form/opportunity/ShowOpportunityForm.vue';
+    import UpdateOpportunityForm from '@/components/form/opportunity/UpdateOpportunityForm.vue';
+    import ShowProspectForm from '@/components/form/opportunity/prospect/ShowProspectForm.vue';
 
 
     const show = ref(true)

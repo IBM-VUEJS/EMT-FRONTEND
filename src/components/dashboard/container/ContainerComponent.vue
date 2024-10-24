@@ -15,7 +15,8 @@
         grid-template-rows: 40px 1fr;
         padding: 10px 20px 25px 20px;
         gap: 10px;
-        height: 900px;
+        height: 100%;
+        width: 100%;
         overflow-y: scroll;
         background-color: var(--menu-bg);
     }

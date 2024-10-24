@@ -24,7 +24,7 @@ const buttons = [
         icon: UseraccountIcon
     },
     {
-        path: 'opportinutes',
+        path: 'opportunity-overview',
         libel: 'Opportunités',
         icon: UserplusIcon
     },
