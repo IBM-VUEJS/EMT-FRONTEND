@@ -99,7 +99,7 @@
 } */
     #dashboard{
         display: grid;
-        grid-template-columns: 280px 1fr;
+        grid-template-columns: 240px 1fr;
         width: 100%;
         height: 100%;
         position: relative;
@@ -108,7 +108,8 @@
     .section{
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 80px 1fr;
+        grid-template-rows: 60px calc(100vh - 60px);
+        overflow: hidden;
     }
     .modals{
         display: flex;

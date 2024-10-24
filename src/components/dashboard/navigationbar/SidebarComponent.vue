@@ -20,7 +20,7 @@ import EbaLogoComponent from './EbaLogoComponent.vue';
     .sidebar{
         position: sticky;
         top: 10px;
-        width: 280px; 
+        width: 100%; 
         box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
     }
     .nav_btn{

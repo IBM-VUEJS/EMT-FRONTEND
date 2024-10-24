@@ -12,7 +12,7 @@
     #inner_container{
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 40px 1fr;
+        grid-template-rows: 40px 83vh;
         padding: 10px 20px 25px 20px;
         gap: 10px;
         height: 100%;

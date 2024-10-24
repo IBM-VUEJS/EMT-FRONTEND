@@ -130,7 +130,7 @@ const showProspectFunc = () => {
     }
     .prospect_info_list{
         display: grid;
-        grid-template-rows: 50px 550px 50px;
+        grid-template-rows: 50px 525px 50px;
         width: 100%;
         height: 100%;
         margin-top: 30px;
@@ -140,7 +140,7 @@ const showProspectFunc = () => {
     }
     .list_header, .list_body_values{
         display: grid;
-        grid-template-columns: repeat(4, 370px) 100px;
+        grid-template-columns: repeat(5, 1fr);
     }
     .list_body_values{
         height: 55px;

@@ -50,7 +50,7 @@ import { useRoute } from 'vue-router';
     .button, .active{
         padding: 10px 15px;
         border-radius: 6px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
     .active, .button:hover{
         background: linear-gradient(90deg, #DC1919 0%, #A80505 100%);
@@ -74,5 +74,7 @@ import { useRoute } from 'vue-router';
     .active .svg .text, .active .svg .svg_icon, .button:hover .svg .svg_icon{
         filter: invert(100%);
     }
-    
+    .text{
+        font-size: .85rem;
+    }
 </style>

@@ -31,5 +31,7 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 190px 1fr;
+        /* outline: 1px solid red; */
+        height: 75vh;
     }
 </style>

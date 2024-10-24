@@ -80,7 +80,7 @@ import InnerContainerTopbarMenuComponent from '@/components/dashboard/topbar/Inn
     }
     .param_container_sidebar_links{
         padding: 50px 20px 0 0;
-        height: 525px;
+        height: 80%;
         border-right: 1px solid var(--grey-light);
     }
     .camera{

@@ -12,7 +12,7 @@ const opportunityButtons = [
         libel: 'Liste des propect',
     },
     {
-        path: 'opportunity-archives',
+        path: 'opportunites-archive-list',
         libel: 'Archives',
     },
 ]

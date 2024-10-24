@@ -101,9 +101,12 @@ const updateProfil = () => {
                         <div class="form_part_title">
                         <div>Numéro de téléphone</div>
                         <div class="double_input_number">
-                            <SelectComponent  :border="border" :options="options">
-                            </SelectComponent>
-                            <InputComponent  :border="border"></InputComponent>
+                            <span>
+                                <SelectComponent  :border="border" :options="options" :isvisiblevibel="false"></SelectComponent>
+                            </span>
+                            <span>
+                                <InputComponent  :border="border"></InputComponent>
+                            </span>
                         </div>
                     </div>
                     </div>
@@ -132,12 +135,13 @@ const updateProfil = () => {
         padding: 0 10px 0 0;
         width: 100%;
         height: 100%;
-        overflow-y: scroll
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .form_inputs{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        overflow-y: scroll;
     }
     form{
         display: grid;
@@ -150,7 +154,7 @@ const updateProfil = () => {
     .left_form, .right_form{
         width: 100%;
         display: grid;
-        grid-template-rows: 80px 80px 80px 80px;
+        grid-template-rows: repeat(5, 65px);
         padding: 0 30px 0px 2px;
         gap: 15px;
     }
@@ -176,5 +180,8 @@ const updateProfil = () => {
         display: grid;
         grid-template-columns: 80px 1fr;
         gap: 15px;
+    }
+    .submit_button{
+        padding-top: 20px;
     }
 </style>

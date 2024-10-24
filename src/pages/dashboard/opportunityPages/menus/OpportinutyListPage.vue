@@ -296,7 +296,7 @@ const updateOpportunity = () => {
     }
     .opportunity_info_list{
         display: grid;
-        grid-template-rows: 50px 550px 50px;
+        grid-template-rows: 50px 525px 50px;
         min-width: 300px;
         width: 100%;
         height: 100%;

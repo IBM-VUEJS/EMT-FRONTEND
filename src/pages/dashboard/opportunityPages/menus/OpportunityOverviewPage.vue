@@ -302,9 +302,11 @@
                     <div class="number" style="align-items: end;" >
                         <SelectComponent :bottom="''" :options="options" :border="'2px solid var(--purple)'" :width="'100px'" :bg-color="'var(--purple-light)'" :color="'var(--purple)'" :purple="true"></SelectComponent>
                     </div>
-                    <div class="number" style="flex-direction: column; align-items: start; padding-left: 20px; gap: 10px">
-                        <div><span style="font-weight: bold; font-size: 1.5rem; margin-right: 10px;">170</span> Opportunités</div>
-                        <div><span style="font-weight: bold; font-size: 1.5rem; margin-right: 10px;">75</span> Prospects</div>
+                    <div class="number" style="flex-direction: column; align-items: center; padding-left: 20px; gap: 10px">
+                        <div>
+                            <div><span style="font-weight: bold; font-size: 1.5rem; margin-right: 10px;">170</span> Opportunités</div>
+                            <div><span style="font-weight: bold; font-size: 1.5rem; margin-right: 10px;">75</span> Prospects</div>
+                        </div>
                     </div>
                     <div class="number">
                         <canvas ref="chartCanvasLine"></canvas>
@@ -317,7 +319,7 @@
             <div class="circle_charts">
                 <div class="circle_chart box">
                     <h6>Répartition par pays</h6>
-                    <div>
+                    <div >
                         <canvas ref="chartCanvasPie_1"></canvas>
                     </div>
                 </div>
@@ -338,7 +340,7 @@
         height: 100%;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1/2fr 7/2fr;
+        grid-template-rows: 200px calc(100% - 200px);
         gap: 15px;
     }
     .first_row_stat, .second_row_stat{
@@ -418,8 +420,7 @@
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
-        height: 100%;
-        height: 100px;
+        height: 80%;
     }
     .statuts_info{
         width: 200px;
@@ -506,10 +507,11 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        width: 20%;
         gap: 20px;
     }
     .stat_per_year .number{
-        width: 250px;
+        width: 100%;
         height: 125px;
         display: flex;
         align-items: center;
@@ -518,10 +520,9 @@
     .circle_chart{
         width: 100%;
         height: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        flex-direction: column;
+        display: grid;
+        grid-template-rows: 20px calc(100% - 40px);
+        gap: 5px;
     }
     .circle_chart h6{
         text-align: center;

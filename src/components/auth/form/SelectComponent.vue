@@ -12,14 +12,15 @@ import { ref } from 'vue';
             width: String,
             purple: Boolean,
             bottom: String,
-            disabled: Boolean
+            disabled: Boolean,
+            isvisiblelibel: Boolean
         }
     )
 </script>
 
 <template>
         <div class="input">
-            <label :for="name">{{libel}}</label>
+            <label v-if="!isvisiblelibel" :for="name">{{libel}}</label>
             <select name="" id="" :style="{border: border, backgroundColor: bgColor, width: width, marginBottom: bottom}" :class="purple ? 'purple' : 'select'" :disabled="disabled">
                 <template v-for="option in options">
                     <option :value="option['value']">
@@ -40,7 +41,7 @@ import { ref } from 'vue';
     }
     .input .select{
         width: 100%;
-        padding: 10px 20px;
+        padding: 5px;
         border: 1px solid red;
         border-radius: 6px;
         font-size: 1.02rem;

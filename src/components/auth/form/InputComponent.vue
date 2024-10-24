@@ -57,7 +57,7 @@
         flex-direction: column;
     }
     .inputs .input{
-        padding: 7.5px 20px;
+        padding: 5px 20px;
     }
     .inputs .input, .input_div{
         width: 100%;
@@ -80,7 +80,7 @@
     }
     .input_div input{
         width: auto;
-        padding: 10px 20px;
+        padding: 5px 20px;
         border: none;
         outline: none;
         background-color: transparent

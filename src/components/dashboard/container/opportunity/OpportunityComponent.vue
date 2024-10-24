@@ -3,11 +3,7 @@
 </script>
 
 <template>
-    <section id="opportunity_container">
-        <div class="stats">
-            <slot name="container"></slot>
-        </div>
-    </section>
+    <slot name="container"></slot>
 </template>
 
 <style scoped>

@@ -136,7 +136,7 @@ const showOpportunityFunc = (id) => {
 <style scoped>
        .opportunity_info_list{
         display: grid;
-        grid-template-rows: 50px 550px 50px;
+        grid-template-rows: 50px 525px 50px;
         width: 100%;
         height: 100%;
         margin-top: 30px;
@@ -146,7 +146,7 @@ const showOpportunityFunc = (id) => {
     }
     .list_header, .list_body_values{
         display: grid;
-        grid-template-columns: repeat(7, 200px) 200px;
+        grid-template-columns: repeat(8, 1fr);
     }
     .list_body_values{
         height: 55px;
