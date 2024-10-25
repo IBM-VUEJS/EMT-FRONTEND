@@ -1,10 +1,8 @@
 <script setup>
     import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
-    import BlueChartsBarIcon from '@/components/icons/BlueChartsBarIcon';
     import LoseOpportunityIcon from '@/components/icons/LoseOpportunityIcon';
     import NewOpportunityIcon from '@/components/icons/NewOpportunityIcon';
     import QualifyOpportunityIcon from '@/components/icons/QualifyOpportunityIcon';
-    import RocketIcon from '@/components/icons/RocketIcon';
     import WinOpportunityIcon from '@/components/icons/WinOpportunityIcon';
     import { ref, onMounted } from 'vue';
     import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, LineElement, BarController, LineController, PieController, ArcElement, Title, Tooltip, Legend, plugins, PointElement } from 'chart.js';
@@ -157,26 +155,46 @@
         const createChartPie_1 = () => {
         const ctx = chartCanvasPie_1.value.getContext('2d');
             new ChartJS(ctx, {
-                type: 'pie', // Définir le type comme "pie"
+                type: 'pie',
                 data: {
-                    labels: ['Red', 'Blue', 'Yellow'], // Les étiquettes des segments
+                    labels: ['TOGO', 'BENIN', 'GABON'],
                     datasets: [{
-                    label: 'My Dataset', // Légende
-                    data: [180, 90, 100], // Les données à afficher
-                    backgroundColor: ['#940000', '#2F80ED', '#9F9F9F'], // Couleurs des segments
-                    borderColor: ['#940000', '#2F80ED', '#9F9F9F'], // Couleurs des bords des segments
-                    borderWidth: 1, // Largeur du bord
+                    label: 'My Dataset',
+                    data: [180, 90, 100],
+                    backgroundColor: ['#940000', '#2F80ED', '#9F9F9F'], 
+                    borderColor: ['#940000', '#2F80ED', '#9F9F9F'],
+                    borderWidth: 1,
                     }]
                 },
                 options: {
-                    responsive: true, // Pour une meilleure adaptation de la taille
+                    responsive: true,
                     plugins: {
-                    legend: {
-                        position: 'bottom', // Position de la légende (en haut)
-                    },
-                    tooltip: {
-                        enabled: true, // Les tooltips seront activés par défaut
-                    }
+                        legend: {
+                            display: true,
+                            position: 'bottom',
+                            labels: {
+                                color: 'blue',
+                                font: {
+                                    size: 8
+                                },
+                                generateLabels: function(chart) {
+                                    const data = chart.data;
+                                    return data.labels.map(function(label, index) {
+                                        return {
+                                            text: `${label} - ${data.datasets[0].data[index]} unités`,
+                                            fillStyle: data.datasets[0].backgroundColor[index],
+                                            hidden: !chart.getDataVisibility(index),
+                                            pointStyle: 'circle',
+                                            rotation: 0,
+                                            textAlign: 'left',
+                                            borderRadius: 4,
+                                            datasetIndex: 0,
+                                            index: index,
+                                        };
+                                    });
+                                }
+                            }
+                        }
                     }
                 }
             });
@@ -185,32 +203,48 @@
         const createChartPie_2 = () => {
         const ctx = chartCanvasPie_2.value.getContext('2d');
             new ChartJS(ctx, {
-                type: 'pie', // Définir le type comme "pie"
+                type: 'pie',
                 data: {
-                    labels: ['Red', 'Blue', 'Yellow'], // Les étiquettes des segments
+                    labels: ['Informatique', 'Journalisme', 'Marketing'],
                     datasets: [{
-                        label: 'My Dataset', // Légende
-                        data: [300, 50, 100], // Les données à afficher
-                        backgroundColor: ['#CD000A', '#FF9A0C', '#036DF8'], // Couleurs des segments
-                        borderColor: ['#CD000A', '#FF9A0C', '#036DF8'], // Couleurs des bords des segments
-                        borderWidth: 1, // Largeur du bord
+                        label: 'My Dataset',
+                        data: [300, 50, 100], 
+                        backgroundColor: ['#CD000A', '#FF9A0C', '#036DF8'], 
+                        borderColor: ['#CD000A', '#FF9A0C', '#036DF8'], 
+                        borderWidth: 1, 
                     }]
                 },
                 options: {
-                    responsive: true, // Pour une meilleure adaptation de la taille
+                    responsive: true,
                     plugins: {
                         legend: {
-                            position: 'bottom', // Position de la légende (en haut)
-                        },
-                        tooltip: {
-                            enabled: true, // Les tooltips seront activés par défaut
-                        },
-                        labels: {
-                            usePointStyle: true
+                            display: true,
+                            position: 'bottom',
+                            labels: {
+                                color: 'blue',
+                                font: {
+                                    size: 8
+                                },
+                                generateLabels: function(chart) {
+                                    const data = chart.data;
+                                    return data.labels.map(function(label, index) {
+                                        return {
+                                            text: `${label} - ${data.datasets[0].data[index]} unités`,
+                                            fillStyle: data.datasets[0].backgroundColor[index],
+                                            hidden: !chart.getDataVisibility(index),
+                                            pointStyle: 'circle',
+                                            rotation: 0,
+                                            textAlign: 'left',
+                                            borderRadius: 4,
+                                            datasetIndex: 0,
+                                            index: index,
+                                        };
+                                    });
+                                }
+                            }
                         }
                     }
-                },
-                
+                }   
             });
         }
 
@@ -506,7 +540,7 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        width: 20%;
+        width: 30%;
         gap: 20px;
     }
     .stat_per_year .number{
@@ -529,9 +563,12 @@
         text-align: center;
         font-size: 1rem;
         margin: 0;
+        min-height: 20px;
+        width: 100%;
     }
     .circle_chart div{
         width: 100%;
+        height:80%;
         display: flex;
         align-items: center;
         justify-content: center;

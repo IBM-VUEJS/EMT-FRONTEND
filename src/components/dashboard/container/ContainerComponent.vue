@@ -10,14 +10,19 @@
 
 <style scoped>
     #inner_container{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 40px 83vh;
+        display: flex;
+        flex-direction: column;
         padding: 10px 20px 25px 20px;
         gap: 10px;
         height: 100%;
         width: 100%;
-        overflow-y: scroll;
         background-color: var(--menu-bg);
+    }
+
+    @media screen and (max-width: 1450px) 
+    {
+        #inner_container{
+            overflow-y: scroll;
+        }        
     }
 </style>
