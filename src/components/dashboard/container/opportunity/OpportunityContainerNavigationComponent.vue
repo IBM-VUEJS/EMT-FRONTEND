@@ -18,4 +18,13 @@
         margin: 0;
         padding: 0;
     }
+    @media screen and (max-width: 1100px) {
+        #navigation {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            flex-direction: column;
+            display: none;
+        }        
+    }
 </style>

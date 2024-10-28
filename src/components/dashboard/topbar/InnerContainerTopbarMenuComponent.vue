@@ -18,7 +18,7 @@ import { inject, onMounted, ref } from 'vue';
                 <slot name="navigation"></slot>
             </div>
             <div class="current_page_option">
-                <div class="container_topbar_menu_text" :style="{fontSize: font_size}" @click="show">
+                <div class="container_topbar_menu_text" :style="{fontSize: font_size}">
                     <slot name="current_page"></slot>
                 </div>
                 <div class="option" v-if="option !== null">
@@ -70,5 +70,19 @@ import { inject, onMounted, ref } from 'vue';
     }
     .option{
         padding: 5px
+    }
+    @media screen and (max-width: 1100px) {
+        .container_topbar_menu2{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column-reverse;
+        }
+        .navigation{
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            flex-direction: column;
+        }
     }
 </style>

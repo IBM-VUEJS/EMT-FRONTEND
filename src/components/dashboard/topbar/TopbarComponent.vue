@@ -22,6 +22,11 @@
 
 <template>
     <div id="topbar">
+        <div class="menu">
+            <div class="menu_bars"></div>
+            <div class="menu_bars"></div>
+            <div class="menu_bars"></div>
+        </div>
         <div class="userInformations">
             <div class="bell_icon" @click="showAlert">
                 <i class="bi bi-bell"></i>
@@ -115,5 +120,28 @@
         bottom: 0;
         right: 0;
         border-radius: 50%;
+    }
+    @media screen and (max-width: 1200px) {
+        #topbar{
+            justify-content: space-between;
+        }        
+        .menu{
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            padding: 4px;
+            border: 1px solid var(--red);
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .menu_bars{
+            width: 100%;
+            height: 4px;
+            border-radius: 5px;
+            background-color: var(--red);
+        }
     }
 </style>

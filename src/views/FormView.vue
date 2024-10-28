@@ -28,4 +28,13 @@ import EbaLogoComponent from '@/components/dashboard/navigationbar/EbaLogoCompon
         min-height: 400px;
 
     }
+    @media screen and (max-width: 1300px) {
+        .form{
+            display: grid;
+            grid-template-rows: 180px 1fr;
+            width: 90%;
+            min-height: 400px;
+
+        }
+    }
 </style>

@@ -6,7 +6,7 @@ import EbaLogoComponent from './EbaLogoComponent.vue';
 </script>
 
 <template>
-    <div class="d-flex flex-column  px-3 bg-body-light sidebar" style="">
+    <div class="d-flex flex-column  px-3 bg-body-light sidebar" style="" id="sidebar">
         <EbaLogoComponent></EbaLogoComponent>
         <ul class="nav nav-pills flex-column">
             <div class="nav_btn">
@@ -25,5 +25,11 @@ import EbaLogoComponent from './EbaLogoComponent.vue';
     }
     .nav_btn{
         margin: 0;
+    }
+
+    @media screen and (max-width: 1200px) {
+        #sidebar{
+            display: none !important;
+        }
     }
 </style>

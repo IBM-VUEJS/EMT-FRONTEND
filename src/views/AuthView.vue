@@ -32,9 +32,21 @@
     }
     .background_image{
         background: var(--red-gradient), url('/public/assets/background/bg-auth-girl.jpg');
-        background-position: fixed;
+        background-position: 0 0;
         background-size: cover;
         background-repeat: no-repeat;
         transform: rotateY(180deg);
+    }
+    @media screen and (max-width: 1100px) {
+        .auth{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            width: 100%;
+            height: 100svh;
+        }
+        .background_image{
+            display: none !important;
+        }
     }
 </style>

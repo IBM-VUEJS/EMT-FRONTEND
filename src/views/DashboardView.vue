@@ -120,4 +120,14 @@
         height: 100%;
         z-index: 10;
     }
+    @media screen and (max-width: 1200px) {
+        #dashboard{
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+    }
 </style>

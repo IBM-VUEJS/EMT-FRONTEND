@@ -270,7 +270,7 @@
                         <div class="rising">
                             125.700.000 F CFA
                         </div>
-                        <ButtonComponent :button_width="'120px'" :bottom="'10px'">Consulter</ButtonComponent>
+                        <ButtonComponent :slim="true" :button_width="'120px'" :bottom="'10px'">Consulter</ButtonComponent>
                     </div>
                 </div>
 
@@ -451,6 +451,7 @@
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
+        gap: 20px;
         height: 80%;
     }
     .statuts_info{
@@ -573,8 +574,7 @@
         align-items: center;
         justify-content: center;
     }
-
-    @media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
         .second_row_stat{
             flex-direction: column-reverse;
         }        
@@ -593,4 +593,48 @@
             height: 100%;
         }
     }
+
+@media screen and (max-width: 1100px) {
+    .first_row_stat{
+        flex-direction: column;
+    }
+    .opportunity_stat_printer{
+        flex-direction: column;
+        width: 100%;
+    }
+    .rising_hope{
+        width: 100%;
+    }
+    .status_box{
+        width: 100%;
+    }
+    .opportunity_box{
+        width: 100%;
+    }
+    h5{
+        text-align: start;
+    }
+    .chart_zone1{
+        flex-direction: column;
+    }
+    .chart_zone1_opp_pros{
+        width: 100%;
+    }
+    .stat_per_year{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 600px) {
+        #overviews{
+            min-height: 100svh
+        }
+        .circle_charts{
+            flex-direction: column;
+            min-height: 400px;
+        }
+        .circle_chart{
+            width: 100%;
+            height: 400px;
+        }
+}
 </style>
