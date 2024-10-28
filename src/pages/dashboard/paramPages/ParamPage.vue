@@ -6,7 +6,9 @@ import paramsButtons from '@/components/dashboard/navigationbar/param/ParamSideb
 import ParamSidebarComponent from '@/components/dashboard/navigationbar/param/ParamSidebarComponent.vue';
 import InnerContainerTopbarComponent from '@/components/dashboard/topbar/InnerContainerTopbarComponent.vue';
 import InnerContainerTopbarMenuComponent from '@/components/dashboard/topbar/InnerContainerTopbarMenuComponent.vue';
+import { ref } from 'vue';
 
+const show_option = ref(false)
 </script>
 
 <template>
@@ -31,7 +33,11 @@ import InnerContainerTopbarMenuComponent from '@/components/dashboard/topbar/Inn
                     </div>
                 </div>
                 <div class="param_container_sidebar_links">
-                    <ul class="nav nav-pills flex-column">
+                    <div class="scroller_option">
+                        <span>Options</span>
+                        <span><i class="bi bi-caret-down-square"></i></span>
+                    </div>
+                    <ul class="nav nav-pills flex-column" @click="show_option = !show_option">
                         <template v-for="link in paramsButtons">
                             <RouterLink :to="{name: link['path']}">
                                 <NavigationButtonComponent :size="'.92rem'" :weight="'500'" :color="'var(--grey)'" :path="link['path']">
@@ -102,7 +108,7 @@ import InnerContainerTopbarMenuComponent from '@/components/dashboard/topbar/Inn
     }
     .username_text{
         display: grid;
-        grid-template-rows: 140px 1fr;
+        grid-template-rows: 100px 1fr;
         width: 100%;
         height: 100%;
         padding-left: 100px;
@@ -111,5 +117,45 @@ import InnerContainerTopbarMenuComponent from '@/components/dashboard/topbar/Inn
         font-size: 1.4rem;
         font-weight: 500;
         align-content: end;
+    }
+    .scroller_option{
+        display: none;
+        padding: 10px;
+        border-bottom: 1px solid var(--grey-light);
+    }
+    @media screen and (max-width: 1000px) {
+        .username_text{
+            padding-left: 0;
+        }
+        .param_container_sidebar_links{
+            padding: 0;
+            border-right: none;
+        }
+    }
+    @media screen and (max-width: 800px) {
+        .myprofile_div_image{
+            margin-top: 15px;
+            width: 100px;
+            height: 100px;
+        }
+        .myprofile_div_image_container{
+            width: 95px;
+            height: 95px;
+        }
+        .param_container_sidebar_links ul{
+            display: none;
+        }
+        .scroller_option{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .param_container_sidebar_links{
+        padding: 10px 0;
+        }
+        .username_text{
+            display: grid;
+            grid-template-rows: 50px 1fr;
+        }
     }
 </style>

@@ -7,7 +7,7 @@
 
 /* semantic color variables for this project */
 :root {
-  --red: #A80505;
+  --red: #961b1b;
   --blue: #036DF8;
   --green: #28C76F;
   --yellow: #FF9A0C;
@@ -64,4 +64,12 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar{
+  width: 2px;
+}
+::-webkit-scrollbar-thumb{
+  background: var(--red);
+  border-radius: 10px;
 }

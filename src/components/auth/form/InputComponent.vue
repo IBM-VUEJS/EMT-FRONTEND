@@ -61,7 +61,7 @@
     }
     .inputs .input, .input_div{
         width: 100%;
-        border: 1px solid red;
+        border: 1px solid var(--red);
         border-radius: 6px;
         font-size: 1.02rem;
     }
@@ -75,8 +75,8 @@
         background-color: var(--white);
     }
     .input_div:focus-within{
-        border: 1px solid red;   
-        outline: 2px solid red;
+        border: 1px solid var(--red);   
+        outline: 2px solid var(--red)
     }
     .input_div input{
         width: auto;

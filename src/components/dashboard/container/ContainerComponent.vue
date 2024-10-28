@@ -17,12 +17,12 @@
         height: 100%;
         width: 100%;
         background-color: var(--menu-bg);
+        overflow-y: scroll;
     }
 
-    @media screen and (max-width: 1450px) 
+    @media screen and (max-width: 1300px) 
     {
         #inner_container{
-            overflow-y: scroll;
         }        
     }
 </style>

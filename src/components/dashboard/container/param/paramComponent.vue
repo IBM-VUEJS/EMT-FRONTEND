@@ -17,21 +17,44 @@
     #mon_profil{
         box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
         border-radius: 10px;
-        padding: 20px 40px;
-        display: grid;
-        grid-template-columns: 300px 1fr;
-        grid-template-rows: 1fr;
+        padding: 20px;
+        display: flex;
         width: 100%;
-        height: 100%;
     }
     .myprofil_navbar{
         padding: 0 20px;
+        width: 290px;
     }
     .myprofil_container{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 190px 1fr;
-        /* outline: 1px solid red; */
-        height: 75vh;
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 290px);
+    }
+    @media screen and (max-width: 1300px) {
+        #mon_profil{
+            box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .myprofil_navbar{
+            padding: 0 20px;
+            width: 100%;
+        }
+        .myprofil_container{
+            width: 100%;
+            /* outline: 1px solid red; */
+        }
+        @media screen and (max-width: 600px) {
+            #mon_profil{
+                box-shadow: none;
+                border-radius: 0;
+                border-top: 1px solid var(--grey);
+                padding: 0px;
+                display: flex;
+                width: 100%;
+            }
+        }
     }
 </style>

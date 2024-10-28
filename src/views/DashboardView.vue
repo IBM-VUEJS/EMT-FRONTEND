@@ -94,12 +94,12 @@
 </template>
 
 <style >
-/* *{
+*{
     outline: 1px solid red;
-} */
+}
     #dashboard{
         display: grid;
-        grid-template-columns: 240px 1fr;
+        grid-template-columns: 245px 1fr;
         width: 100%;
         height: 100%;
         position: relative;

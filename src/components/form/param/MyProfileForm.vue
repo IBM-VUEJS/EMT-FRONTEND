@@ -140,19 +140,19 @@ const updateProfil = () => {
         justify-content: center;
     }
     .form_inputs{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        min-height: 450px;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
     }
     form{
-        display: grid;
-        grid-template-rows: 1fr 40px;
-        grid-template-columns: 1fr;
-        padding-top: 0px;
-        width: 100%;
-        height: 100%;
+        display: flex;
+        flex-direction: column;
     }
     .left_form, .right_form{
-        width: 100%;
+        width: 50%;
         display: grid;
         grid-template-rows: repeat(5, 65px);
         padding: 0 30px 0px 2px;
@@ -182,6 +182,35 @@ const updateProfil = () => {
         gap: 15px;
     }
     .submit_button{
-        padding-top: 20px;
+        width: 100%;
+        height: 100%;
+    }
+
+    @media screen and (max-width: 1300px) {
+        .form_inputs{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            min-height: 450px;
+        }
+        .left_form, .right_form{
+            width: 100%;
+            display: grid;
+            grid-template-rows: repeat(5, 65px);
+            padding: 0 30px 0px 2px;
+            gap: 15px;
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        .my_profile_form{
+            padding: 0;
+        }
+        .left_form, .right_form{
+            display: grid;
+            grid-template-rows: repeat(5, 65px);
+            padding: 0 0px 0px 2px;
+            gap: 15px;
+        }
     }
 </style>

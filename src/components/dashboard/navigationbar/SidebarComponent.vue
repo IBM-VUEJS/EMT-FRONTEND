@@ -17,11 +17,26 @@ import EbaLogoComponent from './EbaLogoComponent.vue';
 </template>
 
 <style>
-    .sidebar{
+    #sidebar{
         position: sticky;
         top: 10px;
         width: 100%; 
         box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+        overflow-y: scroll;
+    }
+    #sidebar:hover{
+        overflow-y: scroll;
+    }
+    #sidebar::-webkit-scrollbar{
+        width: 2px;
+    }
+    #sidebar::-webkit-scrollbar-thumb{
+        background: var(--white);
+        border-radius: 10px;
+    }
+    #sidebar:hover::-webkit-scrollbar-thumb{
+        background: var(--red);
+        border-radius: 10px;
     }
     .nav_btn{
         margin: 0;

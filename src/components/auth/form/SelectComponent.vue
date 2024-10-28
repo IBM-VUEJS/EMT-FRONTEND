@@ -42,7 +42,7 @@ import { ref } from 'vue';
     .input .select{
         width: 100%;
         padding: 5px;
-        border: 1px solid red;
+        border: 1px solid var(--red);
         border-radius: 6px;
         font-size: 1.02rem;
         background-color: var(--white);

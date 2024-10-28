@@ -19,11 +19,14 @@ import MyProfileForm from '@/components/form/param/MyProfileForm.vue';
 </template>
 
 <style>
+/* *{
+    outline: 1px solid red
+} */
     .param_content{
         width: 100%;
         height: 100%;
         display: grid;
-        grid-template-rows: 50px 1fr;
+        grid-template-rows: 40px 1fr;
         padding: 0 40px 0 40px;
     }
     .change_bar_content{
@@ -41,5 +44,10 @@ import MyProfileForm from '@/components/form/param/MyProfileForm.vue';
     .current_option{
         font-size: 1.3rem;
         font-weight: bold;
+    }
+    @media screen and (max-width: 1000px) {
+        .param_content{
+            padding: 0;
+        }
     }
 </style>
