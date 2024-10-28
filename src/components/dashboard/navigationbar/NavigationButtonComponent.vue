@@ -1,5 +1,7 @@
 <script setup>
+import { inject, onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
+import { useWindowSize } from '@vueuse/core';
 
     const props = defineProps(
         {
@@ -13,11 +15,26 @@ import { useRoute } from 'vue-router';
     )
 
     const route = useRoute()
-    console.log(route.path);
+    const isMobile = ref(false)
+    const show = inject('show')
+    const showNavbar = inject('showNavbar')
+    const hideNavbarAndDarkBG = () => {
+        if (isMobile.value === true) {
+            show.value = false
+            showNavbar.value = false
+        } 
+    }
+
+    onMounted(() => {
+        const {width} = useWindowSize()
+        if(width < 1000) {
+            isMobile.value = true
+        }
+    })
 </script>
 
 <template>
-    <div>
+    <div @click="hideNavbarAndDarkBG">
         <li class="nav-item li-button">
             <div class="button" :class="{active: route.path.includes(path)}" >
                 <span class="svg" v-if="svg">

@@ -20,6 +20,7 @@
     const showOpportunity  = ref(false)
     const showUpdateOpportunity  = ref(false)
     const showProspect = ref(false)
+    const showNavbar = ref(true)
     const opportunity_to_show  = ref([])
 
     //Affichage du fond noir
@@ -38,6 +39,8 @@
     provide('showUpdateOpportunity', showUpdateOpportunity)
 
     provide('showProspect', showProspect)
+
+    provide('showNavbar', showNavbar)
 
     provide('opportunity_to_show', opportunity_to_show)
 
@@ -94,9 +97,9 @@
 </template>
 
 <style >
-*{
+/* *{
     outline: 1px solid red;
-}
+} */
     #dashboard{
         display: grid;
         grid-template-columns: 245px 1fr;

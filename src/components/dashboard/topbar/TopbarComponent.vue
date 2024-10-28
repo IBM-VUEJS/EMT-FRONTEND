@@ -1,7 +1,8 @@
 <script setup>
     import UserOptionsModal from '@/components/modals/UserOptionsModal.vue';
     import Swal from 'sweetalert2';
-    import { ref } from 'vue';
+    import { inject, ref } from 'vue';
+
     const toggle = ref(false)
     const props = defineProps(
         {
@@ -18,11 +19,17 @@
         })
         console.log(c);
         }
+        const showNavbar = inject('showNavbar')
+        const show = inject('show')
+        const showNavbarFunc = () => {
+            show.value = true
+            showNavbar.value = true
+        }
 </script>
 
 <template>
     <div id="topbar">
-        <div class="menu">
+        <div class="menu" @click="showNavbarFunc">
             <div class="menu_bars"></div>
             <div class="menu_bars"></div>
             <div class="menu_bars"></div>

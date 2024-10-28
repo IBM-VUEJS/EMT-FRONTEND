@@ -8,11 +8,11 @@ import InnerContainerTopbarComponent from '@/components/dashboard/topbar/InnerCo
 import InnerContainerTopbarMenuComponent from '@/components/dashboard/topbar/InnerContainerTopbarMenuComponent.vue';
 import { ref } from 'vue';
 
-const show_option = ref(false)
+const show_option = ref(true)
 </script>
 
 <template>
-    <InnerContainerTopbarComponent>
+    <InnerContainerTopbarComponent >
         <InnerContainerTopbarMenuComponent :option="'Mon Profil'" :font_size="'1.4rem'" :navigation="false">
             <template v-slot:current_page>
                 Paramètre
@@ -33,12 +33,13 @@ const show_option = ref(false)
                     </div>
                 </div>
                 <div class="param_container_sidebar_links">
-                    <div class="scroller_option">
+                    <div class="scroller_option" @click="show_option = !show_option">
                         <span>Options</span>
-                        <span><i class="bi bi-caret-down-square"></i></span>
+                        <span v-if="show_option"><i class="bi bi-caret-down-square"></i></span>
+                        <span v-else><i class="bi bi-caret-right-square"></i></span>
                     </div>
-                    <ul class="nav nav-pills flex-column" @click="show_option = !show_option">
-                        <template v-for="link in paramsButtons">
+                    <ul class="nav nav-pills flex-column">
+                        <template v-for="link in paramsButtons" v-if="show_option">
                             <RouterLink :to="{name: link['path']}">
                                 <NavigationButtonComponent :size="'.92rem'" :weight="'500'" :color="'var(--grey)'" :path="link['path']">
                                     <template v-slot:text>
@@ -123,6 +124,9 @@ const show_option = ref(false)
         padding: 10px;
         border-bottom: 1px solid var(--grey-light);
     }
+    .scroller_option:hover{
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+    }
     @media screen and (max-width: 1000px) {
         .username_text{
             padding-left: 0;
@@ -143,12 +147,15 @@ const show_option = ref(false)
             height: 95px;
         }
         .param_container_sidebar_links ul{
-            display: none;
+            /* display: none; */
         }
         .scroller_option{
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 10px;
+            width: 100%;
+            border-radius: 10px;
         }
         .param_container_sidebar_links{
         padding: 10px 0;

@@ -1,5 +1,4 @@
 <script setup>
-import { inject, onMounted, ref } from 'vue';
 
     const props = defineProps(
         {
@@ -12,7 +11,7 @@ import { inject, onMounted, ref } from 'vue';
 </script>
 
 <template>
-    <div :class="navigation ? 'container_topbar_menu2' : 'container_topbar_menu'">
+    <div :class="navigation ? 'container_topbar_menu' : 'container_topbar_menu2'">
         <template v-if="navigation">
             <div class="navigation">
                 <slot name="navigation"></slot>
@@ -40,12 +39,13 @@ import { inject, onMounted, ref } from 'vue';
 </template>
 
 <style scoped>
-    .container_topbar_menu{
+    .container_topbar_menu2{
         display: flex;
         align-items: center;
+        justify-content: center;
         width: 100%;
     }
-    .container_topbar_menu2{
+    .container_topbar_menu{
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -78,11 +78,22 @@ import { inject, onMounted, ref } from 'vue';
             justify-content: center;
             flex-direction: column-reverse;
         }
+        .container_topbar_menu{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         .navigation{
             display: flex;
             align-items: center;
             justify-content: start;
             flex-direction: column;
+        }
+        .current_page_option2{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
         }
     }
 </style>
