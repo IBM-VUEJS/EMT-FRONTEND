@@ -2,17 +2,33 @@
 import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
 import InputComponent from '@/components/auth/form/InputComponent.vue';
 import RedirectComponent from '@/components/auth/form/RedirectComponent.vue';
-import { VueReCaptcha } from 'vue-recaptcha-v3';
+import { ref } from 'vue';
+import { RecaptchaV2 } from 'vue3-recaptcha-v2';
 import { useRoute, useRouter } from 'vue-router';
 const props = defineProps(
     {
         title: String
     }
 )
+
+const recaptcha = ref(null)
 const route = useRouter()
-const login = () => {
-    route.push('/dashboard')
-}
+
+const isVerified = ref(false);
+const recaptchaResponse = ref(null);
+
+const handleWidgetId = (widgetId) => {
+  console.log("Widget ID: ", widgetId);
+};
+const handleErrorCalback = () => {
+  console.log("Error callback");
+};
+const handleExpiredCallback = () => {
+  console.log("Expired callback");
+};
+const handleLoadCallback = (response) => {
+  console.log("Load callback", response);
+};
     
 </script>
 
@@ -22,12 +38,23 @@ const login = () => {
         <form class="inputs" @submit.prevent="login">
             <InputComponent :type="'email'" :value="''" :placeholder="'example.eba@gmail.com'" :name="'email'" :libel="'Email'" :padding="'5px 20px'"></InputComponent>
             <InputComponent :type="'password'" :value="''" :placeholder="'*********'" :name="'password'" :libel="'Mot de passe'" :padding="'10px 20px'"></InputComponent>
-            <VueReCaptcha ref="recaptcha" @verify="onVerify"></VueReCaptcha>
             <ButtonComponent :value="'Se Connecter'" :type="'submit'"></ButtonComponent>
+            <RecaptchaV2
+                @widget-id="handleWidgetId"
+                @error-callback="handleErrorCalback"
+                @expired-callback="handleExpiredCallback"
+                @load-callback="handleLoadCallback"
+            />
         </form>
         <RedirectComponent :redirect="'/forgot-password'">Mot de passe oublié ? </RedirectComponent>
     </div>
 </template>
 
-<style scoped>
+<style>
+    #rc-anchor-container{
+        width: 100px !important;
+    }
+    .rc-anchor-normal{
+        width: 100px !important;
+    }
 </style>

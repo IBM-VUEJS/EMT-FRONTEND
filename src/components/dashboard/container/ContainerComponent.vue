@@ -22,7 +22,7 @@
 
     @media screen and (max-width: 1300px) 
     {
-        #inner_container{
-        }        
+        /* #inner_container{
+        }         */
     }
 </style>

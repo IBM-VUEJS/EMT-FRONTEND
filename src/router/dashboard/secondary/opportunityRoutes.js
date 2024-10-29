@@ -6,10 +6,6 @@ import archiveRoutes from "./opportunity/archivesRoutes";
 
 const opportunityRoutes = [
     {
-        path: '',
-        redirect: { name:'opportunity-overview'}
-    },
-    {
         path: 'opportunity-overview',
         name: 'opportunity-overview',
         component: OpportunityOverviewPage
