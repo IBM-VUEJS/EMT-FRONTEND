@@ -43,6 +43,7 @@
             </template>
             <template v-else>
                 <input class="input" :type="type" :name="name" :id="name" :value="value" :placeholder="placeholder" :style="{border: border, width: width, borderRadius: radius, padding: padding, height: height}" :readonly="readonly">
+                <small>fff</small>
             </template>
         </div>
 </template>

@@ -154,7 +154,7 @@ const updateProfil = () => {
     .left_form, .right_form{
         width: 50%;
         display: grid;
-        grid-template-rows: repeat(5, 65px);
+        grid-template-rows: repeat(5, 75px);
         padding: 0 30px 0px 2px;
         gap: 15px;
     }

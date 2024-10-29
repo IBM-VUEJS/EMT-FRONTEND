@@ -146,9 +146,9 @@ const show_option = ref(true)
             width: 95px;
             height: 95px;
         }
-        .param_container_sidebar_links ul{
-            /* display: none; */
-        }
+        /* .param_container_sidebar_links ul{
+            display: none;
+        } */
         .scroller_option{
             display: flex;
             align-items: center;
