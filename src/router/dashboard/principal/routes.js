@@ -13,6 +13,7 @@ import StatisticPage from "@/pages/dashboard/StatisticPage.vue"
 import paramRoutes from "../secondary/paramRoutes"
 import HistoriesPage from "@/pages/dashboard/HistoriesPage.vue"
 import opportunityRoutes from "../secondary/opportunityRoutes"
+import OpportunityAddPage from "@/pages/dashboard/opportunityPages/menus/add/OpportunityAddPage.vue"
 
 const routes = [
     {
@@ -81,6 +82,11 @@ const routes = [
         name: 'params',
         component: ParamPage,
         children: paramRoutes
+    },
+    {
+        path: 'opportunity-add',
+        name: 'opportunity-add',
+        component: OpportunityAddPage
     }
 ]
 

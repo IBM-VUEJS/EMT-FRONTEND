@@ -47,32 +47,34 @@ const closeFilter = () => {
                         <span v-html="FilterIcon"></span> Filtrer
                     </ButtonComponent>
 
-                    <div class="filter_form" v-if="hideFilter && routes.path.includes('/prospects-archive-list')">
-                        <div class="close_filter_div">
-                            <div class="close" @click="closeFilter">
-                                <span v-html="CancelIcon"></span>
+                   <Teleport to="body">
+                        <div class="filter_form" v-if="hideFilter && routes.path.includes('/prospects-archive-list')">
+                            <div class="close_filter_div">
+                                <div class="close" @click="closeFilter">
+                                    <span v-html="CancelIcon"></span>
+                                </div>
                             </div>
+                            <h5 class="popup_title">Filtrer la liste des opportunités</h5>
+                            <form action="" @submit.prevent="">
+                                <SelectComponent :options="nom" :border="'1px solid var(--grey)'" :libel="'Nom'"></SelectComponent>
+                                <SelectComponent :options="type" :border="'1px solid var(--grey)'" :libel="'Type'"></SelectComponent>
+                                <SelectComponent :options="pays" :border="'1px solid var(--grey)'" :libel="'Pays'" :bottom="'10px'"></SelectComponent>
+                                <InputComponent :type="'date'"  :border="'1px solid var(--grey)'" :libel="'Periode'" :bottom="'10px'"></InputComponent>
+                                <div class="submit_cancel">
+                                    <ButtonComponent :button_height="'39px'" :bottom="'0'">
+                                        Filter
+                                    </ButtonComponent>
+
+                                    <ButtonComponent :bordered="true" :slim="true" :bottom="'0'" @click="closeFilter">
+                                        Annuler
+                                    </ButtonComponent>
+                                </div>
+                            </form>
                         </div>
-                        <h5 class="popup_title">Filtrer la liste des Prospects</h5>
-                        <form action="" @submit.prevent="">
-                            <SelectComponent :options="nom" :border="'1px solid var(--grey)'" :libel="'Nom'"></SelectComponent>
-                            <SelectComponent :options="type" :border="'1px solid var(--grey)'" :libel="'Type'"></SelectComponent>
-                            <SelectComponent :options="pays" :border="'1px solid var(--grey)'" :libel="'Pays'" :bottom="'10px'"></SelectComponent>
-                            <InputComponent :type="'date'"  :border="'1px solid var(--grey)'" :libel="'Date'" :bottom="'10px'"></InputComponent>
-                            <div class="submit_cancel">
-                                <ButtonComponent :button_height="'39px'" :bottom="'0'">
-                                    Filter
-                                </ButtonComponent>
+                   </Teleport>
 
-                                <ButtonComponent :bordered="true" :slim="true" :bottom="'0'" @click="closeFilter">
-                                    Annuler
-                                </ButtonComponent>
-                            </div>
-                        </form>
-                    </div>
-
+                    <Teleport to="body">
                     <div class="filter_form" v-if="hideFilter && routes.path.includes('/opportunites-archive-list')">
-                        <Teleport to="body">
                             <div class="close_filter_div">
                                 <div class="close" @click="closeFilter">
                                     <span v-html="CancelIcon"></span>
@@ -86,7 +88,7 @@ const closeFilter = () => {
                                 <SelectComponent :options="pays" :border="'1px solid var(--grey)'" :libel="'Catégorie'" :bottom="'10px'"></SelectComponent>
                                 <SelectComponent :options="pays" :border="'1px solid var(--grey)'" :libel="'Statut'" :bottom="'10px'"></SelectComponent>
                                 <SelectComponent :options="pays" :border="'1px solid var(--grey)'" :libel="'Source'" :bottom="'10px'"></SelectComponent>
-                                <InputComponent :type="'date'"  :border="'1px solid var(--grey)'" :libel="'Date'" :bottom="'10px'"></InputComponent>
+                                <InputComponent :type="'date'"  :border="'1px solid var(--grey)'" :libel="'Periode'" :bottom="'10px'"></InputComponent>
                                 <div class="submit_cancel">
                                     <ButtonComponent :button_height="'39px'" :bottom="'0'">
                                         Filter
@@ -97,8 +99,8 @@ const closeFilter = () => {
                                     </ButtonComponent>
                                 </div>
                             </form>
-                        </Teleport>
                     </div>
+                </Teleport>
                 </div>
             </div>
         </div>
@@ -142,8 +144,9 @@ const closeFilter = () => {
         background-color: var(--white);
         padding: 20px;
         width: 300px;
-        right: 25px;
-        top: 110%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         border-radius: 10px;
         z-index: 100;
     }

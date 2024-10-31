@@ -105,7 +105,7 @@
         border: 1px solid var(--grey);
         box-sizing: border-box  ;
         width: 100%;
-        max-width: 520px;
+        /* max-width: 520px; */
         min-height: 100px;
         border-radius: 10px;
     }

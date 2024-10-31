@@ -192,9 +192,11 @@ const printOpportunities = () => {
             </div>
             <div class="add_filtre">
                 <div class="add tools">
-                    <ButtonComponent :button_width="'100%'" :bgcolor="'white'" :bottom="'0'" :slim="true" @click="addOpportunity">
-                         <span v-html="AddIcon"></span> Ajouter
-                    </ButtonComponent>
+                    <RouterLink :to="{name: 'opportunity-add'}">
+                        <ButtonComponent :button_width="'100%'" :bgcolor="'white'" :bottom="'0'" :slim="true">
+                            <span v-html="AddIcon"></span> Ajouter
+                        </ButtonComponent>
+                    </RouterLink>
                 </div>
                 <div class="add tools">
                     <ButtonComponent :button_width="'100%'" :bgcolor="'white'" :bottom="'0'" :slim="true" :bordered="true" @click="printOpportunities">

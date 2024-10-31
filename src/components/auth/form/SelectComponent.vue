@@ -20,7 +20,7 @@ import { ref } from 'vue';
 </script>
 
 <template>
-        <div class="input">
+        <div class="input_select">
             <label v-if="!isvisiblelibel" :for="name">{{libel}}</label>
             <select name="" id="" :style="{border: border, backgroundColor: bgColor, width: width, marginBottom: bottom, padding: padding}" :class="purple ? 'purple' : 'select'" :disabled="disabled">
                 <template v-for="option in options">
@@ -33,14 +33,14 @@ import { ref } from 'vue';
 </template>
 
 <style scoped>
-    .input{
+    .input_select{
         display: flex;
         align-items: start;
         justify-content: center;
         gap: 10px;
         flex-direction: column;
     }
-    .input .select{
+    .input_select .select{
         width: 100%;
         padding: 5px;
         border: 1px solid var(--red);
@@ -52,7 +52,7 @@ import { ref } from 'vue';
     select option{
         color: var(--grey);
     }
-    .input .select:focus{
+    .input_select .select:focus{
         border: 1px solid var(--red);   
         outline: 2px solid var(--red);
     }
