@@ -13,7 +13,8 @@ import { ref } from 'vue';
             purple: Boolean,
             bottom: String,
             disabled: Boolean,
-            isvisiblelibel: Boolean
+            isvisiblelibel: Boolean,
+            padding: String
         }
     )
 </script>
@@ -21,7 +22,7 @@ import { ref } from 'vue';
 <template>
         <div class="input">
             <label v-if="!isvisiblelibel" :for="name">{{libel}}</label>
-            <select name="" id="" :style="{border: border, backgroundColor: bgColor, width: width, marginBottom: bottom}" :class="purple ? 'purple' : 'select'" :disabled="disabled">
+            <select name="" id="" :style="{border: border, backgroundColor: bgColor, width: width, marginBottom: bottom, padding: padding}" :class="purple ? 'purple' : 'select'" :disabled="disabled">
                 <template v-for="option in options">
                     <option :value="option['value']">
                         {{ option['libel'] }}

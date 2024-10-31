@@ -74,47 +74,47 @@ const updateProfil = () => {
             <div class="form_inputs">
                 <div class="left_form">
                     <div class="title">Personel</div>
-                    <div class="form_part_title">
+                    <div class="inputs_param_form">
                         <div class="double_input_username">
-                            <InputComponent :libel="'Noms'" :placeholder="''" :border="border"></InputComponent>
-                            <InputComponent :libel="'Prénoms'"  :border="border"></InputComponent>
+                            <InputComponent :libel="'Noms'" :placeholder="''" :border="border" :padding="'10px'"></InputComponent>
+                            <InputComponent :libel="'Prénoms'"  :border="border"  :padding="'10px'"></InputComponent>
                         </div>
                     </div>
-                    <div>
-                        <InputComponent :libel="'Email utilisés'" :placeholder="'exampleEba@gmail.com'" :type="'email'" :border="border"></InputComponent>
+                    <div class="inputs_param_form">
+                        <InputComponent :libel="'Email utilisés'" :placeholder="'exampleEba@gmail.com'" :type="'email'" :border="border"  :padding="'10px'"></InputComponent>
                     </div>
-                    <div>
-                        <InputComponent :libel="'Mot de passe'" :placeholder="'*************'" :type="'password'" :border="border"></InputComponent>
+                    <div class="inputs_param_form">
+                        <InputComponent :libel="'Mot de passe'" :placeholder="'*************'" :type="'password'" :border="border" :padding="'5px'"></InputComponent>
                     </div>
-                    <div>
-                        <InputComponent :libel="'Date de naissance'" :placeholder="'--/--/--'" :type="'date'" :border="border"></InputComponent>
+                    <div class="inputs_param_form">
+                        <InputComponent :libel="'Date de naissance'" :placeholder="'--/--/--'" :type="'date'" :border="border"  :padding="'10px'"></InputComponent>
                     </div>
                 </div>
                 <div class="right_form">
                     <div class="title">Contact</div>
-                    <div class="form_part_title">
+                    <div class="inputs_param_form">
                         <div>
-                            <InputComponent :libel="'Email personnel'" :type="'email'"  :border="border"></InputComponent>
+                            <InputComponent :libel="'Email personnel'" :type="'email'"  :border="border"  :padding="'10px'"></InputComponent>
                         </div>
                     </div>
-                    <div class="">
-                        <div class="form_part_title">
+                    <div class="inputs_param_form">
+                        <div class="">
                         <div>Numéro de téléphone</div>
                         <div class="double_input_number">
                             <span>
-                                <SelectComponent  :border="border" :options="options" :isvisiblevibel="false"></SelectComponent>
+                                <SelectComponent  :border="border" :options="options" :isvisiblevibel="false" :padding="'10px'"></SelectComponent>
                             </span>
                             <span>
-                                <InputComponent  :border="border"></InputComponent>
+                                <InputComponent  :border="border"  :padding="'10px'"></InputComponent>
                             </span>
                         </div>
                     </div>
                     </div>
-                    <div>
-                        <SelectComponent :libel="'Situation géographique'"  :border="border" :options="situations"></SelectComponent>
+                    <div class="inputs_param_form">
+                        <SelectComponent :libel="'Situation géographique'"  :border="border" :options="situations"  :padding="'10px'"></SelectComponent>
                     </div>
-                    <div>
-                        <InputComponent :libel="'Adresse'"  :border="border"></InputComponent>
+                    <div class="inputs_param_form">
+                        <InputComponent :libel="'Adresse'"  :border="border"  :padding="'10px'"></InputComponent>
                     </div>   
                 </div>
             </div>
@@ -131,6 +131,11 @@ const updateProfil = () => {
 /* *{
     outline: 1px solid red
 } */
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
     .my_profile_form{
         padding: 0 10px 0 0;
         width: 100%;
@@ -143,8 +148,9 @@ const updateProfil = () => {
         display: flex;
         flex-wrap: wrap;
         width: 100%;
-        min-height: 450px;
+        /* min-height: 450px; */
         margin-bottom: 20px;
+        margin-top: 20px;
         padding-bottom: 20px;
     }
     form{
@@ -153,18 +159,22 @@ const updateProfil = () => {
     }
     .left_form, .right_form{
         width: 50%;
-        display: grid;
-        grid-template-rows: repeat(5, 75px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
         padding: 0 30px 0px 2px;
         gap: 15px;
     }
     .form_part_title{
-        display: grid;
-        grid-template-rows: 20px 1fr;
+        /* display: grid;
+        grid-template-rows: 20px 1fr; */
     }
     .title{
         display: flex;
         align-items: center;
+        width: 100%;
+        height: 40px;
         font-size: 1.1rem;
         color: var(--grey);
     }
@@ -181,6 +191,10 @@ const updateProfil = () => {
         grid-template-columns: 80px 1fr;
         gap: 15px;
     }
+    .inputs_param_form{
+        min-height: 0;
+        width: 100%;
+    }
     .submit_button{
         width: 100%;
         height: 100%;
@@ -195,8 +209,10 @@ const updateProfil = () => {
         }
         .left_form, .right_form{
             width: 100%;
-            display: grid;
-            grid-template-rows: repeat(5, 65px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
             padding: 0 30px 0px 2px;
             gap: 15px;
         }
@@ -207,10 +223,13 @@ const updateProfil = () => {
             padding: 0;
         }
         .left_form, .right_form{
-            display: grid;
-            grid-template-rows: repeat(5, 65px);
+            display: flex;
+             min-height: 450px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
             padding: 0 0px 0px 2px;
-            gap: 15px;
+            gap: 0;
         }
     }
 </style>

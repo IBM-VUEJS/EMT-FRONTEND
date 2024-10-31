@@ -47,4 +47,9 @@
     .text{
         font-size: .8rem;
     }
+    @media screen and (max-width: 800px) {
+        .text{
+            font-size: .65rem;
+        }        
+    }
 </style>

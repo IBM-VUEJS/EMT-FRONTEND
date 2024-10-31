@@ -20,7 +20,8 @@
             bottom: String,
             padding: String,
             readonly: Boolean,
-            height: String
+            height: String,
+            error: String
         }
     )
 </script>
@@ -29,8 +30,8 @@
         <div class="inputs" :style="{marginBottom: bottom}">
             <label :for="name">{{libel}}</label>
             <template v-if="type === 'password'">
-                <div class="input_div"  :style="{border: border}">
-                    <input :type="show_password ? 'text' : 'password'" :name="name"  :placeholder="placeholder" :readonly="readonly" >
+                <div class="input_div"  :style="{border: border, padding: padding}">
+                    <input :type="show_password ? 'text' : 'password'" :name="name"  :placeholder="placeholder" :readonly="readonly">
                     <div class="icon" @click="show_password = !show_password">
                         <template v-if="show_password">
                             <span v-html="EyeoutlineIcon"></span>
@@ -43,7 +44,7 @@
             </template>
             <template v-else>
                 <input class="input" :type="type" :name="name" :id="name" :value="value" :placeholder="placeholder" :style="{border: border, width: width, borderRadius: radius, padding: padding, height: height}" :readonly="readonly">
-                <small>fff</small>
+                <small v-if="error"></small>
             </template>
         </div>
 </template>
@@ -54,7 +55,7 @@
         align-items: start;
         justify-content: center;
         gap: 10px;
-        margin-bottom: 25px;
+        margin-bottom: 0px;
         flex-direction: column;
     }
     .inputs .input{
@@ -71,8 +72,9 @@
         outline: 2px solid var(--red);
     }
     .input_div{
-        display: grid;
-        grid-template-columns: 1fr 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         background-color: var(--white);
     }
     .input_div:focus-within{
@@ -86,12 +88,13 @@
         outline: none;
         background-color: transparent
     }
-    .input_div div{
-        width: 100%;
+    .input_div .icon{
+        width: 10%;
         height: 100%;
+        width: 50px;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: end;
         background-color: transparent;
     }
 </style>

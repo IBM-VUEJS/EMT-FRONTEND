@@ -18,7 +18,7 @@ const isVerified = ref(false);
 const recaptchaResponse = ref(null);
 
 const handleWidgetId = (widgetId) => {
-  console.log("Widget ID: ", widgetId);
+  console.log("Widget ID: ", widgetId)
 };
 const handleErrorCalback = () => {
   console.log("Error callback");
@@ -28,6 +28,10 @@ const handleExpiredCallback = () => {
 };
 const handleLoadCallback = (response) => {
   console.log("Load callback", response);
+};
+
+const login = () => {
+  route.push('/dashboard')
 };
     
 </script>

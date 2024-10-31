@@ -32,9 +32,9 @@ import Swal from 'sweetalert2';
     <div class="login_form">
         <div class="header">{{ title }}</div>
         <form class="inputs" @submit.prevent="changePassword">
-            <InputComponent :type="'password'" :value="''" :placeholder="'******************'" :name="'email'" :libel="'Nouveau mot de passe'"></InputComponent>
+            <InputComponent :type="'password'" :value="''" :placeholder="'******************'" :name="'email'" :libel="'Nouveau mot de passe'" :padding="'5px'" :bottom="'10px'"></InputComponent>
             <CriteriaComponent></CriteriaComponent>
-            <InputComponent :type="'password'" :value="''" :placeholder="'******************'" :name="'email'" :libel="'Confirmer le mot de passe'"></InputComponent>
+            <InputComponent :type="'password'" :value="''" :placeholder="'******************'" :name="'email'" :libel="'Confirmer le mot de passe'" :padding="'5px'" :bottom="'10px'"></InputComponent>
             <ButtonComponent :value="'Valider'" :type="'submit'"></ButtonComponent>
         </form>
     </div>
