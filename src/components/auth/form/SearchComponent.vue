@@ -32,12 +32,12 @@
 
 <style scoped>
     .input_search{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: 1fr 50px;
         padding: 5px;
         border-radius: 5px;
         box-shadow: var(--shadow);
+        width: 100%;
     }
     .input_search:focus-within{
         outline: 1px solid red;

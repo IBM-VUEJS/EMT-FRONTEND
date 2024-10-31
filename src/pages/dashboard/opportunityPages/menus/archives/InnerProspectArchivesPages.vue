@@ -66,7 +66,8 @@ const showProspectFunc = () => {
 </script>
 
 <template>
-<div class="prospect_info_list">
+<div id="prospect_list">
+        <div class="prospect_info_list">
             <div class="list_header">
                 <div  class="list_value" style="padding-left: 15px;">Numéro</div>
                 <div  class="list_value">Nom</div>
@@ -82,17 +83,18 @@ const showProspectFunc = () => {
                         <div  class="list_value">{{ prospect['type'] }}</div>
                         <div  class="list_value">{{prospect['pays']}}</div>
                         <div  class="actions">
-                            <div class="action_icons" @click="showProspectFunc">
+                            <div class="action_icons">
                                 <span v-html="BlueEyesIcon"></span>
                             </div>
-                            <div class="action_icons">
-                                <span v-html="DeleteIcon" @click="unarchiveProspect"></span>
+                            <div class="action_icons" @click="archiveProspect(2)">
+                                <span v-html="DeleteIcon"></span>
                             </div>
                         </div>
                     </div>
                 </template>
             </div>
-            <div class="pagination">
+        </div>
+        <div class="pagination">
                 <div class="pagination_composant">
                     <div class="left_arrow">
                         <span v-html="PaginationLeftArrow"></span>
@@ -107,15 +109,16 @@ const showProspectFunc = () => {
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
 </template>
 
 <style scoped>
+        .lists{
+        height: 100%;
+    }
     #prospect_list{
-        display: grid;
-        grid-template-rows: 60px 1fr;
         padding-bottom: 10px;
-        padding-top: 30px;
+        /* padding-top: 30px; */
     }
     .search_add_filtre{
         display: flex;
@@ -129,14 +132,22 @@ const showProspectFunc = () => {
         gap: 25px;
     }
     .prospect_info_list{
-        display: grid;
-        grid-template-rows: 50px 525px 50px;
+        display: flex;
+        flex-direction: column;
+        min-width: 300px;
         width: 100%;
-        height: 100%;
-        margin-top: 30px;
+        /* height: 100%; */
+        margin-top: 10px;
     }
     .list_header{
         margin-bottom: 20px;
+        height: 50px;
+    }
+    .list_body{
+        height: 525px;
+    }
+    .pagination{
+        height: 50px;
     }
     .list_header, .list_body_values{
         display: grid;
@@ -161,6 +172,10 @@ const showProspectFunc = () => {
     }
     .list_body_values{
         width: 100%;
+    }
+    .list_value{
+        word-break: break-all;
+        word-wrap: break-word;
     }
     .list_value, .actions{
         align-content: center;
@@ -224,5 +239,78 @@ const showProspectFunc = () => {
     }
     .action_icons{
         cursor: pointer;
+    }
+    .filtre{
+        position: relative;
+    }
+    .filter_form{
+        position: absolute;
+        background-color: var(--white);
+        padding: 20px;
+        width: 40%;
+        min-width: 300px;
+        min-height: 300px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+        z-index: 100;
+    }
+    .submit_cancel{
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 10px;
+    }
+    .close_filter_div{
+        position: relative;
+    }
+    .close{
+        position: absolute;
+        top: -35px;
+        right: -30px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        box-shadow: var(--shadow);
+        background-color: var(--white);
+        cursor: pointer
+    }
+    .popup_title{
+        font-weight: 300;
+        color: var(--red);
+    }
+    @media screen and (max-width: 1000px) {
+        .search_add_filtre{
+            flex-direction: column;
+            gap: 10px;
+            justify-content: start;
+            align-items: start;
+            width: 100%;
+        }
+        .search_div{
+            width: 100%;
+        }
+        .prospect_info_list{
+            overflow: scroll;
+        }
+        .list_header, .list_body{
+            padding: 10px;
+            width: 1000px;
+            overflow-x: scroll
+        }
+        .add_filtre{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: 10px;
+        }
+        .add_filtre .tools{
+            font-size: .9rem;
+            width: 100%;
+        }
     }
 </style>

@@ -109,8 +109,6 @@ import { ref, onMounted } from 'vue';
         letter-spacing: 1px;
     }
     .option{
-        padding: 5px;
-        width: 100%;
         text-align: center;
         align-items: center;
     }
@@ -118,7 +116,7 @@ import { ref, onMounted } from 'vue';
         text-align: center;
         align-items: center;
     }
-    @media screen and (max-width: 1100px) {
+    @media screen and (max-width: 1000px) {
         .container_topbar_menu2{
             display: flex;
             align-items: center;
@@ -129,6 +127,7 @@ import { ref, onMounted } from 'vue';
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column-reverse;
         }
         .navigation{
             display: flex;

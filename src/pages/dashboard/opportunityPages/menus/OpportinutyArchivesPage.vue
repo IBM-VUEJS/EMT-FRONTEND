@@ -33,11 +33,13 @@ const closeFilter = () => {
                     <SearchComponent :type="'search'" :width="''" :border="'none'" :search="true" :bottom="'0'"></SearchComponent>
                 </form>
             </div>
-            <div class="inner_page" :class="{active_archive_link: routes.path.includes('/opportunites-archive-list')}">
-                <RouterLink :to="{name: 'opportunites-archive-list'}">Opportunités</RouterLink>
-            </div>
-            <div class="inner_page" :class="{active_archive_link: routes.path.includes('/prospects-archive-list')}">
-                <RouterLink :to="{name: 'prospects-archive-list'}">Prospects</RouterLink>
+            <div class="links">
+                <div class="inner_page" :class="{active_archive_link: routes.path.includes('/opportunites-archive-list')}">
+                    <RouterLink :to="{name: 'opportunites-archive-list'}">Opportunités</RouterLink>
+                </div>
+                <div class="inner_page" :class="{active_archive_link: routes.path.includes('/prospects-archive-list')}">
+                    <RouterLink :to="{name: 'prospects-archive-list'}">Prospects</RouterLink>
+                </div>
             </div>
             <div class="add_filtre">
                 <div class="filtre">
@@ -70,42 +72,44 @@ const closeFilter = () => {
                     </div>
 
                     <div class="filter_form" v-if="hideFilter && routes.path.includes('/opportunites-archive-list')">
-                        <div class="close_filter_div">
-                            <div class="close" @click="closeFilter">
-                                <span v-html="CancelIcon"></span>
+                        <Teleport to="body">
+                            <div class="close_filter_div">
+                                <div class="close" @click="closeFilter">
+                                    <span v-html="CancelIcon"></span>
+                                </div>
                             </div>
-                        </div>
-                        <h5 class="popup_title">Filtrer la liste des Prospects</h5>
-                        <form action="" @submit.prevent="">
-                            <SelectComponent :options="nom" :border="'1px solid var(--grey)'" :libel="'Type de Contact'"></SelectComponent>
-                            <SelectComponent :options="type" :border="'1px solid var(--grey)'" :libel="'Secteur d\'activité'"></SelectComponent>
-                            <SelectComponent :options="pays" :border="'1px solid var(--grey)'" :libel="'Pays'" :bottom="'10px'"></SelectComponent>
-                            <SelectComponent :options="pays" :border="'1px solid var(--grey)'" :libel="'Catégorie'" :bottom="'10px'"></SelectComponent>
-                            <SelectComponent :options="pays" :border="'1px solid var(--grey)'" :libel="'Statut'" :bottom="'10px'"></SelectComponent>
-                            <SelectComponent :options="pays" :border="'1px solid var(--grey)'" :libel="'Source'" :bottom="'10px'"></SelectComponent>
-                            <InputComponent :type="'date'"  :border="'1px solid var(--grey)'" :libel="'Date'" :bottom="'10px'"></InputComponent>
-                            <div class="submit_cancel">
-                                <ButtonComponent :button_height="'39px'" :bottom="'0'">
-                                    Filter
-                                </ButtonComponent>
+                            <h5 class="popup_title">Filtrer la liste des Prospects</h5>
+                            <form action="" @submit.prevent="">
+                                <SelectComponent :options="nom" :border="'1px solid var(--grey)'" :libel="'Type de Contact'"></SelectComponent>
+                                <SelectComponent :options="type" :border="'1px solid var(--grey)'" :libel="'Secteur d\'activité'"></SelectComponent>
+                                <SelectComponent :options="pays" :border="'1px solid var(--grey)'" :libel="'Pays'" :bottom="'10px'"></SelectComponent>
+                                <SelectComponent :options="pays" :border="'1px solid var(--grey)'" :libel="'Catégorie'" :bottom="'10px'"></SelectComponent>
+                                <SelectComponent :options="pays" :border="'1px solid var(--grey)'" :libel="'Statut'" :bottom="'10px'"></SelectComponent>
+                                <SelectComponent :options="pays" :border="'1px solid var(--grey)'" :libel="'Source'" :bottom="'10px'"></SelectComponent>
+                                <InputComponent :type="'date'"  :border="'1px solid var(--grey)'" :libel="'Date'" :bottom="'10px'"></InputComponent>
+                                <div class="submit_cancel">
+                                    <ButtonComponent :button_height="'39px'" :bottom="'0'">
+                                        Filter
+                                    </ButtonComponent>
 
-                                <ButtonComponent :bordered="true" :slim="true" :bottom="'0'" @click="closeFilter">
-                                    Annuler
-                                </ButtonComponent>
-                            </div>
-                        </form>
+                                    <ButtonComponent :bordered="true" :slim="true" :bottom="'0'" @click="closeFilter">
+                                        Annuler
+                                    </ButtonComponent>
+                                </div>
+                            </form>
+                        </Teleport>
                     </div>
                 </div>
             </div>
         </div>
-        <RouterView></RouterView>
     </div>
+    <RouterView></RouterView>
 </template>
 
 <style scoped>
     #opportunity_list{
-        display: grid;
-        grid-template-rows: 60px 1fr;
+        display: flex;
+        flex-direction: column;
         padding-bottom: 10px;
         padding-top: 30px;
     }
@@ -115,6 +119,12 @@ const closeFilter = () => {
         justify-content: space-between;
         width: 100%;
         height: 100%;
+    }
+    .links{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 30%;
     }
     .add_filtre{
         display: flex;
@@ -163,5 +173,26 @@ const closeFilter = () => {
     .popup_title{
         font-weight: 300;
         color: var(--red);
+    }
+    @media screen and (max-width: 1000px) {
+        .search_add_filtre{
+            flex-direction: column;
+            /* height: 200px; */
+        }
+        .search_div{
+            width: 100%;
+        }
+        .links{
+            width: 100%;
+            justify-content: space-evenly;
+            height: 50px;
+        }
+        .add_filtre{
+            margin-top: 10px;
+            width: 100%;
+        }
+        .add_filtre .filtre{
+            width: 100%;
+        }
     }
 </style>

@@ -1,5 +1,6 @@
 <script setup>
 import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
+import InputComponent from '@/components/auth/form/InputComponent.vue';
 import SearchComponent from '@/components/auth/form/SearchComponent.vue';
 import SelectComponent from '@/components/auth/form/SelectComponent.vue';
 import BlueEyesIcon from '@/components/icons/BlueEyesIcon';
@@ -143,7 +144,7 @@ const archiveProspect = () => {
 </script>
 
 <template>
-    <div id="prospect_list">
+    <div class="lists">
         <div class="search_add_filtre">
             <div class="search_div">
                 <form @submit.prevent="">
@@ -151,35 +152,40 @@ const archiveProspect = () => {
                 </form>
             </div>
             <div class="add_filtre">
-                <div class="filtre">
-                    <ButtonComponent :bgcolor="'var(--white)'" :bottom="'0'"  :slim="true"  :bordered="true" @click="showFilter">
+                <div class="filtre tools">
+                    <ButtonComponent :button_width="'100%'" :bgcolor="'var(--white)'" :bottom="'0'"  :slim="true"  :bordered="true" @click="showFilter">
                         <span v-html="FilterIcon"></span> Filtrer
                     </ButtonComponent>
-                    <div class="filter_form" v-if="hideFilter">
-                        <div class="close_filter_div">
-                            <div class="close" @click="closeFilter">
-                                <span v-html="CancelIcon"></span>
+                   <Teleport to="body">
+                        <div class="filter_form" v-if="hideFilter">
+                            <div class="close_filter_div">
+                                <div class="close" @click="closeFilter">
+                                    <span v-html="CancelIcon"></span>
+                                </div>
                             </div>
-                        </div>
-                        <h5 class="popup_title">Filtrer la liste des Prospects</h5>
-                        <form action="" @submit.prevent="">
-                            <SelectComponent :options="nom" :border="'1px solid var(--grey)'" :libel="'Nom'"></SelectComponent>
-                            <SelectComponent :options="type" :border="'1px solid var(--grey)'" :libel="'Type'"></SelectComponent>
-                            <SelectComponent :options="pays" :border="'1px solid var(--grey)'" :libel="'Pays'" :bottom="'10px'"></SelectComponent>
-                            <div class="submit_cancel">
-                                <ButtonComponent :button_height="'39px'" :bottom="'0'">
-                                    Filter
-                                </ButtonComponent>
+                            <h5 class="popup_title">Filtrer la liste des Prospects</h5>
+                            <form action="" @submit.prevent="">
+                                <SelectComponent :options="nom" :border="'1px solid var(--grey)'" :libel="'Nom'"></SelectComponent>
+                                <SelectComponent :options="type" :border="'1px solid var(--grey)'" :libel="'Type'"></SelectComponent>
+                                <SelectComponent :options="pays" :border="'1px solid var(--grey)'" :libel="'Pays'" :bottom="'10px'"></SelectComponent>
+                                <InputComponent :libel="'Periode'" :type="'date'" :border="'1px solid var(--grey)'" :bottom="'10px'"></InputComponent>
+                                <div class="submit_cancel">
+                                    <ButtonComponent :button_height="'39px'" :bottom="'0'">
+                                        Filter
+                                    </ButtonComponent>
 
-                                <ButtonComponent :bordered="true" :slim="true" :bottom="'0'" @click="closeFilter">
-                                    Annuler
-                                </ButtonComponent>
-                            </div>
-                        </form>
-                    </div>
+                                    <ButtonComponent :bordered="true" :slim="true" :bottom="'0'" @click="closeFilter">
+                                        Annuler
+                                    </ButtonComponent>
+                                </div>
+                            </form>
+                        </div>
+                   </Teleport>
                 </div>
             </div>
         </div>
+    </div>
+    <div id="prospect_list">
         <div class="prospect_info_list">
             <div class="list_header">
                 <div  class="list_value" style="padding-left: 15px;">Numéro</div>
@@ -209,7 +215,8 @@ const archiveProspect = () => {
                     </div>
                 </template>
             </div>
-            <div class="pagination">
+        </div>
+        <div class="pagination">
                 <div class="pagination_composant">
                     <div class="left_arrow">
                         <span v-html="PaginationLeftArrow"></span>
@@ -224,16 +231,16 @@ const archiveProspect = () => {
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 </template>
 
 <style scoped>
+    .lists{
+        height: 100%;
+    }
     #prospect_list{
-        display: grid;
-        grid-template-rows: 60px 1fr;
         padding-bottom: 10px;
-        padding-top: 30px;
+        /* padding-top: 30px; */
     }
     .search_add_filtre{
         display: flex;
@@ -247,14 +254,22 @@ const archiveProspect = () => {
         gap: 25px;
     }
     .prospect_info_list{
-        display: grid;
-        grid-template-rows: 50px 525px 50px;
+        display: flex;
+        flex-direction: column;
+        min-width: 300px;
         width: 100%;
-        height: 100%;
-        margin-top: 30px;
+        /* height: 100%; */
+        margin-top: 10px;
     }
     .list_header{
         margin-bottom: 20px;
+        height: 50px;
+    }
+    .list_body{
+        height: 525px;
+    }
+    .pagination{
+        height: 50px;
     }
     .list_header, .list_body_values{
         display: grid;
@@ -279,6 +294,10 @@ const archiveProspect = () => {
     }
     .list_body_values{
         width: 100%;
+    }
+    .list_value{
+        word-break: break-all;
+        word-wrap: break-word;
     }
     .list_value, .actions{
         align-content: center;
@@ -350,9 +369,12 @@ const archiveProspect = () => {
         position: absolute;
         background-color: var(--white);
         padding: 20px;
-        width: 300px;
-        right: 25px;
-        top: 110%;
+        width: 40%;
+        min-width: 300px;
+        min-height: 300px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         border-radius: 10px;
         z-index: 100;
     }
@@ -382,5 +404,35 @@ const archiveProspect = () => {
     .popup_title{
         font-weight: 300;
         color: var(--red);
+    }
+    @media screen and (max-width: 1000px) {
+        .search_add_filtre{
+            flex-direction: column;
+            gap: 10px;
+            justify-content: start;
+            align-items: start;
+            width: 100%;
+        }
+        .search_div{
+            width: 100%;
+        }
+        .prospect_info_list{
+            overflow: scroll;
+        }
+        .list_header, .list_body{
+            padding: 10px;
+            width: 1000px;
+            overflow-x: scroll
+        }
+        .add_filtre{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: 10px;
+        }
+        .add_filtre .tools{
+            font-size: .9rem;
+            width: 100%;
+        }
     }
 </style>

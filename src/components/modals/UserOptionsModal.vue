@@ -56,6 +56,7 @@
         justify-content: center;
         flex-direction: column;
         gap: 15px;
+        z-index: 100;
     }  
     .user_options div, .user_options div a{
         width: 100%;

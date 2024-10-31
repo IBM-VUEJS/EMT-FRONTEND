@@ -47,34 +47,27 @@
 
     ChartJS.register(CategoryScale, LinearScale, BarElement, LineElement, ArcElement, LineController, PointElement, BarController, PieController, Title, Tooltip, Legend);
 
-    const chartCanvasBar = ref(null);
+    const chartCanvasBar_1 = ref(null);
+    const chartCanvasBar_2 = ref(null);
     const chartCanvasLine = ref(null);
     const chartCanvasPie_1 = ref(null);
     const chartCanvasPie_2 = ref(null);
 
-    const createChartBar = () => {
-        const ctx = chartCanvasBar.value.getContext('2d');
+    const createChartBar_1 = () => {
+        const ctx = chartCanvasBar_1.value.getContext('2d');
 
         new ChartJS(ctx, {
             type: 'bar',
             data: {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+            labels: ['Nouveau', 'Qualifié', 'Gangné', 'Perdu'],
             datasets: [
                 {
                 label: 'Opportunités',
-                data: [300, 250, 200, 220, 250, 300, 280, 260, 120],
-                backgroundColor: '#036DF8',
-                borderRadius: 10,
-                barThickness: 10,
-                borderSkipped: false
-                },
-                {
-                label: 'prospect',
-                data: [-150, -120, -130, -110, -90, -60, -30, -40, -80],
-                backgroundColor: '#B10000',
-                borderRadius: 10,
-                barThickness: 10,
-                borderSkipped: false
+                data: [300, 250, 200, 220],
+                backgroundColor: ['#7AFF3C', '#2BE6FF', '#FFE000', '#FF121A'], 
+                borderRadius: 5,
+                barThickness: 50,
+                borderSkipped: true
                 }
             ]
             },
@@ -83,13 +76,13 @@
             scales: {
                 y: {
                     grid: {
-                        // display: false
+                        display: false
                     },
                     beginAtZero: true 
                 },
                 x: {
                     grid: {
-                        // display: false
+                        display: false
                     },
                     stacked: true,
                 }
@@ -102,6 +95,65 @@
             }
         });
     };
+
+    const createChartBar_2 = () => {
+    const ctx = chartCanvasBar_2.value.getContext('2d');
+
+    new ChartJS(ctx, {
+        type: 'bar', // Type de base, mais on ajoute des types spécifiques pour chaque dataset
+        data: {
+            labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP'],
+            datasets: [
+                {
+                    type: 'line',
+                    label: 'Opportunités',
+                    data: [30, 250, 200, 220, 250, 300, 280, 260, 120],
+                    backgroundColor: 'rgba(21, 0, 207, 0.37)',
+                    borderColor: '#005BD1',    
+                    tension: 0.5,
+                    borderJoinStyle: 'bevel',
+                    pointRadius: 5,
+                    pointHoverRadius: 8,
+                    borderWidth: 2,
+                    fill: true,
+                    order: 0
+                },
+                {
+                    type: 'bar',
+                    label: 'Opportunités',
+                    data: [30, 250, 200, 220, 250, 300, 280, 260, 120],
+                    backgroundColor: '#961b1b',
+                    borderRadius: 10,
+                    barThickness: 15,
+                    borderSkipped: true,
+                    order: 1
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    grid: {
+                        display: true,
+                    },
+                    beginAtZero: true
+                },
+                x: {
+                    grid: {
+                        display: false
+                    },
+                    stacked: true
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    });
+};
 
     const createChartLine = () => {
         const ctx = chartCanvasLine.value.getContext('2d');
@@ -251,7 +303,8 @@
 
 
     onMounted(() => {
-        createChartBar();
+        createChartBar_1();
+        createChartBar_2();
         createChartLine();
         createChartPie_1();        
         createChartPie_2();        
@@ -305,28 +358,30 @@
             </div>
         </div>
         <div class="second_row_stat">
-            <div class="box chart_zone1" style="padding: 0;">
-                <div class="chart_zone1_opp_pros">
+            <div class="chart_zone1" style="padding: 0;">
+                <div class="chart_zone1_bar">
+                    <div class="box chart_zone1_opp_pros">
                     <div class="text" >
                         <div class="chart1_title">
-                            Rapport
-                        </div>
-                        <div class="chart1_legend">
-                            <div class="legend">
-                                <div class="legend_blue"></div>
-                                <div>Opportunités</div>
-                            </div>
-                            <div class="legend">
-                                <div class="legend_red"></div>
-                                <div>Prospects</div>
-                            </div>
+                            Opportunités par statut 2024
                         </div>
                     </div>
                     <div class="chart1">
-                        <canvas ref="chartCanvasBar"></canvas>
+                        <canvas ref="chartCanvasBar_1"></canvas>
                     </div>
                 </div>
-                <div class="stat_per_year">
+                <div class="box chart_zone1_opp_pros">
+                    <div class="text" >
+                        <div class="chart1_title">
+                            Opportunités par mois
+                        </div>
+                    </div>
+                    <div class="chart1">
+                        <canvas ref="chartCanvasBar_2"></canvas>
+                    </div>
+                </div>
+                </div>
+                <div class="stat_per_year box">
                     <div class="number" style="align-items: end;" >
                         <SelectComponent :bottom="''" :options="options" :border="'2px solid var(--purple-)'" :width="'100px'" :bg-color="'var(--purple-light)'" :color="'var(--purple)'" :purple="true"></SelectComponent>
                     </div>
@@ -486,14 +541,23 @@
     .chart_zone1{
         display: flex;
         width: 80%;
-        height: 100%;
+        /* height: 100%; */
+        gap: 15px;
     }
+
     .chart_zone1_opp_pros{
         display: flex;
         flex-direction: column;
-        width: 70%;
+        width: 100%;
         padding: 10px;
         border-right: 1px solid var(--grey-light);
+    }
+    .chart_zone1_bar{
+        display: flex;
+        flex-direction: column;
+        /* height: 100%; */
+        width: 70%;
+        gap: 15px;
     }
     .chart_zone1_opp_pros .chart1{
         display: flex;
@@ -539,10 +603,11 @@
     .stat_per_year{
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
         flex-direction: column;
         width: 30%;
-        gap: 20px;
+        /* height: 100%; */
+        /* gap: 3rem; */
     }
     .stat_per_year .number{
         width: 100%;
@@ -592,6 +657,9 @@
             width: 50%;
             height: 100%;
         }
+        .stat_per_year{
+            height: 100%;
+        }
     }
 
 @media screen and (max-width: 1100px) {
@@ -617,11 +685,15 @@
     .chart_zone1{
         flex-direction: column;
     }
+    .chart_zone1_bar{
+        width: 100%;
+    }
     .chart_zone1_opp_pros{
         width: 100%;
     }
     .stat_per_year{
         width: 100%;
+        height: 100%;
     }
 }
 @media screen and (max-width: 600px) {
