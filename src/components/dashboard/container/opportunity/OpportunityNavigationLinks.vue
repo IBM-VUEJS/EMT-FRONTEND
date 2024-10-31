@@ -30,4 +30,17 @@ import { useRoute } from 'vue-router';
         color: var(--red);
         border-right: 1px solid var(--red);
     }
+    @media screen and (max-width: 1000px) {
+        .navigation_links{
+            width: 100%;  
+        }      
+        .active_opportunity_link{
+            color: var(--red);
+            /* text-decoration: underline; */
+            border-right: none;
+            border-bottom: 1px solid var(--red);
+            width: 100%;
+            text-align: center;
+        }
+    }
 </style>

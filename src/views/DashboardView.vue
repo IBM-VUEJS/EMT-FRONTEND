@@ -97,9 +97,9 @@
 </template>
 
 <style >
-/* *{
+*{
     outline: 1px solid red;
-} */
+}
     #dashboard{
         display: grid;
         grid-template-columns: 245px 1fr;
