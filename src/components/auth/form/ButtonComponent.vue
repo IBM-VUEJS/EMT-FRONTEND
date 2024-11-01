@@ -20,13 +20,13 @@ import { ref } from 'vue';
 </script>
 
 <template>
-        <div v-if="!bordered" class="input" :style="{marginBottom: bottom}">
+        <div v-if="!bordered" class="input" :style="{marginBottom: bottom, width: button_width}">
             <button :type="type" :class="slim ? 'button_slim not_bordered' : 'button'" :style="{width: button_width, height: button_height, fontSize: size, marginBottom: bottom, backgroundColor: bgcolor, color: textcolor}">
                 <slot></slot> {{ value }}
             </button> 
         </div>
 
-        <div v-else class="input" :style="{marginBottom: bottom}">
+        <div v-else class="input" :style="{marginBottom: bottom, width: button_width}">
             <button :type="type" :class="slim ? 'button_slim' : ''" class="bordered" :style="{width: button_width, height: button_height, fontSize: size, marginBottom: bottom, backgroundColor: bgcolor, color: textcolor}">
                 <slot></slot> {{ value }}
             </button> 

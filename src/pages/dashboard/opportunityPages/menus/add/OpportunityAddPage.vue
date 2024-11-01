@@ -1,8 +1,10 @@
 <script setup>
 import InputComponent from '@/components/auth/form/InputComponent.vue';
 import SelectComponent from '@/components/auth/form/SelectComponent.vue';
+import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
 import TextareaComponent from '@/components/auth/form/TextareaComponent.vue';
 import RedCircleArrowIcon from '@/components/icons/RedCircleArrowIcon';
+import DownloadIcon from '@/components/icons/DownloadIcon';
 
 
 </script>
@@ -40,35 +42,42 @@ import RedCircleArrowIcon from '@/components/icons/RedCircleArrowIcon';
                     </div>
                     <div class="double_inputs">
                         <div class="double_input">
-                            <InputComponent :width="'100%'" :libel="'Nom de l\'opportunité'"  :border="'1px solid var(--grey)'"></InputComponent>
+                            <InputComponent :width="'100%'" :libel="'Revenus espéré'"  :border="'1px solid var(--grey)'"></InputComponent>
                         </div>
                         <div class="double_input">
-                            <SelectComponent :bottom="'0'" :width="'100%'" :libel="'Nom de l\'opportunité'"  :border="'1px solid var(--grey)'"></SelectComponent>
+                            <SelectComponent :bottom="'0'" :width="'100%'" :libel="'Devise'"  :border="'1px solid var(--grey)'"></SelectComponent>
                         </div>
                     </div>
                     <div class="input">
-                        <InputComponent :width="'100%'" :libel="'Nom de l\'opportunité'"  :border="'1px solid var(--grey)'"></InputComponent>
+                        <InputComponent :width="'100%'" :libel="'Probabilité de conversion'"  :border="'1px solid var(--grey)'"></InputComponent>
                     </div>
                     <div class="input">
-                        <InputComponent :width="'100%'" :libel="'Nom de l\'opportunité'"  :border="'1px solid var(--grey)'"></InputComponent>
+                        <SelectComponent :width="'100%'" :libel="'Type de contact'"  :border="'1px solid var(--grey)'"></SelectComponent>
                     </div>
                     <div class="input">
-                        <InputComponent :width="'100%'" :libel="'Nom de l\'opportunité'"  :border="'1px solid var(--grey)'"></InputComponent>
+                        <InputComponent :width="'100%'" :libel="'Nom du contact'"  :border="'1px solid var(--grey)'"></InputComponent>
                     </div>
                     <div class="input">
-                        <InputComponent :width="'100%'" :libel="'Nom de l\'opportunité'"  :border="'1px solid var(--grey)'"></InputComponent>
+                        <SelectComponent :width="'100%'" :libel="'Source de l\'opportunité'"  :border="'1px solid var(--grey)'"></SelectComponent>
                     </div>
                     <div class="input">
-                        <InputComponent :width="'100%'" :libel="'Nom de l\'opportunité'"  :border="'1px solid var(--grey)'"></InputComponent>
+                        <SelectComponent :width="'100%'" :libel="'Catégorie'"  :border="'1px solid var(--grey)'"></SelectComponent>
                     </div>
                     <div class="input">
-                        <InputComponent :width="'100%'" :libel="'Nom de l\'opportunité'"  :border="'1px solid var(--grey)'"></InputComponent>
+                        <SelectComponent :width="'100%'" :libel="'Secteur d\'activités'"  :border="'1px solid var(--grey)'"></SelectComponent>
                     </div>
                     <div class="input">
-                        <InputComponent :width="'100%'" :libel="'Nom de l\'opportunité'"  :border="'1px solid var(--grey)'"></InputComponent>
+                        <SelectComponent :width="'100%'" :libel="'Pays'"  :border="'1px solid var(--grey)'"></SelectComponent>
                     </div>
                     <div class="textarea">
-                        <TextareaComponent :width="'100%'" :libel="'Nom de l\'opportunité'"  :border="'1px solid var(--grey)'"></TextareaComponent>
+                        <TextareaComponent :width="'100%'" :libel="'Notes'"  :border="'1px solid var(--grey)'"></TextareaComponent>
+                    </div>
+                    <div class="cancel_save">
+                        <ButtonComponent :button_width="'140px'" :type="'reset'" :slim="true" :bordered="true" >Annuler</ButtonComponent>
+                        <ButtonComponent :button_width="'140px'" :type="'submit'" :slim="true" >
+                            Enregister 
+                            <span v-html="DownloadIcon"></span>
+                        </ButtonComponent>
                     </div>
                 </form>
             </div>
@@ -139,5 +148,12 @@ import RedCircleArrowIcon from '@/components/icons/RedCircleArrowIcon';
         padding: 0 10px;
         display: grid;
         grid-template-columns: 1fr;
+    }
+    .cancel_save{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        gap: 20px;
+        padding: 25px 10px 0px 10px;
     }
 </style>

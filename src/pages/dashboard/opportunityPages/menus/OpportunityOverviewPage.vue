@@ -395,7 +395,7 @@
                         <canvas ref="chartCanvasLine"></canvas>
                     </div>
                     <div class="number" style="align-items: start;">
-                        <ButtonComponent :button_width="'100%'" :bottom="'0'" :slim="true">Consulter</ButtonComponent>
+                        <ButtonComponent :button_width="'100px'" :bottom="'0'" :slim="true">Consulter</ButtonComponent>
                     </div>
                 </div>
             </div>

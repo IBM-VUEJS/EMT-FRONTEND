@@ -40,8 +40,8 @@ const login = () => {
     <div class="login_form">
         <div class="header">{{ title }}</div>
         <form class="inputs" @submit.prevent="login">
-            <InputComponent :type="'email'" :value="''" :placeholder="'example.eba@gmail.com'" :name="'email'" :libel="'Email'" :padding="'5px 20px'"></InputComponent>
-            <InputComponent :type="'password'" :value="''" :placeholder="'*********'" :name="'password'" :libel="'Mot de passe'" :padding="'10px 20px'"></InputComponent>
+            <InputComponent :type="'email'" :value="''" :placeholder="'example.eba@gmail.com'" :name="'email'" :libel="'Email'" :padding="'5px 20px'" :bottom="'10px'"></InputComponent>
+            <InputComponent :type="'password'" :value="''" :placeholder="'*********'" :name="'password'" :libel="'Mot de passe'" :padding="'0'" :bottom="'10px'"></InputComponent>
             <ButtonComponent :value="'Se Connecter'" :type="'submit'"></ButtonComponent>
             <RecaptchaV2
                 @widget-id="handleWidgetId"
@@ -54,7 +54,7 @@ const login = () => {
     </div>
 </template>
 
-<style>
+<style scoped>
     #rc-anchor-container{
         width: 100px !important;
     }
