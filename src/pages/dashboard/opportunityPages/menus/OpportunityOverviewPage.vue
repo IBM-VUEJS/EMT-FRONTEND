@@ -461,11 +461,6 @@
         height: 100%;
         gap: 15px
     }
-    .box{
-        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.296);
-        border-radius: 6px;
-        padding: 10px;
-    }
     .rising_hope{
         display: flex;
         /* flex-wrap: wrap; */

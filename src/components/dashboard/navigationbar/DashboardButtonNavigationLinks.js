@@ -29,7 +29,7 @@ const buttons = [
         icon: UserplusIcon
     },
     {
-        path: 'clients',
+        path: 'client-overview',
         libel: 'Clients',
         icon: UsercheckIcon
     },

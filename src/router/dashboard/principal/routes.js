@@ -1,5 +1,5 @@
 import BillPage from "@/pages/dashboard/BillPage.vue"
-import ClientPage from "@/pages/dashboard/ClientPage.vue"
+import ClientPage from "@/pages/dashboard/clientPages/ClientPage.vue"
 import ConsultantPage from "@/pages/dashboard/ConsultantPage.vue"
 import ContratPage from "@/pages/dashboard/ContratPage.vue"
 import CreateAccountPage from "@/pages/dashboard/CreateAccountPage.vue"
@@ -14,6 +14,7 @@ import paramRoutes from "../secondary/paramRoutes"
 import HistoriesPage from "@/pages/dashboard/HistoriesPage.vue"
 import opportunityRoutes from "../secondary/opportunityRoutes"
 import OpportunityAddPage from "@/pages/dashboard/opportunityPages/menus/add/OpportunityAddPage.vue"
+import ClientRoutes from "../secondary/clientRoutes"
 
 const routes = [
     {
@@ -35,7 +36,8 @@ const routes = [
     {
         path: 'clients',
         name: 'clients',
-        component: ClientPage
+        component: ClientPage,
+        children: ClientRoutes
     },
     {
         path: 'factures',
