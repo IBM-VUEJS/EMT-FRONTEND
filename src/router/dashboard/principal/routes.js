@@ -15,6 +15,8 @@ import HistoriesPage from "@/pages/dashboard/HistoriesPage.vue"
 import opportunityRoutes from "../secondary/opportunityRoutes"
 import OpportunityAddPage from "@/pages/dashboard/opportunityPages/menus/add/OpportunityAddPage.vue"
 import ClientRoutes from "../secondary/clientRoutes"
+import ClientAddPage from "@/pages/dashboard/clientPages/menus/add/ClientAddPage.vue"
+import ClientShowPage from "@/pages/dashboard/clientPages/menus/show/ClientShowPage.vue"
 
 const routes = [
     {
@@ -89,6 +91,16 @@ const routes = [
         path: 'opportunity-add',
         name: 'opportunity-add',
         component: OpportunityAddPage
+    },
+    {
+        path: 'client-add',
+        name: 'client-add',
+        component: ClientAddPage
+    },
+    {
+        path: 'client-show',
+        name: 'client-show',
+        component: ClientShowPage
     }
 ]
 

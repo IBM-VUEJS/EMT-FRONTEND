@@ -162,8 +162,6 @@ const showOpportunityFunc = (id) => {
         flex-direction: column;
         min-width: 300px;
         width: 100%;
-        /* height: 100%; */
-        margin-top: 10px;
     }
     .list_header{
         margin-bottom: 20px;

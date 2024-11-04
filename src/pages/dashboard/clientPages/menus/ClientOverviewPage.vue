@@ -2,16 +2,129 @@
 import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
 import SearchComponent from '@/components/auth/form/SearchComponent.vue';
 import ActifClientIcon from '@/components/icons/ActifClientIcon';
+import ActivityViewMoreRightIcon from '@/components/icons/ActivityViewMoreRightIcon';
 import InactifClientIcon from '@/components/icons/InactifClientIcon';
 import PaginationLeftArrow from '@/components/icons/PaginationLeftArrow';
 import PaginationRightArrow from '@/components/icons/PaginationRightArrow';
 import RightArrowIcon from '@/components/icons/RightArrowIcon';
+import { ref, onMounted } from 'vue';
 
-import { ref } from 'vue';
     const current_year = ref(2024)
     const total_client_money = ref(428900000)
     const selected_year = ref(current_year)
     const first_list = ref(true)
+    const activities = ref([
+        {
+            id: 'banqueFinance',
+            percent: 72,
+            libel: 'Banque Finance',
+            price: '156.000.000F CFA',
+            color: 'red'
+        },
+        {
+            id: 'assurance',
+            percent: 48,
+            libel: 'Assurance',
+            price: '100.000.000F CFA',
+            color: 'red'
+        },
+        {
+            id: 'it',
+            percent: 28,
+            libel: 'IT',
+            price: '92.000.000F CFA',
+            color: 'red'
+        },
+        {
+            id: 'ia',
+            percent: 15,
+            libel: 'IA',
+            price: '56.000.000F CFA',
+            color: 'red'
+        },
+    ])
+
+    const countries = ref([
+        {
+            code: 'BJ',
+            name: 'BENIN',
+            price: '120.000.000F CFA',
+            number: 15
+        },
+        {
+            code: 'FR',
+            name: 'FRANCE',
+            price: '100.000.000F CFA',
+            number: 9
+        },
+        {
+            code: 'TG',
+            name: 'TOGO',
+            price: '78.000.000F CFA',
+            number: 8
+        },
+        {
+            code: 'CA',
+            name: 'CANADA',
+            price: '50.000.000F CFA',
+            number: 5
+        },
+        {
+            code: 'BF',
+            name: 'BURKINA FASO',
+            price: '25.000.000F CFA',
+            number: 7
+        },
+    ])
+
+    const createProgressbarByActivity = () => {
+            activities.value.forEach((activity) => {
+                var options = {
+                    chart: {
+                        type: "radialBar"
+                    },
+                    
+                    series: [activity.percent],
+                    
+                    plotOptions: {
+                        radialBar: {
+                        hollow: {
+                            margin: 0,
+                            size: "100%"
+                        },
+                        track: {
+                            background: activity.color,
+                        },
+                        dataLabels: {
+                            showOn: "always",
+                            name: {
+                                offsetY: 0,
+                                show: false,
+                                color: "#888",
+                                fontSize: "13px"
+                            },
+                            value: {
+                                color: "#111",
+                                fontSize: "1rem",
+                                show: true,
+                                offsetY: 6,
+                            }
+                        }
+                        }
+                    },
+
+                    stroke: {
+                        lineCap: "round",
+                    },
+                    labels: [""]
+                };
+
+                var chart = new ApexCharts(document.querySelector(`#${activity.id}`), options);
+
+                chart.render();
+            })
+    }
+
     const topTenClients = ref(
         [
            [
@@ -70,6 +183,10 @@ import { ref } from 'vue';
            ]
         ]
     )
+
+    onMounted(() => {
+        createProgressbarByActivity();
+    })
 </script>
 
 <template>
@@ -196,12 +313,42 @@ import { ref } from 'vue';
             <div class="class_by_activity right_client_container_child box">
                 <h4 class="class_by_activity_title">Répartition par Secteur d'activités</h4>
                 <div class="class_by_activity_content">
-                    <template >
+                    <template v-for="activity in activities">
+                        <div class="class_by_activity_content_child">
+                            <div class="circle_libel_price">
+                                <div :id="activity.id" class="circular_progress_bar"></div>
+                                <div class="libel_price">
+                                    <div class="libel">{{ activity.libel }}</div>
+                                    <div class="price">{{ activity.price }}</div>
+                                </div>
+                            </div>
+                            <div class="view_more">
+                                <RouterLink to="">
+                                    <span v-html="ActivityViewMoreRightIcon"></span>
+                                </RouterLink>
+                            </div>
+                        </div>
                     </template>
                 </div>
             </div>
             <div class="class_by_country right_client_container_child box">
-                4
+                <h4 class="class_by_activity_title">Répartition par pays</h4>
+                <div class="class_by_country_child2">
+                    <template v-for="country in countries">
+                        <div class="flag_libel_price_number">
+                            <div class="flag_libel_price">
+                                <div class="flag">
+                                    <img :src="'https://flagsapi.com/'+country.code+'/flat/32.png'" class="country_flags">
+                                </div>
+                                <div class="libel_price">
+                                    <div class="libel">{{ country.name }}</div>
+                                    <div class="price">{{ country.price }}</div>
+                                </div>
+                            </div>
+                            <div class="number">{{ country.number }}</div>
+                        </div>
+                    </template>
+                </div>
             </div>
         </div>
     </div>
@@ -263,7 +410,9 @@ import { ref } from 'vue';
     }
     .right_client_container_child{
         width: 100%;
-        height: 50%;
+        height: 41svh;
+        overflow-x: hidden;
+        overflow-y: scroll
     }
     .text_select_year{
         width: 100%;
@@ -442,6 +591,68 @@ import { ref } from 'vue';
         cursor: pointer;
     }
     .class_by_activity_content{
-        
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+        gap: 10px;
+    }
+    .class_by_activity_content_child{
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* outline: 1px solid red; */
+    }
+    .circular_progress_bar{
+        width: 75px;
+    }
+    .circle_libel_price{
+        display: flex;
+        align-items: center;
+        gap: 0px;
+    }
+    .libel{
+        font-size: 1rem;
+    }
+    .price{
+        font-size: .85rem;
+    }
+    .class_by_country_child2{
+        padding-top: 2px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .flag_libel_price_number{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .flag_libel_price{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .country_flags{
+        border-radius: 5px;
+    }
+    @media screen and (max-width: 1100px) {
+        .client_container{
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 100%;
+            gap: 15px;
+        }
+        .statistics{
+            width: 100%;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .stats1, .stats2{
+            width: 100%;
+        }
     }
 </style>

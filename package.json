@@ -11,6 +11,7 @@
   "dependencies": {
     "@vueup/vue-quill": "^1.2.0",
     "@vueuse/core": "^11.1.0",
+    "apexcharts": "^4.0.0",
     "chart.js": "^4.4.5",
     "pinia": "^2.2.4",
     "quill": "^2.0.2",
@@ -20,6 +21,7 @@
     "vue-quill-editor": "^3.0.6",
     "vue-router": "^4.4.5",
     "vue-sweetalert2": "^5.0.11",
+    "vue3-apexcharts": "^1.7.0",
     "vue3-recaptcha-v2": "^2.0.2"
   },
   "devDependencies": {

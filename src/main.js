@@ -9,8 +9,10 @@ import {install} from 'vue3-recaptcha-v2';
 import App from './App.vue'
 import router from './router'
 import 'sweetalert2/dist/sweetalert2'
+import VueApexCharts from "vue3-apexcharts";
 
 const app = createApp(App);
+app.use(VueApexCharts);
 
 app.use(
     install, 

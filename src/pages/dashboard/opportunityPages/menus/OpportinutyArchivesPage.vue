@@ -112,8 +112,8 @@ const closeFilter = () => {
     #opportunity_list{
         display: flex;
         flex-direction: column;
-        padding-bottom: 10px;
-        padding-top: 30px;
+        /* padding-bottom: 10px; */
+        /* padding-top: 30px; */
     }
     .search_add_filtre{
         display: flex;

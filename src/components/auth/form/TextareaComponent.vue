@@ -82,7 +82,7 @@
     /* ql-container et ql-toolbar sont contenu dans le composant quill-edtor qui est un module externe ajouter avec la commande npm */
     #textarea .ql-toolbar, #textarea .ql-container{ 
         width: 100%;
-        max-width: 520px;
+        max-width: 100%;
     }
     .ql-editor {
         word-wrap: break-word;

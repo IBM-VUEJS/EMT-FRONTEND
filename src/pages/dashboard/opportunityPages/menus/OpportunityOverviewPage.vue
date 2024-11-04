@@ -55,7 +55,6 @@
 
     const createChartBar_1 = () => {
         const ctx = chartCanvasBar_1.value.getContext('2d');
-
         new ChartJS(ctx, {
             type: 'bar',
             data: {

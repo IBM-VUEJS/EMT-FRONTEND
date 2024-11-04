@@ -39,7 +39,7 @@ import { ref } from 'vue';
         justify-content: center;
         gap: 10px;
         height: 100%;
-        padding: 0 10px;
+        /* padding: 0 10px; */
         flex-direction: column;
     }
     .input_select .select{
