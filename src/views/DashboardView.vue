@@ -18,10 +18,12 @@
     const showAddOpportuinity = ref(false)
     const showDefinePasswordForm = ref(true)
     const showOpportunity  = ref(false)
+    const showClient  = ref(false)
     const showUpdateOpportunity  = ref(false)
     const showProspect = ref(false)
     const showNavbar = ref(true)
     const opportunity_to_show  = ref([])
+    const client_to_show  = ref([])
 
     //Affichage du fond noir
     provide('show', show)
@@ -34,6 +36,9 @@
 
     //formulaire d'affichage d'une opportunité
     provide('showOpportunity', showOpportunity)
+
+    //formulaire d'affichage d'un client
+    provide('showClient', showClient)
 
     //formulaire de mise à jour d'une opportunité
     provide('showUpdateOpportunity', showUpdateOpportunity)

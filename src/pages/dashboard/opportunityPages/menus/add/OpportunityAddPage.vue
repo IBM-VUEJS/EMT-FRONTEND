@@ -26,7 +26,7 @@ import DownloadIcon from '@/components/icons/DownloadIcon';
         </div>
     </div>
     <div class="form_red_descript_text">
-        <div class="container">
+        <div class="container_opportunity">
             <div class="red_descript_text">
                 <h4>Créer une opportunité</h4>
                 <small>Remplissez ce formulaire pour créer une opportunité</small>
@@ -36,8 +36,8 @@ import DownloadIcon from '@/components/icons/DownloadIcon';
                 <div class="form_details_opportunity">
                     <h5>Détails de l'opportunité</h5>
                 </div>
-                <form class="inputs">
-                    <div class="input">
+                <form class="inputs_opportunity_form">
+                    <div class="input_opportunity">
                         <InputComponent :libel="'Nom de l\'opportunité'" :border="'1px solid var(--grey)'"></InputComponent>
                     </div>
                     <div class="double_inputs">
@@ -48,25 +48,25 @@ import DownloadIcon from '@/components/icons/DownloadIcon';
                             <SelectComponent :bottom="'0'" :width="'100%'" :libel="'Devise'"  :border="'1px solid var(--grey)'"></SelectComponent>
                         </div>
                     </div>
-                    <div class="input">
+                    <div class="input_opportunity">
                         <InputComponent :width="'100%'" :libel="'Probabilité de conversion'"  :border="'1px solid var(--grey)'"></InputComponent>
                     </div>
-                    <div class="input">
+                    <div class="input_opportunity">
                         <SelectComponent :width="'100%'" :libel="'Type de contact'"  :border="'1px solid var(--grey)'"></SelectComponent>
                     </div>
-                    <div class="input">
+                    <div class="input_opportunity">
                         <InputComponent :width="'100%'" :libel="'Nom du contact'"  :border="'1px solid var(--grey)'"></InputComponent>
                     </div>
-                    <div class="input">
+                    <div class="input_opportunity">
                         <SelectComponent :width="'100%'" :libel="'Source de l\'opportunité'"  :border="'1px solid var(--grey)'"></SelectComponent>
                     </div>
-                    <div class="input">
+                    <div class="input_opportunity">
                         <SelectComponent :width="'100%'" :libel="'Catégorie'"  :border="'1px solid var(--grey)'"></SelectComponent>
                     </div>
-                    <div class="input">
+                    <div class="input_opportunity">
                         <SelectComponent :width="'100%'" :libel="'Secteur d\'activités'"  :border="'1px solid var(--grey)'"></SelectComponent>
                     </div>
-                    <div class="input">
+                    <div class="input_opportunity">
                         <SelectComponent :width="'100%'" :libel="'Pays'"  :border="'1px solid var(--grey)'"></SelectComponent>
                     </div>
                     <div class="textarea">
@@ -103,7 +103,7 @@ import DownloadIcon from '@/components/icons/DownloadIcon';
         align-items: start;
         justify-content: center;
     }
-    .container{
+    .container_opportunity{
         width: 65%;
     }
     .red_descript_text{
@@ -122,16 +122,16 @@ import DownloadIcon from '@/components/icons/DownloadIcon';
         border: 1px solid rgba(237, 237, 237, 1);
         background-color: var(--white);
         border-radius: 12px;
-        padding: 25px  10px 10px 10px;
+        padding: 25px  20px 10px 20px;
     }
-    .inputs{
+    .inputs_opportunity_form{
         padding: 10px;
         display: flex;
         flex-direction: column;
         gap: 10px;
         /* outline: 1px solid red; */
     }
-    .input{
+    .input_opportunity{
         min-height: 50px;
         width: 100%;
         display: grid;
@@ -143,9 +143,9 @@ import DownloadIcon from '@/components/icons/DownloadIcon';
         grid-template-columns: 1fr 1fr;
         min-height: 50px;
         width: 100%;
+        gap: 10px;
     }
     .textarea{
-        padding: 0 10px;
         display: grid;
         grid-template-columns: 1fr;
     }
@@ -155,5 +155,14 @@ import DownloadIcon from '@/components/icons/DownloadIcon';
         justify-content: end;
         gap: 20px;
         padding: 25px 10px 0px 10px;
+    }    
+    @media screen and (max-width: 850px) {
+        .container_opportunity{
+            width: 100%;
+        }
+        .cancel_save{
+            justify-content: space-between;
+            padding: 25px 0 0 0;
+        }
     }
 </style>

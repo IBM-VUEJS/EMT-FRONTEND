@@ -40,6 +40,11 @@
             <div id="textarea">
                 <quill-editor v-model="content" :options="editorOptions"></quill-editor>
             </div>
+            <small class="small_error">
+                    <template v-if="error">
+                        {{ error }}
+                    </template>
+            </small>
         </div>
 </template>
 

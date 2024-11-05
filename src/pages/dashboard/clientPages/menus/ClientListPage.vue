@@ -15,12 +15,9 @@ import PaginationRightArrow from '@/components/icons/PaginationRightArrow';
 import PrintIcon from '@/components/icons/PrintIcon';
 import YellowEditPenLine from '@/components/icons/YellowEditPenLine';
 import Swal from 'sweetalert2';
-import { inject, provide, ref, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
+import { inject, provide, ref } from 'vue';
 
-const router = useRouter()
-
-const opportunities = [
+const clients = [
     {
         numero: 'CLT_2401',
         nom: 'EBA',
@@ -106,21 +103,14 @@ const opportunities = [
 
 const hideFilter = ref(false)
 const hidePrinter = ref(false)
-const client_to_show = ref(null)
-const show = ref(null)
-const showclient = ref(null)
-const showAddOpportuinity = ref(null)
-const showUpdateclient = ref(null)
-const showDefinePasswordForm = ref(null)
+const client_to_show = inject('client_to_show')
 
-onMounted(() => {
-    client_to_show.value = inject('client_to_show')
-    show.value = inject('show')
-    showclient.value  = inject('showclient')
-    showAddOpportuinity.value = inject('showAddOpportuinity')
-    showUpdateclient.value = inject('showUpdateclient')
-    showDefinePasswordForm.value = inject('showDefinePasswordForm')
-})
+
+const show = inject('show')
+const showClient  = inject('showClient')
+const showAddOpportuinity = inject('showAddOpportuinity')
+const showUpdateclient = inject('showUpdateclient')
+const showDefinePasswordForm = inject('showDefinePasswordForm')
 
 
 const archiveclientFunc = () => {
@@ -153,19 +143,20 @@ const archiveclientFunc = () => {
         showDefinePasswordForm.value = false
 }
 
-const showclientFunc = (client) => {
-    showclient.value = true
+const showclientFunc = (id) => {
+    console.log(showClient.value);
+    showClient.value = true
+    console.log(showClient.value);
     show.value = true
-    client_to_show.value.push(client)
-    router.push({name: 'client-show'})
+    console.log(client_to_show.value);
+    client_to_show.value.push(clients.find((client) => client.id === id))
 }
 
 const UpdateclientFunc = (id) => {
     showUpdateclient.value = true
     show.value = true
-    client_to_show.value.push(opportunities.find((client) => client.id === id))
-    provide('client_to_show', client_to_show.value)
-    console.log(client_to_show.value);
+    client_to_show.value.push(clients.find((client) => client.id === id))
+    // console.log(client_to_show.value);
 }
 
 const addclient = () => {
@@ -288,7 +279,7 @@ const printOpportunities = () => {
                 <div  class="actions">Action</div>
             </div>
             <div class="list_body">
-                <template v-for="client in opportunities">
+                <template v-for="client in clients">
                     <div class="list_body_values">
                         <div  class="list_value"  style="padding-left: 15px;">{{client['numero']}}</div>
                         <div  class="list_value">{{ client['nom'] }}</div>
@@ -297,9 +288,11 @@ const printOpportunities = () => {
                         <div  class="list_value">{{client['produit_service']}}</div>
                         <div  class="list_value" :class="{green: client['statut'] === 'Actif',  red: client['statut'] === 'Inactif'}">{{client['statut']}}</div>
                         <div  class="actions">
-                            <div class="action_icons" @click="showclientFunc(client)">
-                                <span v-html="BlueEyesIcon"></span>
-                            </div>
+                            <RouterLink :to="{name: 'client-show', params: {client_id: client['numero']}}">
+                                <div class="action_icons">
+                                    <span v-html="BlueEyesIcon"></span>
+                                </div>
+                            </RouterLink>
                             <div class="action_icons" @click="UpdateclientFunc(client['id'])">
                                 <span v-html="YellowEditPenLine"></span>
                             </div>
@@ -363,7 +356,7 @@ const printOpportunities = () => {
         height: 50px;
     }
     .list_body{
-        height: 525px;
+        min-height: 500px;
     }
     .pagination{
         height: 50px;

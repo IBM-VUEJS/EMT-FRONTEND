@@ -6,8 +6,21 @@ import TextareaComponent from '@/components/auth/form/TextareaComponent.vue';
 import RedCircleArrowIcon from '@/components/icons/RedCircleArrowIcon';
 import DownloadIcon from '@/components/icons/DownloadIcon';
 import ResourcePersonIcon from '@/components/icons/ResourcePersonIcon';
+import Swal from 'sweetalert2';
+import { useRouter } from 'vue-router';
 
-
+const router = useRouter()
+const createClientFunc = () => {
+    router.push({name: 'client-list'})
+    Swal.fire(
+        {
+            icon: 'success',
+            text: 'Le Client a été crée avec succès',
+            confirmButtonText: 'Retour',
+            confirmButtonColor: 'var(--green)'
+        }
+    )
+}
 </script>
 
 <template>
@@ -27,17 +40,28 @@ import ResourcePersonIcon from '@/components/icons/ResourcePersonIcon';
         </div>
     </div>
     <div class="form_red_descript_text">
-        <div class="container">
+        <div class="container_client">
             <div class="red_descript_text">
                 <h4>Créer un Client</h4>
                 <small>Remplissez ce formulaire pour créer un client</small>
             </div>
 
             <div class="form">
+                <div class="myprofile_div_image">
+                    <div class="myprofile_div_image_container_client">
+                        <img src="" alt="">
+                    </div>
+                    <label for="profil" class="camera">
+                        <i class="bi bi-camera-fill" ></i>
+                    </label>
+                    <div class="container_client_topbar_menu">
+                    </div>
+                </div>
                 <div class="form_details_opportunity">
                     <h5>Informations du client</h5>
                 </div>
-                <form class="clients" @submit.prevent="createClient">
+                
+                <form class="clients" @submit.prevent="createClientFunc">
                     <div class="input_client_info">
                         <InputComponent :libel="'Nom du client'" :placeholder="'Nom'" :border="'1px solid var(--grey)'"></InputComponent>
                     </div>
@@ -109,12 +133,13 @@ import ResourcePersonIcon from '@/components/icons/ResourcePersonIcon';
                         <InputComponent :width="'100%'" :libel="'Poste occupé'" :placeholder="'Veuillez saisir'"  :border="'1px solid var(--grey)'"></InputComponent>
                     </div>
                     <div class="cancel_save">
-                        <ButtonComponent :button_width="'140px'" :type="'reset'" :slim="true" :bordered="true" >Annuler</ButtonComponent>
+                        <ButtonComponent :button_width="'120px'" :type="'reset'" :slim="true" :bordered="true" >Annuler</ButtonComponent>
                         <ButtonComponent :button_width="'140px'" :type="'submit'" :slim="true" >
                             Enregister 
                             <span v-html="DownloadIcon"></span>
                         </ButtonComponent>
                     </div>
+                    <input type="file" name="" id="profil" style="visibility: hidden;">
                 </form>
             </div>
         </div>
@@ -139,7 +164,7 @@ import ResourcePersonIcon from '@/components/icons/ResourcePersonIcon';
         align-items: start;
         justify-content: center;
     }
-    .container{
+    .container_client{
         width: 65%;
     }
     .red_descript_text{
@@ -159,6 +184,42 @@ import ResourcePersonIcon from '@/components/icons/ResourcePersonIcon';
         background-color: var(--white);
         border-radius: 12px;
         padding: 25px  10px 10px 10px;
+    }
+    .myprofile_div_image{
+        width: 220px;
+        height: 220px;
+        background-color: var(--red);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin: 0 auto;
+    }
+    .myprofile_div_image_container_client{
+        width: 205px;
+        height: 205px;
+        background-color: aliceblue;
+        border-radius: 50%;
+    }
+    .param_container_client_sidebar_links{
+        padding: 50px 20px 0 0;
+        height: 80%;
+        border-right: 1px solid var(--grey-light);
+    }
+    .camera{
+        color: var(--white);
+        background-color: var(--red);
+        font-size: 1.4rem;
+        position: absolute;
+        bottom: 0;
+        right: 30px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        text-align: center;
+        align-content: center;
+        cursor: pointer;
     }
     .clients{
         padding: 15px;
@@ -197,5 +258,14 @@ import ResourcePersonIcon from '@/components/icons/ResourcePersonIcon';
         justify-content: end;
         gap: 20px;
         padding: 25px 10px 0px 10px;
+    }
+    @media screen and (max-width: 850px) {
+        .container_client{
+            width: 100%;
+        }
+        .cancel_save{
+            justify-content: space-between;
+            padding: 25px 0 0 0;
+        }
     }
 </style>

@@ -98,7 +98,7 @@ const routes = [
         component: ClientAddPage
     },
     {
-        path: 'client-show',
+        path: 'client-show/:client_id',
         name: 'client-show',
         component: ClientShowPage
     }

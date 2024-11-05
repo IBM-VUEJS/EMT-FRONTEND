@@ -29,6 +29,11 @@ import { ref } from 'vue';
                     </option>
                 </template>
             </select>
+            <small class="small_error">
+                    <template v-if="error">
+                        {{ error }}
+                    </template>
+                </small>
         </div>
 </template>
 
@@ -68,5 +73,8 @@ import { ref } from 'vue';
     .purple:focus{
         border: 1px solid var(--purple);   
         outline: 2px solid var(--purple);
+    }
+    .select_error{
+        text-wrap: nowrap;
     }
 </style>

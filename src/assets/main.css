@@ -43,6 +43,11 @@ a,
   padding: 20px;
   background-color: var(--white);
 }
+.small_error{
+  height: 10px;
+  margin-bottom: 5px;
+  color: red;
+}
 
 @media (hover: hover) {
   a:hover {

@@ -132,9 +132,11 @@ const showclientFunc = (id) => {
                         <div  class="list_value">{{client['produit_service']}}</div>
                         <div  class="list_value" :class="{green: client['statut'] === 'Actif',  red: client['statut'] === 'Inactif'}">{{client['statut']}}</div>
                         <div  class="actions">
-                            <div class="action_icons" @click="showclientFunc(client['numero'])">
-                                <span v-html="BlueEyesIcon"></span>
-                            </div>
+                            <RouterLink :to="{name: 'client-show', params: {client_id: client['numero']}}">
+                                <div class="action_icons" @click="showclientFunc(client['numero'])">
+                                    <span v-html="BlueEyesIcon"></span>
+                                </div>
+                            </RouterLink>
                             <div class="action_icons" @click="unarchiveclient(client['numero'])">
                                 <span v-html="DeleteIcon"></span>
                             </div>

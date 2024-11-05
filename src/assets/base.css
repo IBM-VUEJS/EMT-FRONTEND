@@ -8,8 +8,10 @@
 /* semantic color variables for this project */
 :root {
   --red: #961b1b;
+  --red-light: #aa3d3d3a;
   --blue: #036DF8;
   --green: #28C76F;
+  --green-light: #45d7875c;
   --yellow: #FF9A0C;
   --red-gradient: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(194, 129, 129, 0.345) 70%, #BE0303 100%);
   --red-gradient-bg: linear-gradient(90deg, red, #961b1b);
