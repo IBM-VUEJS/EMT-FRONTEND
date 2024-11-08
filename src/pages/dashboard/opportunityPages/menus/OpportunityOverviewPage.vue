@@ -172,6 +172,7 @@
                     ]
                     },
                 options: {
+                    responsive: true,
                     scales: {
                         y: {
                             grid: {
@@ -360,25 +361,25 @@
             <div class="chart_zone1" style="padding: 0;">
                 <div class="chart_zone1_bar">
                     <div class="box chart_zone1_opp_pros">
-                    <div class="text" >
-                        <div class="chart1_title">
-                            Opportunités par statut 2024
+                        <div class="text" >
+                            <div class="chart1_title">
+                                Opportunités par statut 2024
+                            </div>
+                        </div>
+                        <div class="chart1">
+                            <canvas ref="chartCanvasBar_1"></canvas>
                         </div>
                     </div>
-                    <div class="chart1">
-                        <canvas ref="chartCanvasBar_1"></canvas>
-                    </div>
-                </div>
-                <div class="box chart_zone1_opp_pros">
-                    <div class="text" >
-                        <div class="chart1_title">
-                            Opportunités par mois
+                    <div class="box chart_zone1_opp_pros">
+                        <div class="text" >
+                            <div class="chart1_title">
+                                Opportunités par mois
+                            </div>
+                        </div>
+                        <div class="chart1">
+                            <canvas ref="chartCanvasBar_2"></canvas>
                         </div>
                     </div>
-                    <div class="chart1">
-                        <canvas ref="chartCanvasBar_2"></canvas>
-                    </div>
-                </div>
                 </div>
                 <div class="stat_per_year box">
                     <div class="number" style="align-items: end;" >
@@ -390,8 +391,8 @@
                             <div><span style="font-weight: bold; font-size: 1.5rem; margin-right: 10px;">75</span> Prospects</div>
                         </div>
                     </div>
-                    <div class="number">
-                        <canvas ref="chartCanvasLine"></canvas>
+                    <div class="number" id="curviline_chart">
+                        <canvas ref="chartCanvasLine" style="width: 100% !important;"></canvas>
                     </div>
                     <div class="number" style="align-items: start;">
                         <ButtonComponent :button_width="'100px'" :bottom="'0'" :slim="true">Consulter</ButtonComponent>
@@ -550,7 +551,7 @@
         display: flex;
         flex-direction: column;
         /* height: 100%; */
-        width: 70%;
+        width: 65%;
         gap: 15px;
     }
     .chart_zone1_opp_pros .chart1{
@@ -578,6 +579,9 @@
         justify-content: end;
         gap: 15px;
     }
+    #curviline_chart canvas{
+        width: 100% !important;
+    }
     .legend{
         display: flex;
         align-items: center;
@@ -599,7 +603,7 @@
         align-items: center;
         justify-content: space-evenly;
         flex-direction: column;
-        width: 30%;
+        width: 35%;
         /* height: 100%; */
         /* gap: 3rem; */
     }
@@ -654,6 +658,9 @@
         .stat_per_year{
             height: 100%;
         }
+        #curviline_chart canvas{
+            width: 50% !important;
+        }
     }
 
 @media screen and (max-width: 1100px) {
@@ -692,7 +699,7 @@
 }
 @media screen and (max-width: 600px) {
         #overviews{
-            min-height: 100svh
+            min-height: 100svh; 
         }
         .circle_charts{
             flex-direction: column;
@@ -701,6 +708,9 @@
         .circle_chart{
             width: 100%;
             height: 400px;
+        }
+        #curviline_chart canvas{
+            width: 80% !important;
         }
 }
 </style>

@@ -84,12 +84,14 @@ import { ref, onMounted } from 'vue';
         align-items: center;
         justify-content: center;
         width: 100%;
+        min-height: 40px;
     }
     .container_topbar_menu{
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        height: 40px;
     }
     .current_page_option{
         display: flex;

@@ -1,12 +1,19 @@
 <script setup>
-    import { ref } from 'vue';
+    import { ref, onMounted } from 'vue';
     import EyehideoutlineIcon from '@/components/icons/EyehideoutlineIcon';
     import EyeoutlineIcon from '@/components/icons/EyeoutlineIcon';
     import SearchIcon from '@/components/icons/SearchIcon';
 
     const show_password = ref(false)
-
-    defineProps(
+    const emits = defineEmits(['update:inputValue', 'update:passwordValue'])
+    const onInputChange = (event) => {
+        emits('update:inputValue', event.target.value)
+        console.log('input')
+    }
+    const onPasswordChange = (event) => {
+        emits('update:passwordValue', event.currentTarget.value)
+    }
+    const props = defineProps(
         {
             type: String, 
             value: String,
@@ -21,9 +28,13 @@
             padding: String,
             readonly: Boolean,
             height: String,
-            error: String
+            input_error: Array,
+            passwordValue: String
         }
     )
+    onMounted(() => {
+        console.log(props.input_error)
+    })
 </script>
 
 <template>
@@ -31,7 +42,7 @@
             <label :for="name">{{libel}}</label>
             <template v-if="type === 'password'">
                 <div class="input_div"  :style="{border: border, padding: padding}">
-                    <input :type="show_password ? 'text' : 'password'" :name="name"  :placeholder="placeholder" :readonly="readonly">
+                    <input :type="show_password ? 'text' : 'password'" :name="name"  :placeholder="placeholder" :readonly="readonly" @input="onPasswordChange">
                     <div class="icon" @click="show_password = !show_password">
                         <template v-if="show_password">
                             <span v-html="EyeoutlineIcon"></span>
@@ -42,16 +53,16 @@
                     </div>
                 </div>
                 <small class="small_error">
-                    <template v-if="error">
-                        {{ error }}
+                    <template v-if="input_error">
+                        <!-- {{ error }} -->
                     </template>
                 </small>
             </template>
             <template v-else>
-                <input class="input" :type="type" :name="name" :id="name" :value="value" :placeholder="placeholder" :style="{border: border, width: width, borderRadius: radius, padding: padding, height: height}" :readonly="readonly">
+                <input class="input" :type="type" :name="name" :id="name" :value="value" :placeholder="placeholder" :style="{border: border, width: width, borderRadius: radius, padding: padding, height: height}" :readonly="readonly" @input="onInputChange">
                 <small class="small_error">
-                    <template v-if="error">
-                        {{ error }}
+                    <template v-if="input_error">
+                        {{ input_error }}
                     </template>
                 </small>
             </template>

@@ -20,21 +20,29 @@ import EbaLogoComponent from '@/components/dashboard/navigationbar/EbaLogoCompon
         justify-content: center;
         width: 100%;
         height: 100%;
+        padding: 0 10px;
     }
     .form{
-        display: grid;
-        grid-template-rows: 180px 1fr;
+        display: flex;
+        flex-direction: column;
         width: 460px;
-        min-height: 400px;
-
+        /* min-height: 400px; */
     }
     @media screen and (max-width: 1300px) {
         .form{
             display: grid;
             grid-template-rows: 180px 1fr;
-            width: 90%;
-            min-height: 400px;
+            width: 100%;
+            /* min-height: 00px; */
+        }
+    }
 
+    @media screen and (max-width: 360px) {
+        .form{
+            display: grid;
+            grid-template-rows: 180px 1fr;
+            width: 100%;
+            /* min-height: 00px; */
         }
     }
 </style>

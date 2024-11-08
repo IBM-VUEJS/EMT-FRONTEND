@@ -156,29 +156,29 @@ import { ref, onMounted } from 'vue';
            ],
            [
            {
-                name: 'Second views',
-                money: '92.000.000 FCFA',
-                project: '05'
+                name: 'SBIN',
+                money: '44900.000 FCFA',
+                project: '03'
             },
             {
-                name: 'MTN',
-                money: '92.000.000 FCFA',
-                project: '05'
+                name: 'SBIN',
+                money: '2.000.000 FCFA',
+                project: '15'
             },
             {
-                name: 'MTN',
-                money: '92.000.000 FCFA',
-                project: '05'
+                name: 'SBIN',
+                money: '765.000.000 FCFA',
+                project: '11'
             },
             {
-                name: 'MTN',
+                name: 'SBIN',
                 money: '92.000.000 FCFA',
-                project: '05'
+                project: '21'
             },
             {
-                name: 'MTN',
-                money: '92.000.000 FCFA',
-                project: '05'
+                name: 'SBIN',
+                money: '654.000.000 FCFA',
+                project: '08'
             },
            ]
         ]
@@ -370,12 +370,14 @@ import { ref, onMounted } from 'vue';
         display: grid;
         grid-template-columns: 3fr 1fr;
         width: 100%;
+        height: calc(100% - 40px);
         gap: 15px;
     }
     .left_client_container{
         display: flex;
         flex-direction: column;
         gap: 15px;
+        height: 100%;
     }
     .statistics{
         width: 100%;
@@ -407,10 +409,12 @@ import { ref, onMounted } from 'vue';
         display: flex;
         flex-direction: column;
         gap: 15px;
+        width: 100%;
+        height: 100%;
     }
     .right_client_container_child{
         width: 100%;
-        height: 41svh;
+        height: 50%;
         overflow-x: hidden;
         overflow-y: scroll
     }
@@ -604,7 +608,7 @@ import { ref, onMounted } from 'vue';
         /* outline: 1px solid red; */
     }
     .circular_progress_bar{
-        width: 75px;
+        width: 75px !important;
     }
     .circle_libel_price{
         display: flex;
