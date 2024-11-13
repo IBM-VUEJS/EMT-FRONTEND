@@ -166,10 +166,6 @@ const updateProfil = () => {
         padding: 0 30px 0px 2px;
         gap: 15px;
     }
-    .form_part_title{
-        /* display: grid;
-        grid-template-rows: 20px 1fr; */
-    }
     .title{
         display: flex;
         align-items: center;
