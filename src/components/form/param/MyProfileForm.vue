@@ -128,9 +128,6 @@ const updateProfil = () => {
 </template>
 
 <style scoped>
-/* *{
-    outline: 1px solid red
-} */
     *{
         box-sizing: border-box;
         margin: 0;
@@ -148,7 +145,6 @@ const updateProfil = () => {
         display: flex;
         flex-wrap: wrap;
         width: 100%;
-        /* min-height: 450px; */
         margin-bottom: 20px;
         margin-top: 20px;
         padding-bottom: 20px;
@@ -178,12 +174,10 @@ const updateProfil = () => {
         display: grid;
     }
     .double_input_username{
-        display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 15px;
     }
     .double_input_number{
-        display: grid;
         grid-template-columns: 80px 1fr;
         gap: 15px;
     }
