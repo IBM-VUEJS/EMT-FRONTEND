@@ -1,5 +1,5 @@
 <script setup>
-import SearchComponent from '@/components/auth/form/SearchComponent.vue';
+import SearchComponent from '@/components/form/SearchComponent.vue';
 import BlueEyesIcon from '@/assets/icons/BlueEyesIcon';
 import DeleteIcon from '@/assets/icons/DeleteIcon';
 import PaginationLeftArrow from '@/assets/icons/PaginationLeftArrow';

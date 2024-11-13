@@ -1,7 +1,7 @@
 <script setup>
-    import InputComponent from '@/components/auth/form/InputComponent.vue';
-    import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
-    import CriteriaComponent from '@/components/auth/form/CriteriaComponent.vue';
+    import InputComponent from '../InputComponent.vue';
+    import ButtonComponent from '../ButtonComponent.vue';
+    import CriteriaComponent from '../CriteriaComponent.vue';
     import { computed, inject, provide, ref, watch } from 'vue';
     import Swal from 'sweetalert2';
 

@@ -1,12 +1,8 @@
 <script setup>
-import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
-import SearchComponent from '@/components/auth/form/SearchComponent.vue';
 import BlueEyesIcon from '@/assets/icons/BlueEyesIcon';
 import DeleteIcon from '@/assets/icons/DeleteIcon';
-import FilterIcon from '@/assets/icons/FilterIcon';
 import PaginationLeftArrow from '@/assets/icons/PaginationLeftArrow';
 import PaginationRightArrow from '@/assets/icons/PaginationRightArrow';
-import YellowEditPenLine from '@/assets/icons/YellowEditPenLine';
 import Swal from 'sweetalert2';
 
 const prospects = [

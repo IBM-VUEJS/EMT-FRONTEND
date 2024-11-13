@@ -1,12 +1,12 @@
 <script setup>
-    import InputComponent from '@/components/auth/form/InputComponent.vue';
-    import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
-    import CriteriaComponent from '@/components/auth/form/CriteriaComponent.vue';
-import BackArrowTextComponent from '@/components/auth/form/backArrowTextComponent.vue';
-import RedirectComponent from '@/components/auth/form/RedirectComponent.vue';
-import Swal from 'sweetalert2';
-import { useRouter } from 'vue-router';
-import { onMounted } from 'vue';
+    import InputComponent from '../InputComponent.vue';
+    import ButtonComponent from '../ButtonComponent.vue';
+    import CriteriaComponent from '../CriteriaComponent.vue';
+    import backArrowTextComponent from '../backArrowTextComponent.vue';
+    import RedirectComponent from '../RedirectComponent.vue';
+    import Swal from 'sweetalert2';
+    import { useRouter } from 'vue-router';
+    import { onMounted } from 'vue';
 
     const props = defineProps(
         {

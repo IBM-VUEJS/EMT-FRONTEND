@@ -1,6 +1,6 @@
 <script setup>
-import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
-import SearchComponent from '@/components/auth/form/SearchComponent.vue';
+import ButtonComponent from '@/components/form/ButtonComponent.vue';
+import SearchComponent from '@/components/form/SearchComponent.vue';
 import ActifClientIcon from '@/assets/icons/ActifClientIcon';
 import ActivityViewMoreRightIcon from '@/assets/icons/ActivityViewMoreRightIcon';
 import InactifClientIcon from '@/assets/icons/InactifClientIcon';

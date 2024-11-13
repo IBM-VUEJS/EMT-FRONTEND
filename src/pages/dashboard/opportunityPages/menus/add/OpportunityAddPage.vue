@@ -1,8 +1,8 @@
 <script setup>
-import InputComponent from '@/components/auth/form/InputComponent.vue';
-import SelectComponent from '@/components/auth/form/SelectComponent.vue';
-import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
-import TextareaComponent from '@/components/auth/form/TextareaComponent.vue';
+import InputComponent from '@/components/form/InputComponent.vue';
+import SelectComponent from '@/components/form/SelectComponent.vue';
+import ButtonComponent from '@/components/form/ButtonComponent.vue';
+import TextareaComponent from '@/components/form/TextareaComponent.vue';
 import RedCircleArrowIcon from '@/assets/icons/RedCircleArrowIcon';
 import DownloadIcon from '@/assets/icons/DownloadIcon';
 

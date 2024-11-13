@@ -1,7 +1,7 @@
 <script setup>
-import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
-import InputComponent from '@/components/auth/form/InputComponent.vue';
-import SelectComponent from '@/components/auth/form/SelectComponent.vue';
+import ButtonComponent from '../../ButtonComponent.vue';
+import InputComponent from '../../InputComponent.vue';
+import SelectComponent from '../../SelectComponent.vue';
 import LeftArrowIcon from '@/assets/icons/LeftArrowIcon';
 
     

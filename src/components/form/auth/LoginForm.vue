@@ -1,7 +1,7 @@
 <script setup>
-import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
-import InputComponent from '@/components/auth/form/InputComponent.vue';
-import RedirectComponent from '@/components/auth/form/RedirectComponent.vue';
+import ButtonComponent from '../ButtonComponent.vue';
+import InputComponent from '../InputComponent.vue';
+import RedirectComponent from '../RedirectComponent.vue';
 import { ref } from 'vue';
 import { RecaptchaV2 } from 'vue3-recaptcha-v2';
 import { useRoute, useRouter } from 'vue-router';

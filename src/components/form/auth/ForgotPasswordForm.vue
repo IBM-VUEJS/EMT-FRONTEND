@@ -1,8 +1,8 @@
 <script setup>
-    import InputComponent from '@/components/auth/form/InputComponent.vue';
-    import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
-    import BackArrowTextComponent from '@/components/auth/form/backArrowTextComponent.vue';
-    import RedirectComponent from '@/components/auth/form/RedirectComponent.vue';
+    import InputComponent from '../InputComponent.vue';
+    import ButtonComponent from '../ButtonComponent.vue';
+    import BackArrowTextComponent from '../backArrowTextComponent.vue';
+    import RedirectComponent from '../RedirectComponent.vue';
     import { onMounted, ref } from 'vue';
     import Swal from 'sweetalert2';
 
