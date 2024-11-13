@@ -1,6 +1,6 @@
 <script setup>
-    import AuthView from '@/views/AuthView.vue';
-    import FormView from '@/views/FormView.vue';
+    import AuthView from '@/layouts/AuthView.vue';
+    import FormView from '@/layouts/FormView.vue';
     import ForgotPasswordForm from '@/components/form/auth/ForgotPasswordForm.vue';
 </script>
 

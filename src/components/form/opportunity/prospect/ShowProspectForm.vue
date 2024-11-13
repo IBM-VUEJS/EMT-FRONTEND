@@ -2,7 +2,7 @@
 import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
 import InputComponent from '@/components/auth/form/InputComponent.vue';
 import SelectComponent from '@/components/auth/form/SelectComponent.vue';
-import LeftArrowIcon from '@/components/icons/LeftArrowIcon';
+import LeftArrowIcon from '@/assets/icons/LeftArrowIcon';
 
     
 </script>

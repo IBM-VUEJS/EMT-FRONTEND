@@ -3,8 +3,8 @@ import InputComponent from '@/components/auth/form/InputComponent.vue';
 import SelectComponent from '@/components/auth/form/SelectComponent.vue';
 import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
 import TextareaComponent from '@/components/auth/form/TextareaComponent.vue';
-import RedCircleArrowIcon from '@/components/icons/RedCircleArrowIcon';
-import DownloadIcon from '@/components/icons/DownloadIcon';
+import RedCircleArrowIcon from '@/assets/icons/RedCircleArrowIcon';
+import DownloadIcon from '@/assets/icons/DownloadIcon';
 
 
 </script>

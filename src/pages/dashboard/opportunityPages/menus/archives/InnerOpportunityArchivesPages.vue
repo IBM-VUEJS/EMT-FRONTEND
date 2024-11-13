@@ -1,9 +1,9 @@
 <script setup>
 
-import PaginationLeftArrow from '@/components/icons/PaginationLeftArrow';
-import PaginationRightArrow from '@/components/icons/PaginationRightArrow';
-import BlueEyesIcon from '@/components/icons/BlueEyesIcon';
-import DeleteIcon from '@/components/icons/DeleteIcon';
+import PaginationLeftArrow from '@/assets/icons/PaginationLeftArrow';
+import PaginationRightArrow from '@/assets/icons/PaginationRightArrow';
+import BlueEyesIcon from '@/assets/icons/BlueEyesIcon';
+import DeleteIcon from '@/assets/icons/DeleteIcon';
 import { inject } from 'vue';
 import Swal from 'sweetalert2';
 

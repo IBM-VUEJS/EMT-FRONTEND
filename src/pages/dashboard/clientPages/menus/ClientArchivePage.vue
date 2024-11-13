@@ -1,9 +1,9 @@
 <script setup>
 import SearchComponent from '@/components/auth/form/SearchComponent.vue';
-import BlueEyesIcon from '@/components/icons/BlueEyesIcon';
-import DeleteIcon from '@/components/icons/DeleteIcon';
-import PaginationLeftArrow from '@/components/icons/PaginationLeftArrow';
-import PaginationRightArrow from '@/components/icons/PaginationRightArrow';
+import BlueEyesIcon from '@/assets/icons/BlueEyesIcon';
+import DeleteIcon from '@/assets/icons/DeleteIcon';
+import PaginationLeftArrow from '@/assets/icons/PaginationLeftArrow';
+import PaginationRightArrow from '@/assets/icons/PaginationRightArrow';
 import Swal from 'sweetalert2';
 import { inject, provide, ref } from 'vue';
 

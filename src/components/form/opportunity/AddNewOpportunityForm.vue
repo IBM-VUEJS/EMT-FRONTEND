@@ -3,8 +3,8 @@ import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
 import InputComponent from '@/components/auth/form/InputComponent.vue';
 import SelectComponent from '@/components/auth/form/SelectComponent.vue';
 import TextareaComponent from '@/components/auth/form/TextareaComponent.vue';
-import DownloadIcon from '@/components/icons/DownloadIcon';
-import LeftArrowIcon from '@/components/icons/LeftArrowIcon';
+import DownloadIcon from '@/assets/icons/DownloadIcon';
+import LeftArrowIcon from '@/assets/icons/LeftArrowIcon';
 import Swal from 'sweetalert2';
 import { inject } from 'vue';
 

@@ -1,5 +1,5 @@
 <script setup>
-    import SearchIcon from '@/components/icons/SearchIcon';
+    import SearchIcon from '@/assets/icons/SearchIcon';
 
     defineProps(
         {

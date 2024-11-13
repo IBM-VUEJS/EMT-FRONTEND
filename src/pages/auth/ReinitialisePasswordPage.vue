@@ -1,7 +1,7 @@
 <script setup>
     import ReinitialisePasswordForm from '@/components/form/auth/ReinitialisePasswordForm.vue';
-    import AuthView from '@/views/AuthView.vue';
-    import FormView from '@/views/FormView.vue';
+    import AuthView from '@/layouts/AuthView.vue';
+    import FormView from '@/layouts/FormView.vue';
 </script>
 
 <template>

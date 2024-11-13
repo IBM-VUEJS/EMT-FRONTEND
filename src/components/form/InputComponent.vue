@@ -1,8 +1,8 @@
 <script setup>
     import { ref, onMounted } from 'vue';
-    import EyehideoutlineIcon from '@/components/icons/EyehideoutlineIcon';
-    import EyeoutlineIcon from '@/components/icons/EyeoutlineIcon';
-    import SearchIcon from '@/components/icons/SearchIcon';
+    import EyehideoutlineIcon from '@/assets/icons/EyehideoutlineIcon';
+    import EyeoutlineIcon from '@/assets/icons/EyeoutlineIcon';
+    import SearchIcon from '@/assets/icons/SearchIcon';
 
     const show_password = ref(false)
     const emits = defineEmits(['update:inputValue', 'update:passwordValue'])

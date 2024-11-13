@@ -1,6 +1,6 @@
 <script setup>
 import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
-import EditPenLineIcon from '@/components/icons/EditPenLineIcon';
+import EditPenLineIcon from '@/assets/icons/EditPenLineIcon';
 import InputComponent from '@/components/auth/form/InputComponent.vue';
 import SelectComponent from '@/components/auth/form/SelectComponent.vue';
 import Swal from 'sweetalert2';

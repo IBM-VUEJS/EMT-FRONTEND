@@ -1,9 +1,9 @@
 <script setup>
     import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
-    import LoseOpportunityIcon from '@/components/icons/LoseOpportunityIcon';
-    import NewOpportunityIcon from '@/components/icons/NewOpportunityIcon';
-    import QualifyOpportunityIcon from '@/components/icons/QualifyOpportunityIcon';
-    import WinOpportunityIcon from '@/components/icons/WinOpportunityIcon';
+    import LoseOpportunityIcon from '@/assets/icons/LoseOpportunityIcon';
+    import NewOpportunityIcon from '@/assets/icons/NewOpportunityIcon';
+    import QualifyOpportunityIcon from '@/assets/icons/QualifyOpportunityIcon';
+    import WinOpportunityIcon from '@/assets/icons/WinOpportunityIcon';
     import { ref, onMounted } from 'vue';
     import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, LineElement, BarController, LineController, PieController, ArcElement, Title, Tooltip, Legend, plugins, PointElement } from 'chart.js';
     import SelectComponent from '@/components/auth/form/SelectComponent.vue';

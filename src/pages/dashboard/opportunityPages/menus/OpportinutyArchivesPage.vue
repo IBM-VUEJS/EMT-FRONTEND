@@ -3,10 +3,10 @@ import ButtonComponent from '@/components/auth/form/ButtonComponent.vue';
 import InputComponent from '@/components/auth/form/InputComponent.vue';
 import SearchComponent from '@/components/auth/form/SearchComponent.vue';
 import SelectComponent from '@/components/auth/form/SelectComponent.vue';
-import FilterIcon from '@/components/icons/FilterIcon';
+import FilterIcon from '@/assets/icons/FilterIcon';
 import { RouterView, useRoute } from 'vue-router';
 import { ref, inject } from 'vue';
-import CancelIcon from '@/components/icons/CancelIcon';
+import CancelIcon from '@/assets/icons/CancelIcon';
 
 const routes = useRoute()
 const hideFilter = ref(false)
