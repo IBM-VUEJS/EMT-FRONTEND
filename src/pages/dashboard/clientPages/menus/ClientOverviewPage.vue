@@ -377,11 +377,13 @@ import { ref, onMounted } from 'vue';
         display: flex;
         flex-direction: column;
         gap: 15px;
+        width: 100%;
         height: 100%;
     }
     .statistics{
         width: 100%;
-        min-height: 200px;
+        height: 25%;
+        /* min-height: 200px; */
         display: flex;
         gap: 15px;
     }
@@ -403,7 +405,7 @@ import { ref, onMounted } from 'vue';
     }
     .search_top_client{
         width: 100%;
-        min-height: 500px;
+        height: 75%;
     }
     .right_client_container{
         display: flex;
@@ -642,6 +644,10 @@ import { ref, onMounted } from 'vue';
         border-radius: 5px;
     }
     @media screen and (max-width: 1100px) {
+        .left_client_container{
+            display: grid;
+            grid-template-rows: 1fr 2fr;
+        }
         .client_container{
             display: grid;
             grid-template-columns: 1fr;
@@ -654,6 +660,9 @@ import { ref, onMounted } from 'vue';
             display: flex;
             flex-direction: column;
             gap: 15px;
+        }
+        .search_top_client{
+            height: 500px;
         }
         .stats1, .stats2{
             width: 100%;

@@ -1,22 +1,26 @@
 <script setup>
 import EbaLogoComponent from './EbaLogoComponent.vue';
-import { inject, onMounted, ref } from 'vue';
+import { inject, onMounted, ref, watch } from 'vue';
 import { useWindowSize } from '@vueuse/core'
 
+const {width} = useWindowSize()
 const showNavbar = inject('showNavbar')
 const show = inject('show')
 const hideNavbarFunc = () => {
     showNavbar.value = false
     show.value = false
 }
-onMounted(() => {
-    const {width} = useWindowSize()
-    if (width.value < 1000) {
-        showNavbar.value = false
-    }else{
-        showNavbar.value = true
+
+watch(width,     () => 
+    {
+        if (width.value < 1200) {
+            showNavbar.value = false
+            console.log("1200")
+        }else{
+            showNavbar.value = true
+        }
     }
-})
+)
 
 </script>
 
@@ -67,7 +71,7 @@ onMounted(() => {
 
     @media screen and (max-width: 1200px) {
         #sidebar{
-            display: none;
+            /* display: none; */
             position: absolute;
             z-index: 10;
             background-color: var(--white);

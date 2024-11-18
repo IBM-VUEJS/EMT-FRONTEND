@@ -40,6 +40,9 @@
     //formulaire d'affichage d'un client
     provide('showClient', showClient)
 
+        //formulaire d'affichage d'un client
+        provide('showClient', client_to_show)
+
     //formulaire de mise à jour d'une opportunité
     provide('showUpdateOpportunity', showUpdateOpportunity)
 

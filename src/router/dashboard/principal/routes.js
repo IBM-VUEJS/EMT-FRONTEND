@@ -91,16 +91,6 @@ const routes = [
         path: 'opportunity-add',
         name: 'opportunity-add',
         component: OpportunityAddPage
-    },
-    {
-        path: 'client-add',
-        name: 'client-add',
-        component: ClientAddPage
-    },
-    {
-        path: 'client-show/:client_id',
-        name: 'client-show',
-        component: ClientShowPage
     }
 ]
 

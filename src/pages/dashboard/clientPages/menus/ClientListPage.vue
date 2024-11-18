@@ -102,13 +102,11 @@ const clients = [
 
 
 const hideFilter = ref(false)
-const hidePrinter = ref(false)
 const client_to_show = inject('client_to_show')
 
 
 const show = inject('show')
 const showClient  = inject('showClient')
-const showAddOpportuinity = inject('showAddOpportuinity')
 const showUpdateclient = inject('showUpdateclient')
 const showDefinePasswordForm = inject('showDefinePasswordForm')
 
@@ -152,16 +150,11 @@ const showclientFunc = (id) => {
     client_to_show.value.push(clients.find((client) => client.id === id))
 }
 
-const UpdateclientFunc = (id) => {
+const updateclientFunc = (client_id) => {
     showUpdateclient.value = true
     show.value = true
-    client_to_show.value.push(clients.find((client) => client.id === id))
+    client_to_show.value.push(clients.find((client) => client.numero === client_id))
     // console.log(client_to_show.value);
-}
-
-const addclient = () => {
-    show.value = true
-    showAddOpportuinity.value = true
 }
 
 const showFilter = () => {
@@ -174,24 +167,6 @@ const closeFilter = () => {
     hideFilter.value = false
 }
 
-const showPrinter = () => {
-    show.value = true
-    hidePrinter.value = true
-}
-
-const closePrinter = () => {
-    show.value = false
-    hidePrinter.value = false
-}
-
-//UPDAT FUNCTION
-const updateclient = () => {
-
-}
-
-const printOpportunities = () => {
-
-}
 
 </script>
 
@@ -245,24 +220,11 @@ const printOpportunities = () => {
                 <div class="add tools">
                     <ButtonComponent :button_width="'100%'" :bgcolor="'white'" :bottom="'0'" :slim="true" :bordered="true" @click="showPrinter">
                          <span v-html="PrintIcon"></span> Imprimer
-                    </ButtonComponent>
-                        <div class="filter_form" v-if="hidePrinter">
-                            <div class="close_filter_div">
-                                <div class="close" @click="closePrinter">
-                                    <span v-html="CancelIcon"></span>
-                                </div>
-                            </div>
-                            Excel
-                        </div>
+                    </ButtonComponent>                        
                 </div>
                 <div class="add tools">
                     <ButtonComponent :button_width="'100%'" :bgcolor="'white'" :bottom="'0'" :slim="true" :bordered="true" @click="printOpportunities">
                          <span v-html="ImportIcon"></span> Importer
-                    </ButtonComponent>
-                </div>
-                <div class="add tools">
-                    <ButtonComponent :button_width="'100%'" :bgcolor="'white'" :bottom="'0'" :slim="true" :bordered="true" @click="printOpportunities">
-                         <span v-html="ArchiveIcon"></span> Archive
                     </ButtonComponent>
                 </div>
             </div>
@@ -293,9 +255,11 @@ const printOpportunities = () => {
                                     <span v-html="BlueEyesIcon"></span>
                                 </div>
                             </RouterLink>
-                            <div class="action_icons" @click="UpdateclientFunc(client['id'])">
-                                <span v-html="YellowEditPenLine"></span>
-                            </div>
+                            <RouterLink :to="{name: 'client-update', params: {client_id: client['numero']}}">
+                                <div class="action_icons">
+                                    <span v-html="YellowEditPenLine"></span>
+                                </div>
+                            </RouterLink>
                             <div class="action_icons" @click="archiveclientFunc">
                                 <span v-html="DeleteIcon"></span>
                             </div>

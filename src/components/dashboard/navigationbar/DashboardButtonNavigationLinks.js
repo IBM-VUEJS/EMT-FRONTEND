@@ -15,26 +15,31 @@ import UserplusIcon from "@/assets/icons/UserplusIcon"
 const buttons = [
     {
         path: 'principal',
+        active: 'principal',
         libel: 'Tableau de bord',
         icon: HomeIcon
     },
     {
         path: 'creation-compte',
+        active: 'creation-compte',
         libel: 'Création de Compte',
         icon: UseraccountIcon
     },
     {
         path: 'opportunity-overview',
+        active: 'opportunity',
         libel: 'Opportunités',
         icon: UserplusIcon
     },
     {
         path: 'client-overview',
+        active: 'client',
         libel: 'Clients',
         icon: UsercheckIcon
     },
     {
         path: 'factures',
+        active: 'factures',
         libel: 'Factures',
         icon: BillIcon
     },

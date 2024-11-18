@@ -102,7 +102,7 @@
         outline: 2px solid var(--red)
     }
     .input_div input{
-        width: auto;
+        width: 90%;
         padding: 5px 20px;
         border: none;
         outline: none;
