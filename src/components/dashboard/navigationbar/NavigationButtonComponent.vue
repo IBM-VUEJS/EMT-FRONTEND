@@ -20,7 +20,7 @@ import { useWindowSize } from '@vueuse/core';
     const showNavbar = inject('showNavbar')
     const {width} = useWindowSize()
     const hideNavbarAndDarkBG = () => {
-        console.log(route.redirectedFrom, props.path)
+        console.log(route.fullPath, props.path)
         if (isMobile.value === true) {
             show.value = false
             showNavbar.value = false

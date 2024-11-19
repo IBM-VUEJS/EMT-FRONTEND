@@ -55,7 +55,7 @@ const previousURL = router.options.history.state.back
                 <small>12 : 35</small>
             </div>
             <div class="update_client">
-                <RouterLink :to="{}">
+                <RouterLink :to="{name: 'client-update', params: ''}">
                     <ButtonComponent :slim="true" :bordered="true">
                         Modifier ces informations
                     </ButtonComponent>

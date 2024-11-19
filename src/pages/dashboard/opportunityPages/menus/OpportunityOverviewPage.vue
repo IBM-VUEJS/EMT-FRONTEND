@@ -5,7 +5,7 @@
     import QualifyOpportunityIcon from '@/assets/icons/QualifyOpportunityIcon';
     import WinOpportunityIcon from '@/assets/icons/WinOpportunityIcon';
     import { ref, onMounted } from 'vue';
-    import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, LineElement, BarController, LineController, PieController, ArcElement, Title, Tooltip, Legend, plugins, PointElement } from 'chart.js';
+    import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, LineElement, BarController, LineController, PieController, ArcElement, Title, Tooltip, Legend, plugins, PointElement, Filler } from 'chart.js';
     import SelectComponent from '@/components/form/SelectComponent.vue';
 
     const options = [
@@ -45,7 +45,7 @@
         },
     ]
 
-    ChartJS.register(CategoryScale, LinearScale, BarElement, LineElement, ArcElement, LineController, PointElement, BarController, PieController, Title, Tooltip, Legend);
+    ChartJS.register(CategoryScale, LinearScale, BarElement, LineElement, ArcElement, LineController, PointElement, BarController, PieController, Filler, Title, Tooltip, Legend);
 
     const chartCanvasBar_1 = ref(null);
     const chartCanvasBar_2 = ref(null);
@@ -115,7 +115,7 @@
                     pointHoverRadius: 8,
                     borderWidth: 2,
                     fill: true,
-                    order: 0
+                    order: 0,
                 },
                 {
                     type: 'bar',
