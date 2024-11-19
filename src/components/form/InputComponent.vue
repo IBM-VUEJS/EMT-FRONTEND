@@ -6,12 +6,13 @@
 
     const show_password = ref(false)
     const emits = defineEmits(['update:inputValue', 'update:passwordValue'])
-    const onInputChange = (event) => {
-        emits('update:inputValue', event.target.value)
-        console.log('input')
-    }
+    // const emits = defineEmits(['update:passwordValue'])
+
     const onPasswordChange = (event) => {
         emits('update:passwordValue', event.currentTarget.value)
+    }
+    const onInputChange = (event) => {
+        emits('update:inputValue', event.currentTarget.value)
     }
     const props = defineProps(
         {
@@ -29,11 +30,11 @@
             readonly: Boolean,
             height: String,
             input_error: Array,
+            inputValue: String,
             passwordValue: String
         }
     )
     onMounted(() => {
-        console.log(props.input_error)
     })
 </script>
 
@@ -59,7 +60,7 @@
                 </small>
             </template>
             <template v-else>
-                <input class="input" :type="type" :name="name" :id="name" :value="value" :placeholder="placeholder" :style="{border: border, width: width, borderRadius: radius, padding: padding, height: height}" :readonly="readonly" @input="onInputChange">
+                <input class="input" :type="type" :name="name" :id="name" :placeholder="placeholder" :style="{border: border, width: width, borderRadius: radius, padding: padding, height: height}" :readonly="readonly" @input="onInputChange">
                 <small class="small_error">
                     <template v-if="input_error">
                         {{ input_error }}

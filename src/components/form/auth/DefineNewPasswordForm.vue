@@ -105,7 +105,7 @@
                     <span class="text">Catactère spécial (!,$,%,&,@,*,...)</span>
                 </div>
             </div>
-            <InputComponent :type="'password'" :value="''" :placeholder="'******************'" :name="'email'" :libel="'Confirmer le mot de passe'" :padding="'5px'" :bottom="'10px'" v-model:inputValue="confirmPassword" :input_error="errs"></InputComponent>
+            <InputComponent :PasswordValue="confirmPassword" :type="'password'" :value="''" :placeholder="'******************'" :name="'email'" :libel="'Confirmer le mot de passe'" :padding="'5px'" :bottom="'10px'" v-model:inputValue="confirmPassword" :input_error="errs"></InputComponent>
             <ButtonComponent :value="'Valider'" :type="'submit'"></ButtonComponent>
         </form>
     </div>
